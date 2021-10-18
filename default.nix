@@ -16,15 +16,5 @@ in pkgs.clangStdenv.mkDerivation {
         pkgs.eigen
         pkgs.boost
     ];
-    
-    # configurePhase = ''
-    #     mkdir build && cd build
-    #     cmake -DBUILD_TESTS=ON ..
-    # '';
-
-    # installPhase = ''
-    #     mkdir -p $out/bin
-    #     mv test-* $out/bin
-    # '';
 }
 

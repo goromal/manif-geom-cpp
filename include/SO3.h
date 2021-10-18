@@ -40,8 +40,9 @@ public:
   static SO3 fromAxisAngle(const Vec3T &axis, const T angle)
   {
     T th2 = angle / 2.0;
+    Vec3T xyz = sin(th2) * axis / axis.norm();
     SO3 q;
-    q.arr_ << cos(th2), sin(th2)*axis/axis.norm();
+    q.arr_ << cos(th2), xyz(0), xyz(1), xyz(2);
     q.normalize();
     return q;
   }
@@ -51,7 +52,9 @@ public:
     SO3 q_roll  = SO3::fromAxisAngle((Vec3T() << (T)1, (T)0, (T)0).finished(), roll);
     SO3 q_pitch = SO3::fromAxisAngle((Vec3T() << (T)0, (T)1, (T)0).finished(), pitch);
     SO3 q_yaw   = SO3::fromAxisAngle((Vec3T() << (T)0, (T)0, (T)1).finished(), yaw);
-    return q_yaw * q_pitch * q_roll;
+    SO3 q_euler = q_yaw * q_pitch * q_roll;
+    q_euler.normalize();
+    return q_euler;
   }
   
   static SO3 fromR(const Mat3T &m)
@@ -253,7 +256,7 @@ public:
     return out;
   }
   
-  Mat4T qMatLeft()
+  Mat4T qMatLeft() const
   {
     Mat4T qL;
     qL << w(), -x(), -y(), -z(),

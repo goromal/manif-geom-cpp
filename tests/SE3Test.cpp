@@ -14,22 +14,12 @@ BOOST_AUTO_TEST_CASE(TestTransMatConvs)
     // TODO   
 }
 
-BOOST_AUTO_TEST_CASE(TestInversion)
-{
-    // TODO   
-}
-
-BOOST_AUTO_TEST_CASE(TestComposition)
+BOOST_AUTO_TEST_CASE(TestInversionAndComposition)
 {
     // TODO   
 }
 
 BOOST_AUTO_TEST_CASE(TestPlusMinus)
-{
-    // TODO   
-}
-
-BOOST_AUTO_TEST_CASE(TestChartMaps)
 {
     // TODO   
 }

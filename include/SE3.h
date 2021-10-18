@@ -21,24 +21,6 @@ private:
   typedef Matrix<T,4,4> Mat4T;
   typedef Matrix<T,6,6> Mat6T;
   
-  static const Vec3T e1 = [] {
-    Vec3T v;
-    v << (T)1, (T)0, (T)0;
-    return v;
-  }();
-  
-  static const Vec3T e2 = [] {
-    Vec3T v;
-    v << (T)0, (T)1, (T)0;
-    return v;
-  }();
-  
-  static const Vec3T e3 = [] {
-    Vec3T v;
-    v << (T)0, (T)0, (T)1;
-    return v;
-  }();
-  
   T buf_[7];
 
 public:
@@ -63,11 +45,11 @@ public:
     return x;
   }
   
-  static SE3 fromT(const Mat4T &m)
+  static SE3 fromH(const Mat4T &m)
   {
     SE3 x;
     x.t_ = m.template block<3,1>(0,3);
-    x.q_ = SO3<T>.fromR(m.template block<3,3>(0,0));
+    x.q_ = SO3<T>::fromR(m.template block<3,3>(0,0));
     return x;
   }
   
@@ -112,14 +94,14 @@ public:
     arr_(const_cast<T*>(data))
   {}
 
-  inline T* data() { return arr_.data(); 
+  inline T* data() { return arr_.data(); }
   inline const T* data() const { return arr_.data();}
   inline T& operator[] (int i) {return arr_[i];}
   inline Vec3T& t() { return t_; }
   inline SO3<T>& q() { return q_; }
   inline const Vec7T array() const { return arr_;}
   
-  Mat4T T() const
+  Mat4T H() const
   {
     Mat4T out;
     out << q().R(), t(),
@@ -136,7 +118,7 @@ public:
     return x;
   }
   
-  SO3& invert()
+  SE3& invert()
   {
     q().invert();
     t() = -q() * t();
@@ -171,12 +153,12 @@ public:
   
   SE3 operator+ (const Vec6T &v) const
   {
-    return *this * SE3.Exp(v);
+    return *this * SE3::Exp(v);
   }
   
   SE3& operator+= (const Vec6T &v)
   {
-    SE3 x = SE3.Exp(v);
+    SE3 x = SE3::Exp(v);
     t() = t() + q() * x.t();
     q() = q() * x.q();
   }
@@ -184,13 +166,13 @@ public:
   template<typename T2>
   Vec6T operator- (const SE3<T2>& x) const
   {
-    return SE3.Log(x.inverse() * *this);
+    return SE3::Log(x.inverse() * *this);
   }
   
   static Mat6T hat(const Vec6T &omega)
   {
     Mat6T Omega;
-    Omega << SO3<T>.hat(omega.template block<3,1>(3,0)), omega.template block<3,1>(0,0),
+    Omega << SO3<T>::hat(omega.template block<3,1>(3,0)), omega.template block<3,1>(0,0),
              (T)0, (T)0, (T)0, (T)0;
     return Omega;
   }
@@ -198,20 +180,20 @@ public:
   static Vec6T vee(const Mat6T &Omega)
   {
     Vec6T omega;
-    omega << Omega.template block<3,1>(0,3), SO3<T>.vee(Omega.template block<3,3>(0,0);
+    omega << Omega.template block<3,1>(0,3), SO3<T>::vee(Omega.template block<3,3>(0,0));
     return omega;
   }
   
   static Mat6T log(const SE3 &x)
   {
-    return SE3.hat(SE3.Log(x));
+    return SE3::hat(SE3::Log(x));
   }
   
   static Vec6T Log(const SE3 &x)
   {
-    Vec3T w = SO3<T>.Log(x.q());
+    Vec3T w = SO3<T>::Log(x.q());
     T    th = w.norm();
-    Mat3T W = SO3<T>.hat(w);
+    Mat3T W = SO3<T>::hat(w);
     
     Mat3T leftJacobianInverse;
     if (th > 0)
@@ -220,11 +202,11 @@ public:
       T b = ((T)1. - cos(th))/(th*th);
       T c = ((T)1. - a)/(th*th);
       T e = (b - 2.*c)/(2.*a);
-      leftJacobianInverse = Mat3T.identity() - 0.5*W + e*(W*W);
+      leftJacobianInverse = Mat3T::identity() - 0.5*W + e*(W*W);
     }
     else
     {
-      leftJacobianInverse = Mat3T.identity();
+      leftJacobianInverse = Mat3T::identity();
     }
     
     Vec6T out;
@@ -235,15 +217,15 @@ public:
   
   static SE3 exp(const Mat6T &Omega)
   {
-    return SE3.Exp(SE3.vee(Omega));
+    return SE3::Exp(SE3::vee(Omega));
   }
   
   static SE3 Exp(const Vec6T &omega)
   {
     Vec3T rho = omega.template block<3,1>(0,0);
     Vec3T w = omega.template block<3,1>(3,0);
-    SO3<T> q = SO3<T>.Exp(w);
-    Mat3T W = SO3<T>.hat(w);
+    SO3<T> q = SO3<T>::Exp(w);
+    Mat3T W = SO3<T>::hat(w);
     T th = w.norm();
   
     Mat3T leftJacobian;
@@ -252,11 +234,11 @@ public:
       T a = sin(th)/th;
       T b = ((T)1. - cos(th))/(th*th);
       T c = ((T)1. - a)/(th*th);
-      leftJacobian = a * Mat3T.identity() + b*W + c*(w*w.transpose());
+      leftJacobian = a * Mat3T::identity() + b*W + c*(w*w.transpose());
     }
     else
     {
-      leftJacobian = Mat3T.identity();
+      leftJacobian = Mat3T::identity();
     }
     
     SE3 x;
@@ -271,7 +253,7 @@ public:
 template<typename T>
 inline std::ostream& operator<< (std::ostream& os, const SE3<T>& x)
 {
-  os << "SE(3): [ " << x.t().x() << "i, " << x.t().y() << "j, " << x.t().z() << "k] [ " << q.w() << ", " << q.x() << "i, " << q.y() << "j, " << q.z() << "k]";
+  os << "SE(3): [ " << x.t().x() << "i, " << x.t().y() << "j, " << x.t().z() << "k] [ " << x.q().w() << ", " << x.q().x() << "i, " << x.q().y() << "j, " << x.q().z() << "k]";
   return os;
 }
 

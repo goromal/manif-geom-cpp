@@ -10,30 +10,11 @@ using namespace Eigen;
 template<typename T>
 class SO3
 {
-
 private:
   typedef Matrix<T,3,1> Vec3T;
   typedef Matrix<T,4,1> Vec4T;
   typedef Matrix<T,3,3> Mat3T;
   typedef Matrix<T,4,4> Mat4T;
-  
-  static const Vec3T e1 = [] {
-    Vec3T v;
-    v << (T)1, (T)0, (T)0;
-    return v;
-  }();
-  
-  static const Vec3T e2 = [] {
-    Vec3T v;
-    v << (T)0, (T)1, (T)0;
-    return v;
-  }();
-  
-  static const Vec3T e3 = [] {
-    Vec3T v;
-    v << (T)0, (T)0, (T)1;
-    return v;
-  }();
   
   T buf_[4];
 
@@ -67,9 +48,9 @@ public:
   
   static SO3 fromEuler(const T roll, const T pitch, const T yaw)
   {
-    SO3 q_roll  = SO3.fromAxisAngle(e1, roll);
-    SO3 q_pitch = SO3.fromAxisAngle(e2, pitch);
-    SO3 q_yaw   = SO3.fromAxisAngle(e3, yaw);
+    SO3 q_roll  = SO3::fromAxisAngle((Vec3T() << (T)1, (T)0, (T)0).finished(), roll);
+    SO3 q_pitch = SO3::fromAxisAngle((Vec3T() << (T)0, (T)1, (T)0).finished(), pitch);
+    SO3 q_yaw   = SO3::fromAxisAngle((Vec3T() << (T)0, (T)0, (T)1).finished(), yaw);
     return q_yaw * q_pitch * q_roll;
   }
   
@@ -120,13 +101,13 @@ public:
       qz = 0.25 * s;
     }
         
-    SO3 q = SO3.fromQuat(qw, qx, qy, qz);
+    SO3 q = SO3::fromQuat(qw, qx, qy, qz);
     q.normalize();
 
     return q;
   }
   
-  static SO3 = fromTwoUnitVectors(const Vec3T &u, const Vec3T &v)
+  static SO3 fromTwoUnitVectors(const Vec3T &u, const Vec3T &v)
   {
     SO3 q;
     T d = u.dot(v);
@@ -134,8 +115,8 @@ public:
     if (d < 0.99999999 && d > -0.99999999)
     {
       T invs = 1. / sqrt((2.*(1.+d)));
-      Vec3 xyz = u.cross(v*invs);
-      q = SO3.fromQuat(0.5/invs, xyz(0), xyz(1), xyz(2));
+      Vec3T xyz = u.cross(v*invs);
+      q = SO3::fromQuat(0.5/invs, xyz(0), xyz(1), xyz(2));
       q.normalize();
     }
     else if (d < -0.99999999)
@@ -143,11 +124,11 @@ public:
       // There are an infinite number of solutions here, choose one.
       // This choice works better for vector comparisons with only 
       // nonzero x components.
-      q = SO3.fromQuat((T)0, (T)0, (T)1, (T)0);
+      q = SO3::fromQuat((T)0, (T)0, (T)1, (T)0);
     }
     else
     {
-      q = SO3.identity();
+      q = SO3::identity();
     }
     
     return q;
@@ -192,7 +173,7 @@ public:
     arr_(const_cast<T*>(data))
   {}
 
-  inline T* data() { return arr_.data(); 
+  inline T* data() { return arr_.data(); }
   inline const T* data() const { return arr_.data();}
   inline T& operator[] (int i) {return arr_[i];}
   inline T w() const { return arr_(0); }
@@ -222,7 +203,7 @@ public:
     T yy = y()*y();
     T yz = y()*z();
     T zz = z()*z();
-    Matrix3T out;
+    Mat3T out;
     out << 1. - 2.*yy - 2.*zz, 2.*xy - 2.*wz,      2.*xz + 2.*wy,
            2.*xy + 2.*wz,      1. - 2.*xx - 2.*zz, 2.*yz - 2.*wx,
            2.*xz - 2.*wy,      2.*yz + 2.*wx,      1. - 2.*xx - 2.*yy;
@@ -290,7 +271,7 @@ public:
   template<typename T2>
   SO3 operator* (const SO3<T2> &q) const
   {
-    return SO3.fromQuat(qMatLeft() * q.array());
+    return SO3::fromQuat(qMatLeft() * q.array());
   }
   
   template<typename Tout=T, typename T2>
@@ -309,18 +290,18 @@ public:
   
   SO3 operator+ (const Vec3T &v) const
   {
-    return SO3.fromQuat(qMatLeft() * SO3.Exp(v).array());
+    return SO3::fromQuat(qMatLeft() * SO3::Exp(v).array());
   }
   
   SO3& operator+= (const Vec3T &v)
   {
-    arr_ = qMatLeft() * SO3.Exp(v).array();
+    arr_ = qMatLeft() * SO3::Exp(v).array();
   }
   
   template<typename T2>
   Vec3T operator- (const SO3<T2>& q) const
   {
-    return SO3.Log(SO3.fromQuat(q.inverse().qMatLeft() * array()));
+    return SO3::Log(SO3::fromQuat(q.inverse().qMatLeft() * array()));
   }
   
   static Mat3T hat(const Vec3T &omega)
@@ -341,7 +322,7 @@ public:
   
   static Mat3T log(const SO3 &q)
   {
-    return SO3.hat(SO3.Log(q));
+    return hat(SO3::Log(q));
   }
   
   static Vec3T Log(const SO3 &q)
@@ -353,12 +334,12 @@ public:
     if (n > 0)
       return 2.0 * qv * atan2(n, qw) / n;
     else
-      return Vec3T.Zero();
+      return Vec3T::Zero();
   }
   
   static SO3 exp(const Mat3T &Omega)
   {
-    return SO3.Exp(SO3.vee(Omega));
+    return SO3::Exp(vee(Omega));
   }
   
   static SO3 Exp(const Vec3T &omega)
@@ -381,11 +362,10 @@ public:
     
     return q;
   }
-
 };
 
 template<typename T>
-inline std::ostream& operator<< (std::ostream& os, const SO3<T>& q)
+inline std::ostream& operator<< (std::ostream& os, const SO3<T> &q)
 {
   os << "SO(3): [ " << q.w() << ", " << q.x() << "i, " << q.y() << "j, " << q.z() << "k]";
   return os;

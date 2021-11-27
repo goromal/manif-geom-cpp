@@ -139,15 +139,15 @@ public:
   SE3 operator* (const SE3<T2> &x) const
   {
     SE3 x_out;
-    x_out.t() = t_ + q_ * x.t();
-    x_out.q() = q_ * x.q();
+    x_out.t() = t_ + q_ * x.t_;
+    x_out.q() = q_ * x.q_;
     return x_out;
   }
   
   template<typename Tout=T, typename T2>
   Matrix<Tout,3,1> operator* (const Matrix<T2,3,1> &v) const
   {
-    return q_ * v + t();
+    return q_ * v + t_;
   }
   
   template<typename T2>
@@ -197,7 +197,7 @@ public:
   
   static Vec6T Log(const SE3 &x)
   {
-    Vec3T w = SO3<T>::Log(x.q());
+    Vec3T w = SO3<T>::Log(x.q_);
     T    th = w.norm();
     Mat3T W = SO3<T>::hat(w);
     
@@ -216,7 +216,7 @@ public:
     }
     
     Vec6T out;
-    out << leftJacobianInverse * x.t(), w;
+    out << leftJacobianInverse * x.t_, w;
     
     return out;
   }
@@ -259,7 +259,7 @@ public:
 template<typename T>
 inline std::ostream& operator<< (std::ostream& os, const SE3<T>& x)
 {
-  os << "SE(3): [ " << x.t().x() << "i, " << x.t().y() << "j, " << x.t().z() << "k] [ " << x.q().w() << ", " << x.q().x() << "i, " << x.q().y() << "j, " << x.q().z() << "k]";
+  os << "SE(3): [ " << x.t_.x() << "i, " << x.t_.y() << "j, " << x.t_.z() << "k] [ " << x.q_.w() << ", " << x.q_.x() << "i, " << x.q_.y() << "j, " << x.q_.z() << "k]";
   return os;
 }
 

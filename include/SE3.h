@@ -119,7 +119,7 @@ public:
   {
     SE3 x;
     SO3<T> q_inv = q_.inverse();
-    x.t() = -q_inv * t_;
+    x.t() = -(q_inv * t_);
     x.q() = q_inv;
     return x;
   }
@@ -127,7 +127,7 @@ public:
   SE3& invert()
   {
     q().invert();
-    t() = -q() * t();
+    t() = -(q() * t());
   }
   
   SE3& operator= (const SE3 &x) 

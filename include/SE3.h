@@ -202,11 +202,11 @@ public:
       T b = ((T)1. - cos(th))/(th*th);
       T c = ((T)1. - a)/(th*th);
       T e = (b - 2.*c)/(2.*a);
-      leftJacobianInverse = Mat3T::identity() - 0.5*W + e*(W*W);
+      leftJacobianInverse = Mat3T::Identity() - 0.5*W + e*(W*W);
     }
     else
     {
-      leftJacobianInverse = Mat3T::identity();
+      leftJacobianInverse = Mat3T::Identity();
     }
     
     Vec6T out;
@@ -234,7 +234,7 @@ public:
       T a = sin(th)/th;
       T b = ((T)1. - cos(th))/(th*th);
       T c = ((T)1. - a)/(th*th);
-      leftJacobian = a * Mat3T::identity() + b*W + c*(w*w.transpose());
+      leftJacobian = a * Mat3T::Identity() + b*W + c*(w*w.transpose());
     }
     else
     {

@@ -101,7 +101,7 @@ public:
   {}
 
   inline T* data() { return arr_.data(); }
-  inline T* data() { return arr_.data();}
+  inline const T* data() const { return arr_.data();}
   inline T& operator[] (int i) {return arr_[i];}
   inline Map<Vec3T>& t() { return t_; }
   inline SO3<T>& q() { return q_; }

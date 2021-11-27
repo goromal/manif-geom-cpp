@@ -110,7 +110,7 @@ public:
   Mat4T H() const
   {
     Mat4T out;
-    out << q().R(), t(),
+    out << q_.R(), t_,
            (T)0, (T)0, (T)0, (T)1;
     return out;
   }
@@ -118,8 +118,8 @@ public:
   SE3 inverse() const
   {
     SE3 x;
-    SO3<T> q_inv = q().inverse();
-    x.t() = -q_inv * t();
+    SO3<T> q_inv = q_.inverse();
+    x.t() = -q_inv * t_;
     x.q() = q_inv;
     return x;
   }
@@ -139,15 +139,15 @@ public:
   SE3 operator* (const SE3<T2> &x) const
   {
     SE3 x_out;
-    x_out.t() = t() + q() * x.t();
-    x_out.q() = q() * x.q();
+    x_out.t() = t_ + q_ * x.t();
+    x_out.q() = q_ * x.q();
     return x_out;
   }
   
   template<typename Tout=T, typename T2>
   Matrix<Tout,3,1> operator* (const Matrix<T2,3,1> &v) const
   {
-    return q() * v + t();
+    return q_ * v + t();
   }
   
   template<typename T2>

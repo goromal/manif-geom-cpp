@@ -150,6 +150,11 @@ public:
     return q_ * v + t_;
   }
   
+  Vec3T operator* (const Vec3T &v) const
+  {
+    return q_ * v + t_;
+  }
+  
   template<typename T2>
   SE3& operator*= (const SE3<T2> &x)
   {

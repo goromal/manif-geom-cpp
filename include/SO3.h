@@ -285,6 +285,13 @@ public:
     return v - w() * t + t.cross(qv);
   }
   
+  Vec3T operator* (const Vec3T &v) const
+  {
+    Vec3T qv = arr_.template block<3,1>(1,0);
+    Matrix<Tout,3,1> t = (Tout)2.0 * v.cross(qv);
+    return v - w() * t + t.cross(qv);
+  }
+  
   template<typename T2>
   SO3& operator*= (const SO3<T2> &q)
   {

@@ -81,30 +81,36 @@ public:
   {}
 
   SE3(const Ref<const Vec7T> arr) :
-    arr_(const_cast<T*>(arr.data()))
+    arr_(const_cast<T*>(arr.data())),
+    t_(arr_.data()),
+    q_(arr_.data()+3)
   {}
 
-  SE3(const SE3& x)
-    : arr_(buf_)
+  SE3(const SE3& x) : 
+    arr_(buf_),
+    t_(arr_.data()),
+    q_(arr_.data()+3)
   {
     arr_ = x.arr_;
   }
 
   SE3(const T* data) :
-    arr_(const_cast<T*>(data))
+    arr_(const_cast<T*>(data)),
+    t_(arr_.data()),
+    q_(arr_.data()+3)
   {}
 
   inline T* data() { return arr_.data(); }
   inline const T* data() const { return arr_.data();}
   inline T& operator[] (int i) {return arr_[i];}
-  inline Vec3T& t() { return t_; }
+  inline Map<Vec3T>& t() { return t_; }
   inline SO3<T>& q() { return q_; }
-  inline const Vec7T array() const { return arr_;}
+  inline Vec7T array() { return arr_;}
   
   Mat4T H() const
   {
     Mat4T out;
-    out << q().R(), t(),
+    out << q_.R(), t_,
            (T)0, (T)0, (T)0, (T)1;
     return out;
   }
@@ -112,8 +118,8 @@ public:
   SE3 inverse() const
   {
     SE3 x;
-    SO3<T> q_inv = q().inverse();
-    x.t() = -q_inv * t();
+    SO3<T> q_inv = q_.inverse();
+    x.t() = -(q_inv * t_);
     x.q() = q_inv;
     return x;
   }
@@ -121,7 +127,7 @@ public:
   SE3& invert()
   {
     q().invert();
-    t() = -q() * t();
+    t() = -(q() * t());
   }
   
   SE3& operator= (const SE3 &x) 
@@ -133,15 +139,20 @@ public:
   SE3 operator* (const SE3<T2> &x) const
   {
     SE3 x_out;
-    x_out.t() = t() + q() * x.t();
-    x_out.q() = q() * x.q();
+    x_out.t() = t_ + q_ * x.t_;
+    x_out.q() = q_ * x.q_;
     return x_out;
   }
   
   template<typename Tout=T, typename T2>
   Matrix<Tout,3,1> operator* (const Matrix<T2,3,1> &v) const
   {
-    return q() * v + t();
+    return q_ * v + t_;
+  }
+  
+  Vec3T operator* (const Vec3T &v) const
+  {
+    return q_ * v + t_;
   }
   
   template<typename T2>
@@ -191,7 +202,7 @@ public:
   
   static Vec6T Log(const SE3 &x)
   {
-    Vec3T w = SO3<T>::Log(x.q());
+    Vec3T w = SO3<T>::Log(x.q_);
     T    th = w.norm();
     Mat3T W = SO3<T>::hat(w);
     
@@ -202,15 +213,15 @@ public:
       T b = ((T)1. - cos(th))/(th*th);
       T c = ((T)1. - a)/(th*th);
       T e = (b - 2.*c)/(2.*a);
-      leftJacobianInverse = Mat3T::identity() - 0.5*W + e*(W*W);
+      leftJacobianInverse = Mat3T::Identity() - 0.5*W + e*(W*W);
     }
     else
     {
-      leftJacobianInverse = Mat3T::identity();
+      leftJacobianInverse = Mat3T::Identity();
     }
     
     Vec6T out;
-    out << leftJacobianInverse * x.t(), w;
+    out << leftJacobianInverse * x.t_, w;
     
     return out;
   }
@@ -234,11 +245,11 @@ public:
       T a = sin(th)/th;
       T b = ((T)1. - cos(th))/(th*th);
       T c = ((T)1. - a)/(th*th);
-      leftJacobian = a * Mat3T::identity() + b*W + c*(w*w.transpose());
+      leftJacobian = a * Mat3T::Identity() + b*W + c*(w*w.transpose());
     }
     else
     {
-      leftJacobian = Mat3T::identity();
+      leftJacobian = Mat3T::Identity();
     }
     
     SE3 x;
@@ -253,7 +264,7 @@ public:
 template<typename T>
 inline std::ostream& operator<< (std::ostream& os, const SE3<T>& x)
 {
-  os << "SE(3): [ " << x.t().x() << "i, " << x.t().y() << "j, " << x.t().z() << "k] [ " << x.q().w() << ", " << x.q().x() << "i, " << x.q().y() << "j, " << x.q().z() << "k]";
+  os << "SE(3): [ " << x.t_.x() << "i, " << x.t_.y() << "j, " << x.t_.z() << "k] [ " << x.q_.w() << ", " << x.q_.x() << "i, " << x.q_.y() << "j, " << x.q_.z() << "k]";
   return os;
 }
 

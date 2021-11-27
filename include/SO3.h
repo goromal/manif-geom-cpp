@@ -288,7 +288,7 @@ public:
   Vec3T operator* (const Vec3T &v) const
   {
     Vec3T qv = arr_.template block<3,1>(1,0);
-    Matrix<Tout,3,1> t = (Tout)2.0 * v.cross(qv);
+    Vec3T t = (T)2.0 * v.cross(qv);
     return v - w() * t + t.cross(qv);
   }
   

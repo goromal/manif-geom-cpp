@@ -81,17 +81,23 @@ public:
   {}
 
   SE3(const Ref<const Vec7T> arr) :
-    arr_(const_cast<T*>(arr.data()))
+    arr_(const_cast<T*>(arr.data())),
+    t_(arr_.data()),
+    q_(arr_.data()+3)
   {}
 
-  SE3(const SE3& x)
-    : arr_(buf_)
+  SE3(const SE3& x) : 
+    arr_(buf_),
+    t_(arr_.data()),
+    q_(arr_.data()+3)
   {
     arr_ = x.arr_;
   }
 
   SE3(const T* data) :
-    arr_(const_cast<T*>(data))
+    arr_(const_cast<T*>(data)),
+    t_(arr_.data()),
+    q_(arr_.data()+3)
   {}
 
   inline T* data() { return arr_.data(); }

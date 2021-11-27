@@ -101,11 +101,11 @@ public:
   {}
 
   inline T* data() { return arr_.data(); }
-  inline const T* data() const { return arr_.data();}
+  inline T* data() { return arr_.data();}
   inline T& operator[] (int i) {return arr_[i];}
-  inline Vec3T& t() const { return t_; }
-  inline SO3<T>& q() const { return q_; }
-  inline const Vec7T array() const { return arr_;}
+  inline Map<Vec3T>& t() { return t_; }
+  inline SO3<T>& q() { return q_; }
+  inline Vec7T array() { return arr_;}
   
   Mat4T H() const
   {

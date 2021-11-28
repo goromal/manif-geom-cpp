@@ -67,6 +67,13 @@ public:
     return x;
   }
   
+  static SE3 fromVecAndQuat(const Vec3T &t, const SO3<T> &q)
+  {
+    SE3.x;
+    x.arr_ << t(0), t(1), t(2), q.w(), q.x(), q.y(), q.z();
+    return x;
+  }
+  
   static SE3 fromVecAndQuat(const Vec3T &tvec, const Quaternion<T> quat)
   {
     SE3 x;
@@ -252,11 +259,7 @@ public:
       leftJacobian = Mat3T::Identity();
     }
     
-    SE3 x;
-    x.t_ = leftJacobian * rho;
-    x.q_ = q;
-    
-    return x;
+    return SE3.fromVecAndQuat(leftJacobian * rho, q);
   }
 
 };

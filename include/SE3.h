@@ -259,7 +259,7 @@ public:
       leftJacobian = Mat3T::Identity();
     }
     
-    return SE3.fromVecAndQuat(leftJacobian * rho, q);
+    return SE3::fromVecAndQuat(leftJacobian * rho, q);
   }
 
 };

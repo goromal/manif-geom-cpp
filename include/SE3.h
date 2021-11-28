@@ -69,7 +69,7 @@ public:
   
   static SE3 fromVecAndQuat(const Vec3T &t, const SO3<T> &q)
   {
-    SE3.x;
+    SE3 x;
     x.arr_ << t(0), t(1), t(2), q.w(), q.x(), q.y(), q.z();
     return x;
   }

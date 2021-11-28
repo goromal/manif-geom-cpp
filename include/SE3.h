@@ -253,8 +253,8 @@ public:
     }
     
     SE3 x;
-    x.t() = leftJacobian * rho;
-    x.q() = q;
+    x.t_ = leftJacobian * rho;
+    x.q_ = q;
     
     return x;
   }

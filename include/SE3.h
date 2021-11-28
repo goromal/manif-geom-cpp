@@ -207,7 +207,7 @@ public:
     Mat3T W = SO3<T>::hat(w);
     
     Mat3T leftJacobianInverse;
-    if (th > 0)
+    if (th > 1e-4)
     {
       T a = sin(th)/th;
       T b = ((T)1. - cos(th))/(th*th);
@@ -240,7 +240,7 @@ public:
     T th = w.norm();
   
     Mat3T leftJacobian;
-    if (th > 0)
+    if (th > 1e-4)
     {
       T a = sin(th)/th;
       T b = ((T)1. - cos(th))/(th*th);

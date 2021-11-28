@@ -47,10 +47,7 @@ public:
   
   static SE3 fromH(const Mat4T &m)
   {
-    SE3 x;
-    x.t_ = m.template block<3,1>(0,3);
-    x.q_ = SO3<T>::fromR(m.template block<3,3>(0,0));
-    return x;
+    return SE3::fromVecAndQuat(m.template block<3,1>(0,3), SO3<T>::fromR(m.template block<3,3>(0,0)));
   }
   
   static SE3 fromVecAndQuat(const T tx, const T ty, const T tz, const T qw, const T qx, const T qy, const T qz)
@@ -64,6 +61,13 @@ public:
   {
     SE3 x;
     x.arr_ << tvec(0), tvec(1), tvec(2), qvec(0), qvec(1), qvec(2), qvec(3);
+    return x;
+  }
+  
+  static SE3 fromVecAndQuat(const Vec3T &t, const SO3<T> &q)
+  {
+    SE3 x;
+    x.arr_ << t(0), t(1), t(2), q.w(), q.x(), q.y(), q.z();
     return x;
   }
   
@@ -119,9 +123,7 @@ public:
   {
     SE3 x;
     SO3<T> q_inv = q_.inverse();
-    x.t() = -(q_inv * t_);
-    x.q() = q_inv;
-    return x;
+    return SE3::fromVecAndQuat(-(q_inv * t_), q_inv);
   }
   
   SE3& invert()
@@ -138,10 +140,7 @@ public:
   template<typename T2>
   SE3 operator* (const SE3<T2> &x) const
   {
-    SE3 x_out;
-    x_out.t() = t_ + q_ * x.t_;
-    x_out.q() = q_ * x.q_;
-    return x_out;
+    return SE3::fromVecAndQuat(t_ + q_ * x.t_, q_ * x.q_);
   }
   
   template<typename Tout=T, typename T2>
@@ -207,7 +206,7 @@ public:
     Mat3T W = SO3<T>::hat(w);
     
     Mat3T leftJacobianInverse;
-    if (th > 0)
+    if (th > 1e-4)
     {
       T a = sin(th)/th;
       T b = ((T)1. - cos(th))/(th*th);
@@ -240,7 +239,7 @@ public:
     T th = w.norm();
   
     Mat3T leftJacobian;
-    if (th > 0)
+    if (th > 1e-4)
     {
       T a = sin(th)/th;
       T b = ((T)1. - cos(th))/(th*th);
@@ -252,11 +251,7 @@ public:
       leftJacobian = Mat3T::Identity();
     }
     
-    SE3 x;
-    x.t() = leftJacobian * rho;
-    x.q() = q;
-    
-    return x;
+    return SE3::fromVecAndQuat(leftJacobian * rho, q);
   }
 
 };

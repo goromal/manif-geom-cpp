@@ -71,7 +71,7 @@ public:
     T R32 = m(2,1);
     T R33 = m(2,2);
     
-    if (R11 + R22 + R33 > 0)
+    if (R11 + R22 + R33 > (T)0.0)
     {
       s  = 2. * sqrt(1. + R11 + R22 + R33);
       qw = 0.25 * s;
@@ -115,14 +115,14 @@ public:
     SO3 q;
     T d = u.dot(v);
     
-    if (d < 0.99999999 && d > -0.99999999)
+    if (d < (T)0.99999999 && d > (T)-0.99999999)
     {
       T invs = 1. / sqrt((2.*(1.+d)));
       Vec3T xyz = u.cross(v*invs);
       q = SO3::fromQuat(0.5/invs, xyz(0), xyz(1), xyz(2));
       q.normalize();
     }
-    else if (d < -0.99999999)
+    else if (d < (T)-0.99999999)
     {
       // There are an infinite number of solutions here, choose one.
       // This choice works better for vector comparisons with only 
@@ -192,7 +192,7 @@ public:
   void normalize()
   {
     arr_ /= arr_.norm();
-    if (arr_(0) < 0) arr_ *= (T)-1.0;
+    if (arr_(0) < (T)0.0) arr_ *= (T)-1.0;
   }
   
   Mat3T R() const
@@ -341,7 +341,7 @@ public:
     T     qw = q.w();
     
     T n = qv.norm();
-    if (n > 1e-4)
+    if (n > (T)1e-4)
       return 2.0 * qv * atan2(n, qw) / n;
     else
       return Vec3T::Zero();
@@ -357,7 +357,7 @@ public:
     T th = omega.norm();
     
     SO3 q;
-    if (th > 1e-4)
+    if (th > (T)1e-4)
     {
       Vec3T u = omega / th;
       q.arr_(0) = cos(th/2.0);

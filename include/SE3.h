@@ -257,7 +257,7 @@ public:
   template <class NewScalarType>
   SE3<NewScalarType> cast() const
   {
-    return SE3<NewScalarType>(array().template cast<NewScalarType>());
+    return SE3<NewScalarType>(arr_.template cast<NewScalarType>());
   }
 };
 

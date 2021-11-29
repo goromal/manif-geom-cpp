@@ -372,6 +372,12 @@ public:
     
     return q;
   }
+  
+  template <class NewScalarType>
+  SO3<NewScalarType> cast() const
+  {
+    return SO3<NewScalarType>(array().template cast<NewScalarType>());
+  }
 };
 
 template<typename T>

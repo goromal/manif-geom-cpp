@@ -254,6 +254,11 @@ public:
     return SE3::fromVecAndQuat(leftJacobian * rho, q);
   }
 
+  template <class NewScalarType>
+  SE3<NewScalarType> cast() const
+  {
+    return SE3<NewScalarType>(array().template cast<NewScalarType>());
+  }
 };
 
 template<typename T>

@@ -115,7 +115,7 @@ public:
   {
     Mat4T out;
     out << q_.R(), t_,
-           (T)0, (T)0, (T)0, (T)1;
+           (T)0., (T)0., (T)0., (T)1.;
     return out;
   }
   
@@ -183,7 +183,7 @@ public:
   {
     Mat6T Omega;
     Omega << SO3<T>::hat(omega.template block<3,1>(3,0)), omega.template block<3,1>(0,0),
-             (T)0, (T)0, (T)0, (T)0;
+             (T)0., (T)0., (T)0., (T)0.;
     return Omega;
   }
   

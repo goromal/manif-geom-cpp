@@ -33,7 +33,7 @@ public:
   static SO3 identity()
   {
     SO3 q;
-    q.arr_ << 1.0, 0, 0, 0;
+    q.arr_ << 1., 0., 0., 0.;
     return q;
   }
   
@@ -49,9 +49,9 @@ public:
   
   static SO3 fromEuler(const T roll, const T pitch, const T yaw)
   {
-    SO3 q_roll  = SO3::fromAxisAngle((Vec3T() << (T)1, (T)0, (T)0).finished(), roll);
-    SO3 q_pitch = SO3::fromAxisAngle((Vec3T() << (T)0, (T)1, (T)0).finished(), pitch);
-    SO3 q_yaw   = SO3::fromAxisAngle((Vec3T() << (T)0, (T)0, (T)1).finished(), yaw);
+    SO3 q_roll  = SO3::fromAxisAngle((Vec3T() << (T)1., (T)0., (T)0.).finished(), roll);
+    SO3 q_pitch = SO3::fromAxisAngle((Vec3T() << (T)0., (T)1., (T)0.).finished(), pitch);
+    SO3 q_yaw   = SO3::fromAxisAngle((Vec3T() << (T)0., (T)0., (T)1.).finished(), yaw);
     SO3 q_euler = q_yaw * q_pitch * q_roll;
     q_euler.normalize();
     return q_euler;
@@ -127,7 +127,7 @@ public:
       // There are an infinite number of solutions here, choose one.
       // This choice works better for vector comparisons with only 
       // nonzero x components.
-      q = SO3::fromQuat((T)0, (T)0, (T)1, (T)0);
+      q = SO3::fromQuat((T)0., (T)0., (T)1., (T)0.);
     }
     else
     {
@@ -317,9 +317,9 @@ public:
   static Mat3T hat(const Vec3T &omega)
   {
     Mat3T Omega;
-    Omega <<   (T)0, -omega.z(),  omega.y(),
-              omega.z(),   (T)0, -omega.x(),
-             -omega.y(),  omega.x(),   (T)0;
+    Omega <<   (T)0., -omega.z(),  omega.y(),
+              omega.z(),   (T)0., -omega.x(),
+             -omega.y(),  omega.x(),   (T)0.;
     return Omega;
   }
   
@@ -341,7 +341,7 @@ public:
     T     qw = q.w();
     
     T n = qv.norm();
-    if (n > 0)
+    if (n > 1e-4)
       return 2.0 * qv * atan2(n, qw) / n;
     else
       return Vec3T::Zero();
@@ -360,8 +360,8 @@ public:
     if (th > 1e-4)
     {
       Vec3T u = omega / th;
-      q.arr_(0) = cos(th/2);
-      q.arr_.template block<3,1>(1,0) = sin(th/2) * u;
+      q.arr_(0) = cos(th/2.0);
+      q.arr_.template block<3,1>(1,0) = sin(th/2.0) * u;
     }
     else
     {

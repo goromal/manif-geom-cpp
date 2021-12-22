@@ -1,18 +1,11 @@
 { pkgs ? import <nixpkgs> {} }:
-pkgs.clangStdenv.mkDerivation {
-    name = "manif-geom-cpp";
-    version = "1.0.0";
-    src = pkgs.lib.cleanSource ./.;
-    
-    nativeBuildInputs = [
-        pkgs.cmake
-        pkgs.clang
-        pkgs.git
-    ];
-    
-    buildInputs = [
-        pkgs.eigen
-        pkgs.boost
-    ];
+import ./manif-geom-cpp.nix {
+    stdenv = pkgs.clangStdenv;
+    cleanSource = pkgs.lib.cleanSource;
+    cmake = pkgs.cmake;
+    clang = pkgs.clang;
+    git = pkgs.git;
+    eigen = pkgs.eigen;
+    boost = pkgs.boost;
 }
 

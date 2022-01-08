@@ -187,7 +187,7 @@ public:
   inline void setX(T x) { arr_(1) = x; }
   inline void setY(T y) { arr_(2) = y; }
   inline void setZ(T z) { arr_(3) = z; }
-  inline const Vec4T array() const { return arr_;}
+  inline Vec4T array() const { return arr_;}
   
   void normalize()
   {
@@ -268,13 +268,13 @@ public:
   
   SO3& operator= (const SO3 &q) 
   { 
-    arr_ = q.array(); 
+    arr_ = q.arr_; 
   }
   
   template<typename T2>
   SO3 operator* (const SO3<T2> &q) const
   {
-    return SO3::fromQuat(qMatLeft() * q.array());
+    return SO3::fromQuat(qMatLeft() * q.arr_);
   }
   
   template<typename Tout=T, typename T2>
@@ -295,23 +295,23 @@ public:
   template<typename T2>
   SO3& operator*= (const SO3<T2> &q)
   {
-    arr_ = qMatLeft() * q.array();
+    arr_ = qMatLeft() * q.arr_;
   }
   
   SO3 operator+ (const Vec3T &v) const
   {
-    return SO3::fromQuat(qMatLeft() * SO3::Exp(v).array());
+    return SO3::fromQuat(qMatLeft() * SO3::Exp(v).arr_);
   }
   
   SO3& operator+= (const Vec3T &v)
   {
-    arr_ = qMatLeft() * SO3::Exp(v).array();
+    arr_ = qMatLeft() * SO3::Exp(v).arr_;
   }
   
   template<typename T2>
   Vec3T operator- (const SO3<T2>& q) const
   {
-    return SO3::Log(SO3::fromQuat(q.inverse().qMatLeft() * array()));
+    return SO3::Log(SO3::fromQuat(q.inverse().qMatLeft() * arr_));
   }
   
   static Mat3T hat(const Vec3T &omega)

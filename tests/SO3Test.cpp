@@ -6,38 +6,6 @@
 
 using namespace Eigen;
 
-// AutoDiff cost function (factor) for the difference between two rotations.
-// Weighted by measurement covariance, Qij_.
-class SO3Functor
-{
-public:
-EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-  // store measured relative pose and inverted covariance matrix
-  SO3Functor(Eigen::Matrix<double,4,1> &qi_vec, Eigen::Matrix<double,3,3> &Qij)
-  : q_(qi_vec)
-  {
-    Qij_inv_ = Qij.inverse();
-  }
-
-  // templated residual definition for both doubles and jets
-  // basically a weighted implementation of boxminus using Eigen templated types
-  template<typename T>
-  bool operator()(const T* _q_hat, T* _res) const
-  {
-    SO3<T> q_hat(_q_hat);
-    Eigen::Map<Eigen::Matrix<T,3,1>> r(_res);
-    
-    r = Qij_inv_.cast<T>() * (q_hat - q_.cast<T>());
-    
-    return true;
-  }
-
-private:
-  SO3d q_;
-  Eigen::Matrix<double,3,3> Qij_inv_;
-};
-
-
 BOOST_AUTO_TEST_SUITE(TestSO3)
 
 BOOST_AUTO_TEST_CASE(TestSO3Action)
@@ -176,23 +144,6 @@ BOOST_AUTO_TEST_CASE(TestConstructors)
     BOOST_CHECK_CLOSE(q2.x(), 1.0, 1e-8);
     BOOST_CHECK_CLOSE(q2.y(), 0.0, 1e-8);
     BOOST_CHECK_CLOSE(q2.z(), 0.0, 1e-8);
-}
-
-BOOST_AUTO_TEST_CASE(TestFactor)
-{
-    Vector4d q_sample_vec(0.6245725, -0.19324224, 0.5209314, 0.54881428);
-    Matrix3d Q_sample = Matrix3d::Identity();
-    SO3Functor q_factor(q_sample_vec, Q_sample);
-    double q_hat[4];
-    q_hat[0] = 1.;
-    q_hat[1] = 1.;
-    q_hat[2] = 0.;
-    q_hat[3] = 0.;
-    double r[3];
-    q_factor(q_hat, r);
-    BOOST_CHECK_CLOSE(r[0], 1.5312255198, 1e-8);
-    BOOST_CHECK_CLOSE(r[1], -2.0029253629, 1e-8);
-    BOOST_CHECK_CLOSE(r[2], -0.05220617254, 1e-8);
 }
 
 BOOST_AUTO_TEST_CASE(TestMutableArray)

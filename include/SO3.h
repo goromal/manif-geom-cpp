@@ -176,8 +176,10 @@ public:
     arr_(const_cast<T*>(data))
   {}
 
-  inline T* data() { return arr_.data(); }
-  inline const T* data() const { return arr_.data();}
+  // SO3(T* data) :
+  //   arr_(data)
+  // {}
+
   inline T& operator[] (int i) {return arr_[i];}
   inline T w() const { return arr_(0); }
   inline T x() const { return arr_(1); }
@@ -187,7 +189,17 @@ public:
   inline void setX(T x) { arr_(1) = x; }
   inline void setY(T y) { arr_(2) = y; }
   inline void setZ(T z) { arr_(3) = z; }
-  inline Vec4T array() const { return arr_;}
+  inline const Vec4T elements() const { return arr_; }
+  inline Vec4T array() const { return arr_; }
+  inline T* data() { return arr_.data(); }
+  inline const T* data() const { return arr_.data(); }
+
+  SO3 copy() const
+  {
+    SO3 tmp;
+    tmp.arr_ = arr_;
+    return tmp;
+  }
   
   void normalize()
   {
@@ -266,15 +278,49 @@ public:
     return qL;
   }
   
+  template <typename Tout=T, typename T2>
+  SO3<Tout> otimes(const SO3<T2>& q) const
+  {
+    SO3<Tout> qout;
+    qout.arr_ <<  w() * q.w() - x() *q.x() - y() * q.y() - z() * q.z(),
+                  w() * q.x() + x() *q.w() + y() * q.z() - z() * q.y(),
+                  w() * q.y() - x() *q.z() + y() * q.w() + z() * q.x(),
+                  w() * q.z() + x() *q.y() - y() * q.x() + z() * q.w();
+    return qout;
+  }
+
+  template<typename Tout=T, typename T2>
+  SO3<Tout> oplus(const Matrix<T2,3,1> &delta) const
+  {
+    return otimes<Tout, T2>(SO3<T2>::Exp(delta));
+  }
+
+  template<typename Tout=T, typename T2>
+  Matrix<Tout,3,1> ominus(const SO3<T2> &q) const
+  {
+    SO3<Tout> dq = q.inverse().template otimes<Tout>(*this);
+    if (dq.w() < 0.0)
+    {
+      dq.arr_ *= (Tout)-1.0;
+    }
+    return SO3<Tout>::Log(dq);
+  }
+
   SO3& operator= (const SO3 &q) 
   { 
-    arr_ = q.arr_; 
+    arr_ = q.elements(); 
   }
   
   template<typename T2>
   SO3 operator* (const SO3<T2> &q) const
   {
-    return SO3::fromQuat(qMatLeft() * q.arr_);
+    return otimes(q);
+  }
+
+  template<typename T2>
+  SO3& operator*= (const SO3<T2> &q)
+  {
+    arr_ = otimes(q).elements();
   }
   
   template<typename Tout=T, typename T2>
@@ -292,26 +338,20 @@ public:
     return v - w() * t + t.cross(qv);
   }
   
-  template<typename T2>
-  SO3& operator*= (const SO3<T2> &q)
-  {
-    arr_ = qMatLeft() * q.arr_;
-  }
-  
   SO3 operator+ (const Vec3T &v) const
   {
-    return SO3::fromQuat(qMatLeft() * SO3::Exp(v).arr_);
+    return oplus(v);
   }
   
   SO3& operator+= (const Vec3T &v)
   {
-    arr_ = qMatLeft() * SO3::Exp(v).arr_;
+    arr_ = oplus(v).elements();
   }
   
   template<typename T2>
   Vec3T operator- (const SO3<T2>& q) const
   {
-    return SO3::Log(SO3::fromQuat(q.inverse().qMatLeft() * arr_));
+    return ominus(q);
   }
   
   static Mat3T hat(const Vec3T &omega)
@@ -337,14 +377,14 @@ public:
   
   static Vec3T Log(const SO3 &q)
   {
-    Vec3T qv = q.arr_.template block<3,1>(1,0);
+    Vec3T qv = q.elements().template block<3,1>(1,0);
     T     qw = q.w();
     
     T n = qv.norm();
     if (n > (T)1e-4)
       return 2.0 * qv * atan2(n, qw) / n;
     else
-      return Vec3T::Zero();
+      return qv;
   }
   
   static SO3 exp(const Mat3T &Omega)
@@ -373,10 +413,12 @@ public:
     return q;
   }
   
-  template <class NewScalarType>
-  SO3<NewScalarType> cast() const
+  template<typename T2>
+  SO3<T2> cast() const
   {
-    return SO3<NewScalarType>(arr_.template cast<NewScalarType>());
+    SO3<T2> q;
+    q.arr_ = arr_.template cast<T2>();
+    return q;
   }
 };
 

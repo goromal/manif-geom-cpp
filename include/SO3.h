@@ -162,9 +162,11 @@ public:
     arr_(buf_)
   {}
 
-  SO3(const Ref<const Vec4T> arr) :
-    arr_(const_cast<T*>(arr.data()))
-  {}
+  SO3(const Ref<const Vec4T>& arr)
+    : arr_(buf_)
+  {
+    arr_ = arr;
+  }
 
   SO3(const SO3& q)
     : arr_(buf_)
@@ -175,10 +177,6 @@ public:
   SO3(const T* data) :
     arr_(const_cast<T*>(data))
   {}
-
-  // SO3(T* data) :
-  //   arr_(data)
-  // {}
 
   inline T& operator[] (int i) {return arr_[i];}
   inline T w() const { return arr_(0); }

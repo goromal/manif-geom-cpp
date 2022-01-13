@@ -204,6 +204,13 @@ public:
     arr_ /= arr_.norm();
     if (arr_(0) < (T)0.0) arr_ *= (T)-1.0;
   }
+
+  SO3 normalized()
+  {
+    SO3 tmp = copy();
+    tmp.normalize();
+    return tmp;
+  }
   
   Mat3T R() const
   {

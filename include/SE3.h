@@ -84,11 +84,13 @@ public:
     q_(arr_.data()+3)
   {}
 
-  SE3(const Ref<const Vec7T> arr) :
-    arr_(const_cast<T*>(arr.data())),
+  SE3(const Ref<const Vec7T>& arr) :
+    arr_(buf_),
     t_(arr_.data()),
     q_(arr_.data()+3)
-  {}
+  {
+    arr_ = arr;
+  }
 
   SE3(const SE3& x) : 
     arr_(buf_),
@@ -104,13 +106,23 @@ public:
     q_(arr_.data()+3)
   {}
 
-  inline T* data() { return arr_.data(); }
-  inline const T* data() const { return arr_.data();}
-  inline T& operator[] (int i) {return arr_[i];}
+  inline T& operator[] (int i) { return arr_[i]; }
+  inline const Map<Vec3T>& t() const { return t_; }
+  inline const SO3<T>& q() const { return q_; }
   inline Map<Vec3T>& t() { return t_; }
   inline SO3<T>& q() { return q_; }
-  inline Vec7T array() { return arr_;}
+  inline const Vec7T elements() const { return arr_; }
+  inline Vec7T array() const { return arr_; }
+  inline T* data() { return arr_.data(); }
+  inline const T* data() const { return arr_.data(); }
   
+  SE3 copy() const
+  {
+    SE3 tmp;
+    tmp.arr_ = arr_;
+    return tmp;
+  }
+
   Mat4T H() const
   {
     Mat4T out;
@@ -131,16 +143,44 @@ public:
     q().invert();
     t() = -(q() * t());
   }
+
+  template <typename Tout=T, typename T2>
+  SE3<Tout> otimes(const SE3<T2>& x) const
+  {
+    SE3<Tout> xout;
+    xout.t() = t_ + q_ * x.t_;
+    xout.q() = q_ * x.q_;
+    return xout;
+  }
+
+  template<typename Tout=T, typename T2>
+  SE3<Tout> oplus(const Matrix<T2,6,1> &delta) const
+  {
+    return otimes<Tout, T2>(SE3<T2>::Exp(delta));
+  }
+
+  template<typename Tout=T, typename T2>
+  Matrix<Tout,6,1> ominus(const SE3<T2> &x) const
+  {
+    return SE3<Tout>::Log(x.inverse().template otimes<Tout>(*this));
+  }
   
   SE3& operator= (const SE3 &x) 
   { 
-    arr_ = x.array(); 
+    arr_ = x.elements();
+    return *this;
   }
   
   template<typename T2>
   SE3 operator* (const SE3<T2> &x) const
   {
-    return SE3::fromVecAndQuat(t_ + q_ * x.t_, q_ * x.q_);
+    return otimes(x);
+  }
+
+  template<typename T2>
+  SE3& operator*= (const SE3<T2> &x)
+  {
+    arr_ = otimes(x).elements();
   }
   
   template<typename Tout=T, typename T2>
@@ -154,29 +194,20 @@ public:
     return q_ * v + t_;
   }
   
-  template<typename T2>
-  SE3& operator*= (const SE3<T2> &x)
-  {
-    t() = t() + q() * x.t();
-    q() = q() * x.q();
-  }
-  
   SE3 operator+ (const Vec6T &v) const
   {
-    return *this * SE3::Exp(v);
+    return oplus(v);
   }
   
   SE3& operator+= (const Vec6T &v)
   {
-    SE3 x = SE3::Exp(v);
-    t() = t() + q() * x.t();
-    q() = q() * x.q();
+    arr_ = oplus(v).elements();
   }
   
   template<typename T2>
   Vec6T operator- (const SE3<T2>& x) const
   {
-    return SE3::Log(x.inverse() * *this);
+    return ominus(x);
   }
   
   static Mat6T hat(const Vec6T &omega)
@@ -254,10 +285,12 @@ public:
     return SE3::fromVecAndQuat(leftJacobian * rho, q);
   }
 
-  template <class NewScalarType>
-  SE3<NewScalarType> cast() const
+  template<typename T2>
+  SE3<T2> cast() const
   {
-    return SE3<NewScalarType>(arr_.template cast<NewScalarType>());
+    SE3<T2> x;
+    x.arr_ = arr_.template cast<T2>();
+    return x;
   }
 };
 

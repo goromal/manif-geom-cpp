@@ -9,18 +9,46 @@ typedef Matrix<double,7,1> Vector7d;
 
 BOOST_AUTO_TEST_SUITE(TestSE3)
 
-BOOST_AUTO_TEST_CASE(TestSE3Action)
+BOOST_AUTO_TEST_CASE(TestAction)
 {
-    // TODO
+    srand(444444);
+    static const unsigned int numTests = 1000;
+    for (unsigned int i = 0; i < numTests; i++)
+    {
+        SE3d x = SE3d::random();
+        SE3d xinv = x.inverse();
+        Vector3d v;
+        v.setRandom();
+        Vector3d v2 = xinv * (x * v);
+        BOOST_CHECK_CLOSE(v.x(), v2.x(), 1e-8);
+        BOOST_CHECK_CLOSE(v.y(), v2.y(), 1e-8);
+        BOOST_CHECK_CLOSE(v.z(), v2.z(), 1e-8);
+    }
 }
 
 BOOST_AUTO_TEST_CASE(TestInversionAndComposition)
 {
-    // TODO   
+    srand(444444);
+    static const unsigned int numTests = 1000;
+    for (unsigned int i = 0; i < numTests; i++)
+    {
+        SE3d x1 = SE3d::random();
+        SE3d x2 = SE3d::random();
+        SE3d x2inv = x2.inverse();
+        SE3d x1p = x1 * x2 * x2inv;
+        BOOST_CHECK_CLOSE(x1.t().x(), x1p.t().x(), 1e-8);
+        BOOST_CHECK_CLOSE(x1.t().y(), x1p.t().y(), 1e-8);
+        BOOST_CHECK_CLOSE(x1.t().z(), x1p.t().z(), 1e-8);
+        BOOST_CHECK_CLOSE(x1.q().w(), x1p.q().w(), 1e-8);
+        BOOST_CHECK_CLOSE(x1.q().x(), x1p.q().x(), 1e-8);
+        BOOST_CHECK_CLOSE(x1.q().y(), x1p.q().y(), 1e-8);
+        BOOST_CHECK_CLOSE(x1.q().z(), x1p.q().z(), 1e-8);
+    }
 }
 
 BOOST_AUTO_TEST_CASE(TestPlusMinus)
 {
+    srand(444444);
     static const unsigned int numTests = 50;
     for (unsigned int i = 0; i < numTests; i++)
     {
@@ -36,6 +64,32 @@ BOOST_AUTO_TEST_CASE(TestPlusMinus)
         BOOST_CHECK_CLOSE(x12(4), x12p(4), 1e-8);
         BOOST_CHECK_CLOSE(x12(5), x12p(5), 1e-8);
     }  
+}
+
+BOOST_AUTO_TEST_CASE(TestChartMaps)
+{
+    srand(444444);
+    static const unsigned int numTests = 50;
+    for (unsigned int i = 0; i < numTests; i++)
+    {
+        SE3d x = SE3d::random();
+        Matrix<double,6,1> w;
+        w.setRandom();
+        Matrix<double,6,1> xLog = SE3d::Log(x);
+        SE3d x2 = SE3d::Exp(xLog);
+        BOOST_CHECK_CLOSE(x.t().x(), x2.t().x(), 1e-8);
+        BOOST_CHECK_CLOSE(x.t().y(), x2.t().y(), 1e-8);
+        BOOST_CHECK_CLOSE(x.t().z(), x2.t().z(), 1e-8);
+        BOOST_CHECK_CLOSE(x.q().w(), x2.q().w(), 1e-8);
+        BOOST_CHECK_CLOSE(x.q().x(), x2.q().x(), 1e-8);
+        BOOST_CHECK_CLOSE(x.q().y(), x2.q().y(), 1e-8);
+        BOOST_CHECK_CLOSE(x.q().z(), x2.q().z(), 1e-8);
+        SE3d wExp = SE3d::Exp(w);
+        Matrix<double,6,1> w2 = SE3d::Log(wExp);
+        BOOST_CHECK_CLOSE(w.x(), w2.x(), 1e-8);
+        BOOST_CHECK_CLOSE(w.y(), w2.y(), 1e-8);
+        BOOST_CHECK_CLOSE(w.z(), w2.z(), 1e-8);
+    }
 }
 
 BOOST_AUTO_TEST_CASE(TestConstructors)

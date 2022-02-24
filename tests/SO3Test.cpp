@@ -165,4 +165,25 @@ BOOST_AUTO_TEST_CASE(TestMutableArray)
     BOOST_CHECK_CLOSE(q.w(), 1.0, 1e-8);
 }
 
+BOOST_AUTO_TEST_CASE(TestScaling)
+{
+    srand(444444);
+    SO3d qI = SO3d::identity();
+    SO3d qIs = 5.0 * qI;
+    BOOST_CHECK_CLOSE(qIs.w(), qI.w(), 1e-8);
+    BOOST_CHECK_CLOSE(qIs.x(), qI.x(), 1e-8);
+    BOOST_CHECK_CLOSE(qIs.y(), qI.y(), 1e-8);
+    BOOST_CHECK_CLOSE(qIs.z(), qI.z(), 1e-8);
+    SO3d qr = SO3d::random();
+    SO3d qr2 = qr * 0.2; // if scale is too big, then the rotation will
+                         // wrap around the sphere, resulting in a reversed
+                         // or truncated tangent vector which can't be inverted
+                         // through scalar division
+    SO3d qr3 = qr2 / 0.2;
+    BOOST_CHECK_CLOSE(qr.w(), qr3.w(), 1e-8);
+    BOOST_CHECK_CLOSE(qr.x(), qr3.x(), 1e-8);
+    BOOST_CHECK_CLOSE(qr.y(), qr3.y(), 1e-8);
+    BOOST_CHECK_CLOSE(qr.z(), qr3.z(), 1e-8);
+}
+
 BOOST_AUTO_TEST_SUITE_END()

@@ -181,6 +181,26 @@ public:
   SE3& operator*= (const SE3<T2> &x)
   {
     arr_ = otimes(x).elements();
+    return *this;
+  }
+
+  SE3& operator*= (const double &s)
+  {
+    arr_ = SE3::Exp(s * SE3::Log(*this)).elements();
+    return *this;
+  }
+
+  SE3& operator/= (const double &s)
+  {
+    arr_ = SE3::Exp(SE3::Log(*this) / s).elements();
+    return *this;
+  }
+
+  SE3 operator/ (const double &s) const
+  {
+    SE3 qs;
+    qs.arr_ = SE3::Exp(SE3::Log(*this) / s).elements();
+    return qs;
   }
   
   template<typename Tout=T, typename T2>
@@ -293,6 +313,22 @@ public:
     return x;
   }
 };
+
+template<typename T>
+SE3<T> operator* (const double &l, const SE3<T> &r)
+{
+  SE3<T> lr;
+  lr.arr_ = SE3<T>::Exp(l * SE3<T>::Log(r)).elements();
+  return lr;
+}
+
+template<typename T>
+SE3<T> operator* (const SE3<T> &l, const double &r)
+{
+  SE3<T> lr;
+  lr.arr_ = SE3<T>::Exp(r * SE3<T>::Log(l)).elements();
+  return lr;
+}
 
 template<typename T>
 inline std::ostream& operator<< (std::ostream& os, const SE3<T>& x)

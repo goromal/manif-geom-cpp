@@ -327,6 +327,26 @@ public:
   SO3& operator*= (const SO3<T2> &q)
   {
     arr_ = otimes(q).elements();
+    return *this;
+  }
+
+  SO3& operator*= (const double &s)
+  {
+    arr_ = SO3::Exp(s * SO3::Log(*this)).elements();
+    return *this;
+  }
+
+  SO3& operator/= (const double &s)
+  {
+    arr_ = SO3::Exp(SO3::Log(*this) / s).elements();
+    return *this;
+  }
+
+  SO3 operator/ (const double &s) const
+  {
+    SO3 qs;
+    qs.arr_ = SO3::Exp(SO3::Log(*this) / s).elements();
+    return qs;
   }
   
   template<typename Tout=T, typename T2>
@@ -427,6 +447,22 @@ public:
     return q;
   }
 };
+
+template<typename T>
+SO3<T> operator* (const double &l, const SO3<T> &r)
+{
+  SO3<T> lr;
+  lr.arr_ = SO3<T>::Exp(l * SO3<T>::Log(r)).elements();
+  return lr;
+}
+
+template<typename T>
+SO3<T> operator* (const SO3<T> &l, const double &r)
+{
+  SO3<T> lr;
+  lr.arr_ = SO3<T>::Exp(r * SO3<T>::Log(l)).elements();
+  return lr;
+}
 
 template<typename T>
 inline std::ostream& operator<< (std::ostream& os, const SO3<T> &q)

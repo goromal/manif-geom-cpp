@@ -131,4 +131,28 @@ BOOST_AUTO_TEST_CASE(TestMutableArray)
     BOOST_CHECK_CLOSE(x.t().x(), 0., 1e-8);
 }
 
+BOOST_AUTO_TEST_CASE(TestScaling)
+{
+    srand(444444);
+    SE3d xI = SE3d::identity();
+    SE3d xIs = 5.0 * xI;
+    BOOST_CHECK_CLOSE(xIs.t().x(), xI.t().x(), 1e-8);
+    BOOST_CHECK_CLOSE(xIs.t().y(), xI.t().y(), 1e-8);
+    BOOST_CHECK_CLOSE(xIs.t().z(), xI.t().z(), 1e-8);
+    BOOST_CHECK_CLOSE(xIs.q().w(), xI.q().w(), 1e-8);
+    BOOST_CHECK_CLOSE(xIs.q().x(), xI.q().x(), 1e-8);
+    BOOST_CHECK_CLOSE(xIs.q().y(), xI.q().y(), 1e-8);
+    BOOST_CHECK_CLOSE(xIs.q().z(), xI.q().z(), 1e-8);
+    SE3d xr = SE3d::random();
+    SE3d xr2 = xr * 0.2;
+    SE3d xr3 = xr2 / 0.2;
+    BOOST_CHECK_CLOSE(xr.t().x(), xr3.t().x(), 1e-8);
+    BOOST_CHECK_CLOSE(xr.t().y(), xr3.t().y(), 1e-8);
+    BOOST_CHECK_CLOSE(xr.t().z(), xr3.t().z(), 1e-8);
+    BOOST_CHECK_CLOSE(xr.q().w(), xr3.q().w(), 1e-8);
+    BOOST_CHECK_CLOSE(xr.q().x(), xr3.q().x(), 1e-8);
+    BOOST_CHECK_CLOSE(xr.q().y(), xr3.q().y(), 1e-8);
+    BOOST_CHECK_CLOSE(xr.q().z(), xr3.q().z(), 1e-8);
+}
+
 BOOST_AUTO_TEST_SUITE_END()

@@ -142,6 +142,7 @@ public:
   {
     q().invert();
     t() = -(q() * t());
+    return *this;
   }
 
   template <typename Tout=T, typename T2>
@@ -222,6 +223,7 @@ public:
   SE3& operator+= (const Vec6T &v)
   {
     arr_ = oplus(v).elements();
+    return *this;
   }
   
   template<typename T2>

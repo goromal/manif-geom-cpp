@@ -243,6 +243,7 @@ public:
   SO3& invert()
   {
     arr_.template block<3,1>(1,0) *= (T)-1.0;
+    return *this;
   }
   
   T roll() const
@@ -372,6 +373,7 @@ public:
   SO3& operator+= (const Vec3T &v)
   {
     arr_ = oplus(v).elements();
+    return *this;
   }
   
   template<typename T2>

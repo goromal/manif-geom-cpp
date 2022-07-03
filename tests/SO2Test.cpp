@@ -77,7 +77,7 @@ BOOST_AUTO_TEST_CASE(TestAngleConvs)
         angle.setRandom();
         angle *= M_PI;
         SO2d q = SO2d::fromAngle(angle.x());
-        SO2d q2 = SO2d::fromEuler(q.angle());
+        SO2d q2 = SO2d::fromAngle(q.angle());
 
         BOOST_CHECK_CLOSE(q.w(), q2.w(), 1e-8);
         BOOST_CHECK_CLOSE(q.x(), q2.x(), 1e-8);

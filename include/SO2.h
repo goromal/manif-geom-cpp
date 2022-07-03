@@ -160,7 +160,7 @@ public:
     
     T angle() const
     {
-        return acos(w());
+        return atan2(x(), w());
     }
     
     template <typename Tout=T, typename T2>

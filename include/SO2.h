@@ -56,8 +56,7 @@ public:
         
         if (d < (T)0.99999999 && d > (T)-0.99999999)
         {
-            T sinth = u.cross(v).norm();
-            q.arr_ << sqrt(1. - sinth * sinth), sinth;
+            q.arr_ << d, sqrt(1. - d * d);
         }
         else if (d < (T)-0.99999999)
         {

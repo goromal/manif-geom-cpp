@@ -17,6 +17,7 @@ target_link_libraries(manif-geom-cpp INTERFACE Eigen3::Eigen)
 set(UNIT_TEST unit-tests)
 add_executable(${UNIT_TEST}
     tests/MainTest.cpp
+    tests/SO2Test.cpp
     tests/SO3Test.cpp
     tests/SE3Test.cpp
 )

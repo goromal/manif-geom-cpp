@@ -24,6 +24,10 @@ BOOST_AUTO_TEST_CASE(TestAction)
         Vector3d v3;
         v3 << v2.x(), v2.y(), 0;
         SO3d so3 = SO3d::fromEuler(0, 0, so2.angle());
+        
+        BOOST_CHECK_CLOSE(so3.roll(), 0, 1e-8);
+        BOOST_CHECK_CLOSE(so3.pitch(), 0, 1e-8);
+        BOOST_CHECK_CLOSE(so3.yaw(), so2.angle(), 1e-8);
 
         auto start1 = std::chrono::high_resolution_clock::now();
         Vector2d qv2 = so2 * v2;

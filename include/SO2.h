@@ -228,7 +228,7 @@ public:
     {
         Vec2T out;
         out << w() * v.x() - x() * v.y(),
-               w() * v.y() - x() * v.x();
+               w() * v.y() + x() * v.x();
         return out;
     }
   
@@ -236,7 +236,7 @@ public:
     {
         Vec2T out;
         out << w() * v.x() - x() * v.y(),
-               w() * v.y() - x() * v.x();
+               w() * v.y() + x() * v.x();
         return out;
     }
   

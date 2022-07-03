@@ -3,8 +3,10 @@
 #include <Eigen/Geometry>
 #include <chrono>
 #include "SO2.h"
+#include "SO3.h"
 
 using namespace Eigen;
+typedef Matrix<double,1,1> Vector1d;
 
 BOOST_AUTO_TEST_SUITE(TestSO2)
 

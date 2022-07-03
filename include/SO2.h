@@ -159,7 +159,7 @@ public:
     
     T angle() const
     {
-        return acos(w());
+        return atan2(x(), w());
     }
     
     template <typename Tout=T, typename T2>
@@ -227,7 +227,7 @@ public:
     {
         Vec2T out;
         out << w() * v.x() - x() * v.y(),
-               w() * v.y() - x() * v.x();
+               w() * v.y() + x() * v.x();
         return out;
     }
   
@@ -235,7 +235,7 @@ public:
     {
         Vec2T out;
         out << w() * v.x() - x() * v.y(),
-               w() * v.y() - x() * v.x();
+               w() * v.y() + x() * v.x();
         return out;
     }
   

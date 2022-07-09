@@ -469,7 +469,7 @@ SO3<T> operator* (const SO3<T> &l, const double &r)
 template<typename T>
 inline std::ostream& operator<< (std::ostream& os, const SO3<T> &q)
 {
-  os << "SO(3): [ " << q.w() << ", " << q.x() << "i, " << q.y() << "j, " << q.z() << "k]";
+  os << "SO(3): [ " << q.w() << ", " << q.x() << "i, " << q.y() << "j, " << q.z() << "k ]";
   return os;
 }
 

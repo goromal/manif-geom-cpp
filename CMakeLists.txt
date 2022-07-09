@@ -18,6 +18,7 @@ set(UNIT_TEST unit-tests)
 add_executable(${UNIT_TEST}
     tests/MainTest.cpp
     tests/SO2Test.cpp
+    tests/SE2Test.cpp
     tests/SO3Test.cpp
     tests/SE3Test.cpp
 )
@@ -29,7 +30,7 @@ add_test(NAME ${UNIT_TEST} COMMAND ${UNIT_TEST})
 
 add_custom_command(
     TARGET ${UNIT_TEST}
-    COMMENT "Run SO(3) and SE(3) unit tests"
+    COMMENT "Run manifold unit tests"
     POST_BUILD
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMAND ${UNIT_TEST}

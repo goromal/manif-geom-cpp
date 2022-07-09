@@ -335,7 +335,7 @@ SE3<T> operator* (const SE3<T> &l, const double &r)
 template<typename T>
 inline std::ostream& operator<< (std::ostream& os, const SE3<T>& x)
 {
-  os << "SE(3): [ " << x.t_.x() << "i, " << x.t_.y() << "j, " << x.t_.z() << "k] [ " << x.q_.w() << ", " << x.q_.x() << "i, " << x.q_.y() << "j, " << x.q_.z() << "k]";
+  os << "SE(3): [ " << x.t_.x() << "i, " << x.t_.y() << "j, " << x.t_.z() << "k ] [ " << x.q_.w() << ", " << x.q_.x() << "i, " << x.q_.y() << "j, " << x.q_.z() << "k ]";
   return os;
 }
 

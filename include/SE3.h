@@ -232,22 +232,22 @@ public:
     return ominus(x);
   }
   
-  static Mat6T hat(const Vec6T &omega)
+  static Mat4T hat(const Vec6T &omega)
   {
-    Mat6T Omega;
+    Mat4T Omega;
     Omega << SO3<T>::hat(omega.template block<3,1>(3,0)), omega.template block<3,1>(0,0),
              (T)0., (T)0., (T)0., (T)0.;
     return Omega;
   }
   
-  static Vec6T vee(const Mat6T &Omega)
+  static Vec6T vee(const Mat4T &Omega)
   {
     Vec6T omega;
     omega << Omega.template block<3,1>(0,3), SO3<T>::vee(Omega.template block<3,3>(0,0));
     return omega;
   }
   
-  static Mat6T log(const SE3 &x)
+  static Mat4T log(const SE3 &x)
   {
     return SE3::hat(SE3::Log(x));
   }
@@ -278,7 +278,7 @@ public:
     return out;
   }
   
-  static SE3 exp(const Mat6T &Omega)
+  static SE3 exp(const Mat4T &Omega)
   {
     return SE3::Exp(SE3::vee(Omega));
   }

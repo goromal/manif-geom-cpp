@@ -7,7 +7,7 @@ option(BUILD_TESTS "Build Tests" ON)
 
 find_package(Eigen3 REQUIRED NO_MODULE)
 
-add_library(manif-geom-cpp INTERFACE)
+add_library(manif-geom-cpp INTERFACE) 
 target_include_directories(manif-geom-cpp INTERFACE
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>

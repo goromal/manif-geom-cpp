@@ -1,8 +1,8 @@
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE ManifGeomCppTests
 
-#include <iostream>
 #include <boost/test/unit_test.hpp>
+#include <iostream>
 
 /*! Global testing definitions. */
 struct GlobalFixture

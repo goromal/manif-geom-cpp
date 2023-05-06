@@ -20,4 +20,4 @@ cmake ..
 make # or make install
 ```
 
-By default, building will build and run the unit tests, but this can be turned off with the cmake option `BUILD_TESTS`.
+By default, building will build and run the unit tests, but this can be turned off with the CMake option `BUILD_TESTS`.

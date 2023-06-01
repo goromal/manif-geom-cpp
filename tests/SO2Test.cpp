@@ -4,6 +4,7 @@
 #include <Eigen/Geometry>
 #include <boost/test/unit_test.hpp>
 #include <chrono>
+#include <cmath>
 
 using namespace Eigen;
 typedef Matrix<double, 1, 1> Vector1d;
@@ -135,6 +136,23 @@ BOOST_AUTO_TEST_CASE(TestConstructors)
     SO2d q2(q_arr);
     BOOST_CHECK_CLOSE(q2.w(), 1.0, 1e-8);
     BOOST_CHECK_CLOSE(q2.x(), 0.0, 1e-8);
+
+    srand(444444);
+    Vector2d v1;
+    v1.setRandom();
+    v1 /= v1.norm();
+    Vector2d v2;
+    v2.setRandom();
+    v2 /= v2.norm();
+    SO2d qv  = SO2d::fromTwoUnitVectors(v1, v2);
+    SO2d qv2 = SO2d::fromTwoUnitVectors(v2, v1).inverse();
+    BOOST_CHECK_CLOSE(qv.w(), qv2.w(), 1e-8);
+    BOOST_CHECK_CLOSE(qv.x(), qv2.x(), 1e-8);
+
+    double thpi2 = SO2d::fromTwoUnitVectors(Vector2d(0., 1.), Vector2d(1., 0.)).angle();
+    BOOST_CHECK_CLOSE(thpi2, -M_PI / 2.0, 1e-8);
+    double thpi2i = SO2d::fromTwoUnitVectors(Vector2d(1., 0.), Vector2d(0., 1.)).angle();
+    BOOST_CHECK_CLOSE(thpi2i, M_PI / 2.0, 1e-8);
 }
 
 BOOST_AUTO_TEST_CASE(TestMutableArray)

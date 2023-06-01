@@ -154,6 +154,20 @@ BOOST_AUTO_TEST_CASE(TestConstructors)
     BOOST_CHECK_CLOSE(q2.x(), 1.0, 1e-8);
     BOOST_CHECK_CLOSE(q2.y(), 0.0, 1e-8);
     BOOST_CHECK_CLOSE(q2.z(), 0.0, 1e-8);
+
+    srand(444444);
+    Vector3d v1;
+    v1.setRandom();
+    v1 /= v1.norm();
+    Vector3d v2;
+    v2.setRandom();
+    v2 /= v2.norm();
+    SO3d qv  = SO3d::fromTwoUnitVectors(v1, v2);
+    SO3d qv2 = SO3d::fromTwoUnitVectors(v2, v1).inverse();
+    BOOST_CHECK_CLOSE(qv.w(), qv2.w(), 1e-8);
+    BOOST_CHECK_CLOSE(qv.x(), qv2.x(), 1e-8);
+    BOOST_CHECK_CLOSE(qv.y(), qv2.y(), 1e-8);
+    BOOST_CHECK_CLOSE(qv.z(), qv2.z(), 1e-8);
 }
 
 BOOST_AUTO_TEST_CASE(TestMutableArray)

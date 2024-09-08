@@ -146,7 +146,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a40cc77c2189cfc5a0bf90f2689b02b97"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a40cc77c2189cfc5a0bf90f2689b02b97">operator*=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; &amp;x)</td></tr>
 <tr class="separator:a40cc77c2189cfc5a0bf90f2689b02b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d8e770b375a7ff19acfc77d8a89f2a" id="r_a75d8e770b375a7ff19acfc77d8a89f2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75d8e770b375a7ff19acfc77d8a89f2a">operator*=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">double</a> &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">s</a>)</td></tr>
-<tr class="memdesc:a75d8e770b375a7ff19acfc77d8a89f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a transform by a scalar amount via multiplication.  <br /></td></tr>
 <tr class="separator:a75d8e770b375a7ff19acfc77d8a89f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67976cd66cd1b70583d142d3792d1b96" id="r_a67976cd66cd1b70583d142d3792d1b96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67976cd66cd1b70583d142d3792d1b96">operator/=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">double</a> &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">s</a>)</td></tr>
 <tr class="separator:a67976cd66cd1b70583d142d3792d1b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -202,6 +201,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a44c202d07cbe24bcfa213a40ac656ff4" id="r_a44c202d07cbe24bcfa213a40ac656ff4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">EIGEN_MAKE_ALIGNED_OPERATOR_NEW</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Map</a>&lt; Vec7T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44c202d07cbe24bcfa213a40ac656ff4">arr_</a></td></tr>
+<tr class="memdesc:a44c202d07cbe24bcfa213a40ac656ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around the internal array buffer, accessible as an Eigen vector object.  <br /></td></tr>
 <tr class="separator:a44c202d07cbe24bcfa213a40ac656ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b5e69bb24de2b4578411d2320fc18ec" id="r_a3b5e69bb24de2b4578411d2320fc18ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Map</a>&lt; Vec3T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b5e69bb24de2b4578411d2320fc18ec">t_</a></td></tr>
 <tr class="separator:a3b5e69bb24de2b4578411d2320fc18ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1052,20 +1052,6 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
-<p>Scale a transform by a scalar amount via multiplication. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">s</td><td>The scalar to be uniformly applied </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The scaled random rigid body transform \(\mathbf{X}_B^W\in SE(3)\).</dd></dl>
-<p>Conceptually, the scaling action can be thought of:</p><ol type="1">
-<li>Calculating the tangent space vector \(\mathbf{x}\in \mathbb{R}^6\).</li>
-<li>Scaling that tangent space vector by \(s\).</li>
-<li>Converting the tangent space vector back into \(SE(3)\). </li>
-</ol>
-
 </div>
 </div>
 <a id="a40cc77c2189cfc5a0bf90f2689b02b97" name="a40cc77c2189cfc5a0bf90f2689b02b97"></a>
@@ -1526,6 +1512,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Wrapper around the internal array buffer, accessible as an Eigen vector object. </p>
 
 </div>
 </div>

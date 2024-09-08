@@ -115,6 +115,7 @@ Functions</h2></td></tr>
 <tr class="separator:adcafb2b194bfe529118f5ff38ab7fb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2581800bd9f81f334ead77297ef86c35" id="r_a2581800bd9f81f334ead77297ef86c35"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2581800bd9f81f334ead77297ef86c35"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2581800bd9f81f334ead77297ef86c35">operator*</a> (const <a class="el" href="classSE3.html">SE3</a>&lt; T &gt; &amp;l, const double &amp;r)</td></tr>
+<tr class="memdesc:a2581800bd9f81f334ead77297ef86c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a transform by a scalar amount via multiplication.  <br /></td></tr>
 <tr class="separator:a2581800bd9f81f334ead77297ef86c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae45b505818b52f25061ae4dc78973d37" id="r_ae45b505818b52f25061ae4dc78973d37"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ae45b505818b52f25061ae4dc78973d37"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae45b505818b52f25061ae4dc78973d37">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classSE3.html">SE3</a>&lt; T &gt; &amp;x)</td></tr>
@@ -179,6 +180,21 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Scale a transform by a scalar amount via multiplication. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>The transform to scale. </td></tr>
+    <tr><td class="paramname">r</td><td>The scalar to be uniformly applied. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The scaled random rigid body transform \(\mathbf{X}_B^W\in SE(3)\).</dd></dl>
+<p>Conceptually, the scaling action can be thought of:</p><ol type="1">
+<li>Calculating the tangent space vector \(\mathbf{x}\in \mathbb{R}^6\).</li>
+<li>Scaling that tangent space vector by \(r\).</li>
+<li>Converting the tangent space vector back into \(SE(3)\). </li>
+</ol>
 
 </div>
 </div>

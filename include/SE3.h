@@ -27,7 +27,7 @@ private:
 
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-    Map<Vec7T> arr_;
+    Map<Vec7T> arr_; ///< Wrapper around the internal array buffer, accessible as an Eigen vector object.
     Map<Vec3T> t_;
     SO3<T>     q_;
 
@@ -211,16 +211,6 @@ public:
         return *this;
     }
 
-    /**
-     * @brief Scale a transform by a scalar amount via multiplication.
-     * @param s The scalar to be uniformly applied
-     * @returns The scaled random rigid body transform \f$\mathbf{X}_B^W\in SE(3)\f$.
-     *
-     * Conceptually, the scaling action can be thought of:
-     * 1. Calculating the tangent space vector \f$\mathbf{x}\in \mathbb{R}^6\f$.
-     * 2. Scaling that tangent space vector by \f$s\f$.
-     * 3. Converting the tangent space vector back into \f$SE(3)\f$.
-     */
     SE3& operator*=(const double& s)
     {
         arr_ = SE3::Exp(s * SE3::Log(*this)).elements();
@@ -360,6 +350,17 @@ SE3<T> operator*(const double& l, const SE3<T>& r)
     return lr;
 }
 
+/**
+ * @brief Scale a transform by a scalar amount via multiplication.
+ * @param l The transform to scale.
+ * @param r The scalar to be uniformly applied.
+ * @returns The scaled random rigid body transform \f$\mathbf{X}_B^W\in SE(3)\f$.
+ *
+ * Conceptually, the scaling action can be thought of:
+ * 1. Calculating the tangent space vector \f$\mathbf{x}\in \mathbb{R}^6\f$.
+ * 2. Scaling that tangent space vector by \f$r\f$.
+ * 3. Converting the tangent space vector back into \f$SE(3)\f$.
+ */
 template<typename T>
 SE3<T> operator*(const SE3<T>& l, const double& r)
 {

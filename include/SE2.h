@@ -8,6 +8,9 @@
 
 using namespace Eigen;
 
+/**
+ * @brief Class representing a member of the \f$SE(2)\f$ manifold, or a 2D rigid body transform
+ */
 template<typename T>
 class SE2
 {
@@ -27,6 +30,9 @@ public:
     Map<Vec2T> t_;
     SO2<T>     q_;
 
+    /**
+     * @brief Obtain a random rigid body transform
+     */
     static SE2 random()
     {
         SE2 x;

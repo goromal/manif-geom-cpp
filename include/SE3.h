@@ -54,6 +54,13 @@ public:
         return x;
     }
 
+    static SE3 nans()
+    {
+        SE3 x;
+        x.arr_.setConstant(std::numeric_limits<T>::quiet_NaN());
+        return x;
+    }
+
     /**
      * @brief Obtain a rigid body transform from a matrix.
      * @param m A homogeneous 4x4 matrix.

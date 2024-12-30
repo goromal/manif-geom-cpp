@@ -71,7 +71,6 @@ DerivePointerAlignment: false
 
 ExperimentalAutoDetectBinPacking: false
 
-#TODO
 #IncludeCategories:
 
 IndentCaseLabels: false
@@ -84,7 +83,6 @@ Language: Cpp
 
 KeepEmptyLinesAtTheStartOfBlocks: false
 
-#TODO
 #MacroBlockBegin:
 
 MaxEmptyLinesToKeep: 1

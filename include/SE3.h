@@ -44,6 +44,13 @@ public:
         return x;
     }
 
+    static SE3 nans()
+    {
+        SE3 x;
+        x.arr_.setConstant(std::numeric_limits<T>::quiet_NaN());
+        return x;
+    }
+
     static SE3 fromH(const Mat4T& m)
     {
         return SE3::fromVecAndQuat(m.template block<3, 1>(0, 3), SO3<T>::fromR(m.template block<3, 3>(0, 0)));

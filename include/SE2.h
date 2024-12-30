@@ -5,6 +5,7 @@
 #include <Eigen/Geometry>
 #include <iostream>
 #include <math.h>
+#include <limits>
 
 using namespace Eigen;
 
@@ -40,6 +41,13 @@ public:
         SE2 x;
         x.arr_.setZero();
         x.arr_(2) = (T)1.0;
+        return x;
+    }
+
+    static SE2 nans()
+    {
+        SE2 x;
+        x.arr_.setConstant(std::numeric_limits<T>::quiet_NaN());
         return x;
     }
 

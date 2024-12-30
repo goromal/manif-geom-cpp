@@ -35,6 +35,13 @@ public:
         return q;
     }
 
+    static SO2 nans()
+    {
+        SO2 x;
+        x.arr_.setConstant(std::numeric_limits<T>::quiet_NaN());
+        return x;
+    }
+
     static SO2 fromAngle(const T angle)
     {
         SO2 q;

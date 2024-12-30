@@ -37,6 +37,13 @@ public:
         return q;
     }
 
+    static SO3 nans()
+    {
+        SO3 x;
+        x.arr_.setConstant(std::numeric_limits<T>::quiet_NaN());
+        return x;
+    }
+
     static SO3 fromAxisAngle(const Vec3T& axis, const T angle)
     {
         T     th2 = angle / 2.0;

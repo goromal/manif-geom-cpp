@@ -1,0 +1,24 @@
+# Project-related information
+PROJECT_NAME           = "manif-geom-cpp"
+OUTPUT_DIRECTORY       = "docs"             # Directory where the docs are generated
+RECURSIVE              = YES                # Recursively scan all subdirectories
+EXTRACT_ALL            = YES                # Extract all code comments
+
+# HTML output settings
+GENERATE_HTML          = YES                # Enable HTML documentation
+GENERATE_LATEX         = NO                 # Disable LaTeX documentation
+HTML_OUTPUT            = .                  # Specify HTML output directory
+
+# MathJax integration (for math rendering)
+USE_MATHJAX            = YES                # Enable MathJax support for math rendering
+
+# Input settings (multiple directories)
+INPUT                  = include            # Include both C++ and Python directories for parsing
+
+# File patterns
+FILE_PATTERNS          = *.cpp *.h *.py     # Specify the file types to be parsed
+
+# Additional settings for LaTeX-style math
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO

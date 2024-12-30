@@ -8,6 +8,9 @@
 
 using namespace Eigen;
 
+/**
+ * @brief Class representing a member of the \f$SE(3)\f$ manifold, or a 3D rigid body transform
+ */
 template<typename T>
 class SE3
 {
@@ -24,10 +27,17 @@ private:
 
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
-    Map<Vec7T> arr_;
+    Map<Vec7T> arr_; ///< Wrapper around the internal array buffer, accessible as an Eigen vector object.
     Map<Vec3T> t_;
     SO3<T>     q_;
 
+    /**
+     * @brief Obtain a random rigid body transform.
+     * @return A random rigid body transform \f$\mathbf{X}_B^W\in SE(3)\f$.
+     *
+     *  The rotation component \f$\mathbf{q}_B^W\f$ will be normalized, but the translation component
+     * \f$\mathbf{t}_{B/W}^W\f$ will not (each component will be between 0 and 1).
+     */
     static SE3 random()
     {
         SE3 x;
@@ -51,6 +61,11 @@ public:
         return x;
     }
 
+    /**
+     * @brief Obtain a rigid body transform from a matrix.
+     * @param m A homogeneous 4x4 matrix.
+     * @return The corresponding rigid body transform \f$\mathbf{X}_B^W\in SE(3)\f$.
+     */
     static SE3 fromH(const Mat4T& m)
     {
         return SE3::fromVecAndQuat(m.template block<3, 1>(0, 3), SO3<T>::fromR(m.template block<3, 3>(0, 0)));
@@ -342,6 +357,17 @@ SE3<T> operator*(const double& l, const SE3<T>& r)
     return lr;
 }
 
+/**
+ * @brief Scale a transform by a scalar amount via multiplication.
+ * @param l The transform to scale.
+ * @param r The scalar to be uniformly applied.
+ * @returns The scaled random rigid body transform \f$\mathbf{X}_B^W\in SE(3)\f$.
+ *
+ * Conceptually, the scaling action can be thought of:
+ * 1. Calculating the tangent space vector \f$\mathbf{x}\in \mathbb{R}^6\f$.
+ * 2. Scaling that tangent space vector by \f$r\f$.
+ * 3. Converting the tangent space vector back into \f$SE(3)\f$.
+ */
 template<typename T>
 SE3<T> operator*(const SE3<T>& l, const double& r)
 {

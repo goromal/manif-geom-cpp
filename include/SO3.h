@@ -7,6 +7,9 @@
 
 using namespace Eigen;
 
+/**
+ * @brief Class representing a member of the \f$SO(3)\f$ manifold, or a 3D rotation
+ */
 template<typename T>
 class SO3
 {

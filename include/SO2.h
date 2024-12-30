@@ -6,6 +6,9 @@
 
 using namespace Eigen;
 
+/**
+ * @brief Class representing a member of the \f$SO(2)\f$ manifold, or a 2D rotation
+ */
 template<typename T>
 class SO2
 {

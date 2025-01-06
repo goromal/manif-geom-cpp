@@ -18,7 +18,7 @@
  *
  * @section install Installation
  * This code is meant to be built as a static library with CMake. It should be compatible with the latest versions of
- * Eigen and Boost (for the unit test framework).
+ * Eigen and Boost (unit test framework only).
  *
  * Install with
  *

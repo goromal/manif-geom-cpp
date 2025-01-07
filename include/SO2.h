@@ -21,8 +21,18 @@ private:
 
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+    /**
+     * @brief Memory-mapped array representing all rotation fields in \f$\boldsymbol{q}\f$.
+     */
     Map<Vec2T> arr_;
 
+    /**
+     * @brief Obtain a random rotation.
+     * @return A random rotation \f$\boldsymbol{q}_B^W\in SO(3)\f$.
+     *
+     *  The rotation \f$\mathbf{q}_B^W\f$ will be normalized, but the translation component
+     * \f$\mathbf{t}_{B/W}^W\f$ will not (each component will be between 0 and 1).
+     */
     static SO2 random()
     {
         SO2 q;

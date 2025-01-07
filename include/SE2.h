@@ -101,7 +101,7 @@ public:
     /**
      * @brief Construct a transform from a translation vector and rotation fields vector.
      * @param tvec The translation vector \f$\boldsymbol{t}\in\mathbb{R}^2\f$.
-     * @param qvec The rotation represented as an array \f$\boldsymbol{q}\in SO(2)\f$.
+     * @param qvec The rotation represented as an array \f$\boldsymbol{q}\in\mathbb{R}^2\f$.
      */
     static SE2 fromVecAndRot(const Vec2T& tvec, const Vec2T& qvec)
     {

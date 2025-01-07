@@ -116,76 +116,115 @@ $(function(){initNavTree('classSE3.html',''); initResizable(); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acaf18105c4c565c943930c1e59db3343" id="r_acaf18105c4c565c943930c1e59db3343"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaf18105c4c565c943930c1e59db3343">SE3</a> ()</td></tr>
+<tr class="memdesc:acaf18105c4c565c943930c1e59db3343"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a transform (with garbage data).  <br /></td></tr>
 <tr class="separator:acaf18105c4c565c943930c1e59db3343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4659b75c3b6d6aac27d2beebce0ddd1c" id="r_a4659b75c3b6d6aac27d2beebce0ddd1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4659b75c3b6d6aac27d2beebce0ddd1c">SE3</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Ref</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec7T &gt; &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">arr</a>)</td></tr>
+<tr class="memdesc:a4659b75c3b6d6aac27d2beebce0ddd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a transform from an array representing all transform fields in \(\begin{bmatrix}\boldsymbol{t} &amp;
+\boldsymbol{q}\end{bmatrix}^\top\).  <br /></td></tr>
 <tr class="separator:a4659b75c3b6d6aac27d2beebce0ddd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98d7fa7ba6728befbddafa8b7a334307" id="r_a98d7fa7ba6728befbddafa8b7a334307"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98d7fa7ba6728befbddafa8b7a334307">SE3</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a> &amp;x)</td></tr>
+<tr class="memdesc:a98d7fa7ba6728befbddafa8b7a334307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor from another transform.  <br /></td></tr>
 <tr class="separator:a98d7fa7ba6728befbddafa8b7a334307"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa85feb4be9725e70f7fa2d78f8efffd7" id="r_aa85feb4be9725e70f7fa2d78f8efffd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa85feb4be9725e70f7fa2d78f8efffd7">SE3</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> *<a class="el" href="#a04ca8e168b7900b6fcad3a7b4050de2d">data</a>)</td></tr>
+<tr class="memdesc:aa85feb4be9725e70f7fa2d78f8efffd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a transform from a pointer array representing all transform fields in \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\).  <br /></td></tr>
 <tr class="separator:aa85feb4be9725e70f7fa2d78f8efffd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af49c010eedcf0c725784244a55e953b6" id="r_af49c010eedcf0c725784244a55e953b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af49c010eedcf0c725784244a55e953b6">operator[]</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">int</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">i</a>)</td></tr>
+<tr class="memdesc:af49c010eedcf0c725784244a55e953b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access a field from \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\).  <br /></td></tr>
 <tr class="separator:af49c010eedcf0c725784244a55e953b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b3cd8ccabf062a8574c93bc43753b88" id="r_a3b3cd8ccabf062a8574c93bc43753b88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Map</a>&lt; Vec3T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b3cd8ccabf062a8574c93bc43753b88">t</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a3b3cd8ccabf062a8574c93bc43753b88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the translation vector \(\boldsymbol{t}\in\mathbb{R}^3\).  <br /></td></tr>
 <tr class="separator:a3b3cd8ccabf062a8574c93bc43753b88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae73b7d53a52f29f40330f8b9ad274347" id="r_ae73b7d53a52f29f40330f8b9ad274347"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae73b7d53a52f29f40330f8b9ad274347">q</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:ae73b7d53a52f29f40330f8b9ad274347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the rotation \(\boldsymbol{q}\in SO(3)\).  <br /></td></tr>
 <tr class="separator:ae73b7d53a52f29f40330f8b9ad274347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bdc1f996bd65177ce072ef3c3ec798c" id="r_a3bdc1f996bd65177ce072ef3c3ec798c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Map</a>&lt; Vec3T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bdc1f996bd65177ce072ef3c3ec798c">t</a> ()</td></tr>
+<tr class="memdesc:a3bdc1f996bd65177ce072ef3c3ec798c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the translation vector \(\boldsymbol{t}\in\mathbb{R}^3\).  <br /></td></tr>
 <tr class="separator:a3bdc1f996bd65177ce072ef3c3ec798c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5a5592530ad3583e708a3b62593a57" id="r_a7b5a5592530ad3583e708a3b62593a57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b5a5592530ad3583e708a3b62593a57">q</a> ()</td></tr>
+<tr class="memdesc:a7b5a5592530ad3583e708a3b62593a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the rotation \(\boldsymbol{q}\in SO(3)\).  <br /></td></tr>
 <tr class="separator:a7b5a5592530ad3583e708a3b62593a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ae935f5775ac64a7bcffb7966fede0" id="r_a76ae935f5775ac64a7bcffb7966fede0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec7T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76ae935f5775ac64a7bcffb7966fede0">elements</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a76ae935f5775ac64a7bcffb7966fede0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\).  <br /></td></tr>
 <tr class="separator:a76ae935f5775ac64a7bcffb7966fede0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b444bc533088348d5061d0ce6bcf690" id="r_a6b444bc533088348d5061d0ce6bcf690"><td class="memItemLeft" align="right" valign="top">Vec7T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b444bc533088348d5061d0ce6bcf690">array</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a6b444bc533088348d5061d0ce6bcf690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\).  <br /></td></tr>
 <tr class="separator:a6b444bc533088348d5061d0ce6bcf690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04ca8e168b7900b6fcad3a7b4050de2d" id="r_a04ca8e168b7900b6fcad3a7b4050de2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04ca8e168b7900b6fcad3a7b4050de2d">data</a> ()</td></tr>
+<tr class="memdesc:a04ca8e168b7900b6fcad3a7b4050de2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer to all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\).  <br /></td></tr>
 <tr class="separator:a04ca8e168b7900b6fcad3a7b4050de2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac42c09355f648b957adb128afe59ad05" id="r_ac42c09355f648b957adb128afe59ad05"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac42c09355f648b957adb128afe59ad05">data</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:ac42c09355f648b957adb128afe59ad05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer to all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\).  <br /></td></tr>
 <tr class="separator:ac42c09355f648b957adb128afe59ad05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abca0fae19eb9aaec220a030a2358bd14" id="r_abca0fae19eb9aaec220a030a2358bd14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abca0fae19eb9aaec220a030a2358bd14">copy</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:abca0fae19eb9aaec220a030a2358bd14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a deep copy of the current transform.  <br /></td></tr>
 <tr class="separator:abca0fae19eb9aaec220a030a2358bd14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bb066ef9152ce193d62af5c22af48aa" id="r_a3bb066ef9152ce193d62af5c22af48aa"><td class="memItemLeft" align="right" valign="top">Mat4T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bb066ef9152ce193d62af5c22af48aa">H</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a3bb066ef9152ce193d62af5c22af48aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the transform to matrix representation \(\begin{bmatrix}\boldsymbol{R} &amp; \boldsymbol{t}
+\\ \boldsymbol{0} &amp; 1\end{bmatrix}\in\mathbb{R}^{4\times 4}\).  <br /></td></tr>
 <tr class="separator:a3bb066ef9152ce193d62af5c22af48aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36185757bc2292bfb061267ef5645600" id="r_a36185757bc2292bfb061267ef5645600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36185757bc2292bfb061267ef5645600">inverse</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a36185757bc2292bfb061267ef5645600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the inverse transform \(\boldsymbol{T}_A^B\rightarrow \boldsymbol{T}_B^A\).  <br /></td></tr>
 <tr class="separator:a36185757bc2292bfb061267ef5645600"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af842365fdd289ce137a59598f091fcea" id="r_af842365fdd289ce137a59598f091fcea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af842365fdd289ce137a59598f091fcea">invert</a> ()</td></tr>
+<tr class="memdesc:af842365fdd289ce137a59598f091fcea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert the current transform \(\boldsymbol{T}_A^B\rightarrow \boldsymbol{T}_B^A\).  <br /></td></tr>
 <tr class="separator:af842365fdd289ce137a59598f091fcea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13139cb8ba7b55cd7fad2565f12c60bf" id="r_a13139cb8ba7b55cd7fad2565f12c60bf"><td class="memTemplParams" colspan="2">template&lt;typename Tout  = T, typename T2 &gt; </td></tr>
 <tr class="memitem:a13139cb8ba7b55cd7fad2565f12c60bf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&lt; Tout &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">otimes</a> (const <a class="el" href="classSE3.html">SE3</a>&lt; T2 &gt; &amp;x) const</td></tr>
+<tr class="memdesc:a13139cb8ba7b55cd7fad2565f12c60bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of group composition: \(\boldsymbol{T}_B^C \otimes \boldsymbol{T}_A^B\rightarrow
+\boldsymbol{T}_A^C\).  <br /></td></tr>
 <tr class="separator:a13139cb8ba7b55cd7fad2565f12c60bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf539c88fdc5f9e7e229e95518594970" id="r_aaf539c88fdc5f9e7e229e95518594970"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Tout</a>  = T, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; </td></tr>
 <tr class="memitem:aaf539c88fdc5f9e7e229e95518594970"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Tout</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aaf539c88fdc5f9e7e229e95518594970">oplus</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Matrix</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a>, 6, 1 &gt; &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">delta</a>) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:aaf539c88fdc5f9e7e229e95518594970"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of tangent space group perturbations: \(\boldsymbol{T}_A^B\oplus \boldsymbol{t}_B^{B&#39;}
+\rightarrow \boldsymbol{T}_A^{B&#39;}\).  <br /></td></tr>
 <tr class="separator:aaf539c88fdc5f9e7e229e95518594970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe34dc518cb836eca4123077914c9d1b" id="r_afe34dc518cb836eca4123077914c9d1b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Tout</a>  = T, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; </td></tr>
 <tr class="memitem:afe34dc518cb836eca4123077914c9d1b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Matrix</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Tout</a>, 6, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afe34dc518cb836eca4123077914c9d1b">ominus</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; &amp;x) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:afe34dc518cb836eca4123077914c9d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of group subtraction: \(\boldsymbol{T}_A^B\ominus \boldsymbol{T}_A^{B&#39;} \rightarrow
+\boldsymbol{t}_B^{B&#39;}\).  <br /></td></tr>
 <tr class="separator:afe34dc518cb836eca4123077914c9d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a876ec6ebea53d5d53d0d400727e4afc3" id="r_a876ec6ebea53d5d53d0d400727e4afc3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a876ec6ebea53d5d53d0d400727e4afc3">operator=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a> &amp;x)</td></tr>
+<tr class="memdesc:a876ec6ebea53d5d53d0d400727e4afc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
 <tr class="separator:a876ec6ebea53d5d53d0d400727e4afc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa7155403111be61e2024686f5148709" id="r_aaa7155403111be61e2024686f5148709"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; </td></tr>
 <tr class="memitem:aaa7155403111be61e2024686f5148709"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aaa7155403111be61e2024686f5148709">operator*</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; &amp;x) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:aaa7155403111be61e2024686f5148709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of otimes via multiplication.  <br /></td></tr>
 <tr class="separator:aaa7155403111be61e2024686f5148709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40cc77c2189cfc5a0bf90f2689b02b97" id="r_a40cc77c2189cfc5a0bf90f2689b02b97"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; </td></tr>
 <tr class="memitem:a40cc77c2189cfc5a0bf90f2689b02b97"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a40cc77c2189cfc5a0bf90f2689b02b97">operator*=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; &amp;x)</td></tr>
+<tr class="memdesc:a40cc77c2189cfc5a0bf90f2689b02b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of otimes via multiplication.  <br /></td></tr>
 <tr class="separator:a40cc77c2189cfc5a0bf90f2689b02b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d8e770b375a7ff19acfc77d8a89f2a" id="r_a75d8e770b375a7ff19acfc77d8a89f2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75d8e770b375a7ff19acfc77d8a89f2a">operator*=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">double</a> &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">s</a>)</td></tr>
+<tr class="memdesc:a75d8e770b375a7ff19acfc77d8a89f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a transform by a scalar.  <br /></td></tr>
 <tr class="separator:a75d8e770b375a7ff19acfc77d8a89f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67976cd66cd1b70583d142d3792d1b96" id="r_a67976cd66cd1b70583d142d3792d1b96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67976cd66cd1b70583d142d3792d1b96">operator/=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">double</a> &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">s</a>)</td></tr>
+<tr class="memdesc:a67976cd66cd1b70583d142d3792d1b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a transform by a scalar.  <br /></td></tr>
 <tr class="separator:a67976cd66cd1b70583d142d3792d1b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91d46505e898b6abb181eb9d2f764647" id="r_a91d46505e898b6abb181eb9d2f764647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91d46505e898b6abb181eb9d2f764647">operator/</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">double</a> &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">s</a>) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a91d46505e898b6abb181eb9d2f764647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a transform by a scalar.  <br /></td></tr>
 <tr class="separator:a91d46505e898b6abb181eb9d2f764647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb4950eb593aa5e827979f0b1dd7b84c" id="r_acb4950eb593aa5e827979f0b1dd7b84c"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Tout</a>  = T, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; </td></tr>
 <tr class="memitem:acb4950eb593aa5e827979f0b1dd7b84c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Matrix</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Tout</a>, 3, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acb4950eb593aa5e827979f0b1dd7b84c">operator*</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Matrix</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a>, 3, 1 &gt; &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">v</a>) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:acb4950eb593aa5e827979f0b1dd7b84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a vector via multiplication: \(\boldsymbol{T}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\).  <br /></td></tr>
 <tr class="separator:acb4950eb593aa5e827979f0b1dd7b84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5de4692568c4060d8dc9d4dbe8ef4f31" id="r_a5de4692568c4060d8dc9d4dbe8ef4f31"><td class="memItemLeft" align="right" valign="top">Vec3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5de4692568c4060d8dc9d4dbe8ef4f31">operator*</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec3T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">v</a>) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a5de4692568c4060d8dc9d4dbe8ef4f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a vector via multiplication: \(\boldsymbol{T}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\).  <br /></td></tr>
 <tr class="separator:a5de4692568c4060d8dc9d4dbe8ef4f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54233103c920a67e2dad93edeac0fdb" id="r_aa54233103c920a67e2dad93edeac0fdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa54233103c920a67e2dad93edeac0fdb">operator+</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec6T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">v</a>) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:aa54233103c920a67e2dad93edeac0fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of oplus via addition.  <br /></td></tr>
 <tr class="separator:aa54233103c920a67e2dad93edeac0fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1fdf1f7c875872e1783da00d74b76fb" id="r_aa1fdf1f7c875872e1783da00d74b76fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1fdf1f7c875872e1783da00d74b76fb">operator+=</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec6T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">v</a>)</td></tr>
+<tr class="memdesc:aa1fdf1f7c875872e1783da00d74b76fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of oplus via addition.  <br /></td></tr>
 <tr class="separator:aa1fdf1f7c875872e1783da00d74b76fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36c3f4613747a723812174d8e8177f4b" id="r_a36c3f4613747a723812174d8e8177f4b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; </td></tr>
 <tr class="memitem:a36c3f4613747a723812174d8e8177f4b"><td class="memTemplItemLeft" align="right" valign="top">Vec6T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a36c3f4613747a723812174d8e8177f4b">operator-</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; &amp;x) <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:a36c3f4613747a723812174d8e8177f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of ominus via subtraction.  <br /></td></tr>
 <tr class="separator:a36c3f4613747a723812174d8e8177f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b77a42f9e8ff5c9a229685e3e7314d" id="r_ac4b77a42f9e8ff5c9a229685e3e7314d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt; </td></tr>
 <tr class="memitem:ac4b77a42f9e8ff5c9a229685e3e7314d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T2</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac4b77a42f9e8ff5c9a229685e3e7314d">cast</a> () <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a></td></tr>
+<tr class="memdesc:ac4b77a42f9e8ff5c9a229685e3e7314d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast the underlying numeric type.  <br /></td></tr>
 <tr class="separator:ac4b77a42f9e8ff5c9a229685e3e7314d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -204,24 +243,34 @@ Static Public Member Functions</h2></td></tr>
 1\end{bmatrix}\) into a \(SE(3)\) transform.  <br /></td></tr>
 <tr class="separator:a59d7ad5aa26995d19d6739ec8080996d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a913b652e3e1ca36f9b422a6ace9c9394" id="r_a913b652e3e1ca36f9b422a6ace9c9394"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> <a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a913b652e3e1ca36f9b422a6ace9c9394">fromVecAndQuat</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">tx</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">ty</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">tz</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">qw</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">qx</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">qy</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">qz</a>)</td></tr>
+<tr class="memdesc:a913b652e3e1ca36f9b422a6ace9c9394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a transform from the individual fields.  <br /></td></tr>
 <tr class="separator:a913b652e3e1ca36f9b422a6ace9c9394"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cb406adf10e6e09965bd4bc7066d9ef" id="r_a6cb406adf10e6e09965bd4bc7066d9ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> <a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cb406adf10e6e09965bd4bc7066d9ef">fromVecAndQuat</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec3T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">tvec</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec4T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">qvec</a>)</td></tr>
+<tr class="memdesc:a6cb406adf10e6e09965bd4bc7066d9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a transform from a translation vector and rotation fields vector.  <br /></td></tr>
 <tr class="separator:a6cb406adf10e6e09965bd4bc7066d9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ea8cf55d9fb18bb25217bbf9e7f6d90" id="r_a0ea8cf55d9fb18bb25217bbf9e7f6d90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> <a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ea8cf55d9fb18bb25217bbf9e7f6d90">fromVecAndQuat</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec3T &amp;<a class="el" href="#a3b3cd8ccabf062a8574c93bc43753b88">t</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> &gt; &amp;<a class="el" href="#ae73b7d53a52f29f40330f8b9ad274347">q</a>)</td></tr>
+<tr class="memdesc:a0ea8cf55d9fb18bb25217bbf9e7f6d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a transform from a translation vector and a rotation object.  <br /></td></tr>
 <tr class="separator:a0ea8cf55d9fb18bb25217bbf9e7f6d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae476a668019b23bf90ad15151c0b863e" id="r_ae476a668019b23bf90ad15151c0b863e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> <a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae476a668019b23bf90ad15151c0b863e">fromVecAndQuat</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec3T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">tvec</a>, <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Quaternion</a>&lt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">T</a> &gt; <a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">quat</a>)</td></tr>
+<tr class="memdesc:ae476a668019b23bf90ad15151c0b863e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a transform from a translation vector and an Eigen Quaternion object.  <br /></td></tr>
 <tr class="separator:ae476a668019b23bf90ad15151c0b863e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a550635210153e4babf8f2fb4ad508138" id="r_a550635210153e4babf8f2fb4ad508138"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> Mat4T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a550635210153e4babf8f2fb4ad508138">hat</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec6T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">omega</a>)</td></tr>
+<tr class="memdesc:a550635210153e4babf8f2fb4ad508138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hat operator implementation, which coverts the tangent-space vector representation to the corresponding Lie algebra: \(\mathbb{R}^6\rightarrow \mathfrak{se}(3)\).  <br /></td></tr>
 <tr class="separator:a550635210153e4babf8f2fb4ad508138"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e0e8e2938a708493116741d9c2a752f" id="r_a7e0e8e2938a708493116741d9c2a752f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> Vec6T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e0e8e2938a708493116741d9c2a752f">vee</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Mat4T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Omega</a>)</td></tr>
+<tr class="memdesc:a7e0e8e2938a708493116741d9c2a752f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vee operator implementation, which coverts the Lie algebra representation to a tangent-space vector representation: \(\mathfrak{se}(3) \rightarrow \mathbb{R}^6\).  <br /></td></tr>
 <tr class="separator:a7e0e8e2938a708493116741d9c2a752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc24a2dfbfaccf76e89b31120e37bf86" id="r_adc24a2dfbfaccf76e89b31120e37bf86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> Mat4T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc24a2dfbfaccf76e89b31120e37bf86">log</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a> &amp;x)</td></tr>
+<tr class="memdesc:adc24a2dfbfaccf76e89b31120e37bf86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic chart map implementation: \(SE(3) \rightarrow \mathfrak{se}(3)\).  <br /></td></tr>
 <tr class="separator:adc24a2dfbfaccf76e89b31120e37bf86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf5a857430b182e6a50d859eb086ca46" id="r_abf5a857430b182e6a50d859eb086ca46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> Vec6T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf5a857430b182e6a50d859eb086ca46">Log</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> <a class="el" href="classSE3.html">SE3</a> &amp;x)</td></tr>
+<tr class="memdesc:abf5a857430b182e6a50d859eb086ca46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic chart map implementation: \(SE(3) \rightarrow \mathbb{R}^6\).  <br /></td></tr>
 <tr class="separator:abf5a857430b182e6a50d859eb086ca46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af328eb9d711b7c65a8d06ba19108c3c5" id="r_af328eb9d711b7c65a8d06ba19108c3c5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> <a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af328eb9d711b7c65a8d06ba19108c3c5">exp</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Mat4T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">Omega</a>)</td></tr>
+<tr class="memdesc:af328eb9d711b7c65a8d06ba19108c3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential chart map implementation: \(\mathfrak{se}(3) \rightarrow SE(3)\).  <br /></td></tr>
 <tr class="separator:af328eb9d711b7c65a8d06ba19108c3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af06d1501dfed7958045ac07d6d61dffb" id="r_af06d1501dfed7958045ac07d6d61dffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">static</a> <a class="el" href="classSE3.html">SE3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af06d1501dfed7958045ac07d6d61dffb">Exp</a> (<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">const</a> Vec6T &amp;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">omega</a>)</td></tr>
+<tr class="memdesc:af06d1501dfed7958045ac07d6d61dffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential chart map implementation: \(\mathbb{R}^6 \rightarrow SE(3)\).  <br /></td></tr>
 <tr class="separator:af06d1501dfed7958045ac07d6d61dffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -266,6 +315,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Create a transform (with garbage data). </p>
+
 </div>
 </div>
 <a id="a4659b75c3b6d6aac27d2beebce0ddd1c" name="a4659b75c3b6d6aac27d2beebce0ddd1c"></a>
@@ -292,6 +343,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create a transform from an array representing all transform fields in \(\begin{bmatrix}\boldsymbol{t} &amp;
+\boldsymbol{q}\end{bmatrix}^\top\). </p>
 
 </div>
 </div>
@@ -320,6 +374,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Copy constructor from another transform. </p>
+
 </div>
 </div>
 <a id="aa85feb4be9725e70f7fa2d78f8efffd7" name="aa85feb4be9725e70f7fa2d78f8efffd7"></a>
@@ -346,6 +402,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create a transform from a pointer array representing all transform fields in \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\). </p>
 
 </div>
 </div>
@@ -374,6 +432,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\). </p>
 
 </div>
 </div>
@@ -404,6 +464,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Cast the underlying numeric type. </p>
+
 </div>
 </div>
 <a id="abca0fae19eb9aaec220a030a2358bd14" name="abca0fae19eb9aaec220a030a2358bd14"></a>
@@ -430,6 +492,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get a deep copy of the current transform. </p>
 
 </div>
 </div>
@@ -458,6 +522,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access pointer to all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\). </p>
+
 </div>
 </div>
 <a id="ac42c09355f648b957adb128afe59ad05" name="ac42c09355f648b957adb128afe59ad05"></a>
@@ -484,6 +550,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access pointer to all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\). </p>
 
 </div>
 </div>
@@ -512,6 +580,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access all elements of \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\). </p>
+
 </div>
 </div>
 <a id="af328eb9d711b7c65a8d06ba19108c3c5" name="af328eb9d711b7c65a8d06ba19108c3c5"></a>
@@ -539,6 +609,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Exponential chart map implementation: \(\mathfrak{se}(3) \rightarrow SE(3)\). </p>
+
 </div>
 </div>
 <a id="af06d1501dfed7958045ac07d6d61dffb" name="af06d1501dfed7958045ac07d6d61dffb"></a>
@@ -565,6 +637,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Exponential chart map implementation: \(\mathbb{R}^6 \rightarrow SE(3)\). </p>
 
 </div>
 </div>
@@ -652,6 +726,20 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a transform from the individual fields. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tx</td><td>First component of the translation \(\boldsymbol{t}\in\mathbb{R}^3\). </td></tr>
+    <tr><td class="paramname">ty</td><td>Second component of the translation \(\boldsymbol{t}\in\mathbb{R}^3\). </td></tr>
+    <tr><td class="paramname">tz</td><td>Third component of the translation \(\boldsymbol{t}\in\mathbb{R}^3\). </td></tr>
+    <tr><td class="paramname">qw</td><td>Real component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qx</td><td>First imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qy</td><td>Second imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qz</td><td>Third imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0ea8cf55d9fb18bb25217bbf9e7f6d90" name="a0ea8cf55d9fb18bb25217bbf9e7f6d90"></a>
@@ -682,6 +770,15 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a transform from a translation vector and a rotation object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The translation vector \(\boldsymbol{t}\in\mathbb{R}^3\). </td></tr>
+    <tr><td class="paramname">q</td><td>The rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -714,6 +811,15 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a transform from a translation vector and an Eigen Quaternion object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>The translation vector \(\boldsymbol{t}\in\mathbb{R}^3\). </td></tr>
+    <tr><td class="paramname">q</td><td>The Eigen Quaternion \(\boldsymbol{q}\in SO(3)\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a6cb406adf10e6e09965bd4bc7066d9ef" name="a6cb406adf10e6e09965bd4bc7066d9ef"></a>
@@ -745,6 +851,15 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a transform from a translation vector and rotation fields vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tvec</td><td>The translation vector \(\boldsymbol{t}\in\mathbb{R}^3\). </td></tr>
+    <tr><td class="paramname">qvec</td><td>The rotation represented as an array \(\boldsymbol{q}\in\mathbb{R}^4\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a3bb066ef9152ce193d62af5c22af48aa" name="a3bb066ef9152ce193d62af5c22af48aa"></a>
@@ -772,6 +887,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Convert the transform to matrix representation \(\begin{bmatrix}\boldsymbol{R} &amp; \boldsymbol{t}
+\\ \boldsymbol{0} &amp; 1\end{bmatrix}\in\mathbb{R}^{4\times 4}\). </p>
+
 </div>
 </div>
 <a id="a550635210153e4babf8f2fb4ad508138" name="a550635210153e4babf8f2fb4ad508138"></a>
@@ -798,6 +916,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Hat operator implementation, which coverts the tangent-space vector representation to the corresponding Lie algebra: \(\mathbb{R}^6\rightarrow \mathfrak{se}(3)\). </p>
 
 </div>
 </div>
@@ -855,6 +975,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain the inverse transform \(\boldsymbol{T}_A^B\rightarrow \boldsymbol{T}_B^A\). </p>
+
 </div>
 </div>
 <a id="af842365fdd289ce137a59598f091fcea" name="af842365fdd289ce137a59598f091fcea"></a>
@@ -881,6 +1003,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Invert the current transform \(\boldsymbol{T}_A^B\rightarrow \boldsymbol{T}_B^A\). </p>
 
 </div>
 </div>
@@ -909,6 +1033,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Logarithmic chart map implementation: \(SE(3) \rightarrow \mathfrak{se}(3)\). </p>
+
 </div>
 </div>
 <a id="abf5a857430b182e6a50d859eb086ca46" name="abf5a857430b182e6a50d859eb086ca46"></a>
@@ -935,6 +1061,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Logarithmic chart map implementation: \(SE(3) \rightarrow \mathbb{R}^6\). </p>
 
 </div>
 </div>
@@ -994,6 +1122,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of group subtraction: \(\boldsymbol{T}_A^B\ominus \boldsymbol{T}_A^{B&#39;} \rightarrow
+\boldsymbol{t}_B^{B&#39;}\). </p>
+
 </div>
 </div>
 <a id="acb4950eb593aa5e827979f0b1dd7b84c" name="acb4950eb593aa5e827979f0b1dd7b84c"></a>
@@ -1022,6 +1153,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transform a vector via multiplication: \(\boldsymbol{T}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\). </p>
 
 </div>
 </div>
@@ -1052,6 +1186,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of otimes via multiplication. </p>
+
 </div>
 </div>
 <a id="a5de4692568c4060d8dc9d4dbe8ef4f31" name="a5de4692568c4060d8dc9d4dbe8ef4f31"></a>
@@ -1079,6 +1215,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Transform a vector via multiplication: \(\boldsymbol{T}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\). </p>
+
 </div>
 </div>
 <a id="a75d8e770b375a7ff19acfc77d8a89f2a" name="a75d8e770b375a7ff19acfc77d8a89f2a"></a>
@@ -1105,6 +1244,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Scale a transform by a scalar. </p>
+<p>Under the hood, this converts the transform into a tangent-space vector, scales the vector, then converts the scaled vector back to a transform. </p>
 
 </div>
 </div>
@@ -1135,6 +1277,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of otimes via multiplication. </p>
+
 </div>
 </div>
 <a id="aa54233103c920a67e2dad93edeac0fdb" name="aa54233103c920a67e2dad93edeac0fdb"></a>
@@ -1162,6 +1306,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of oplus via addition. </p>
+
 </div>
 </div>
 <a id="aa1fdf1f7c875872e1783da00d74b76fb" name="aa1fdf1f7c875872e1783da00d74b76fb"></a>
@@ -1188,6 +1334,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Invocation of oplus via addition. </p>
 
 </div>
 </div>
@@ -1218,6 +1366,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of ominus via subtraction. </p>
+
 </div>
 </div>
 <a id="a91d46505e898b6abb181eb9d2f764647" name="a91d46505e898b6abb181eb9d2f764647"></a>
@@ -1244,6 +1394,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Scale a transform by a scalar. </p>
+<p>Under the hood, this converts the transform into a tangent-space vector, scales the vector, then converts the scaled vector back to a transform. </p>
 
 </div>
 </div>
@@ -1272,6 +1425,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Scale a transform by a scalar. </p>
+<p>Under the hood, this converts the transform into a tangent-space vector, scales the vector, then converts the scaled vector back to a transform. </p>
+
 </div>
 </div>
 <a id="a876ec6ebea53d5d53d0d400727e4afc3" name="a876ec6ebea53d5d53d0d400727e4afc3"></a>
@@ -1299,6 +1455,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Copy constructor. </p>
+
 </div>
 </div>
 <a id="af49c010eedcf0c725784244a55e953b6" name="af49c010eedcf0c725784244a55e953b6"></a>
@@ -1325,6 +1483,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access a field from \(\begin{bmatrix}\boldsymbol{t} &amp; \boldsymbol{q}\end{bmatrix}^\top\). </p>
 
 </div>
 </div>
@@ -1355,6 +1515,9 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of tangent space group perturbations: \(\boldsymbol{T}_A^B\oplus \boldsymbol{t}_B^{B&#39;}
+\rightarrow \boldsymbol{T}_A^{B&#39;}\). </p>
+
 </div>
 </div>
 <a id="a13139cb8ba7b55cd7fad2565f12c60bf" name="a13139cb8ba7b55cd7fad2565f12c60bf"></a>
@@ -1384,6 +1547,9 @@ template&lt;typename Tout  = T, typename T2 &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of group composition: \(\boldsymbol{T}_B^C \otimes \boldsymbol{T}_A^B\rightarrow
+\boldsymbol{T}_A^C\). </p>
+
 </div>
 </div>
 <a id="a7b5a5592530ad3583e708a3b62593a57" name="a7b5a5592530ad3583e708a3b62593a57"></a>
@@ -1411,6 +1577,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the rotation \(\boldsymbol{q}\in SO(3)\). </p>
+
 </div>
 </div>
 <a id="ae73b7d53a52f29f40330f8b9ad274347" name="ae73b7d53a52f29f40330f8b9ad274347"></a>
@@ -1437,6 +1605,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access the rotation \(\boldsymbol{q}\in SO(3)\). </p>
 
 </div>
 </div>
@@ -1496,6 +1666,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the translation vector \(\boldsymbol{t}\in\mathbb{R}^3\). </p>
+
 </div>
 </div>
 <a id="a3b3cd8ccabf062a8574c93bc43753b88" name="a3b3cd8ccabf062a8574c93bc43753b88"></a>
@@ -1523,6 +1695,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the translation vector \(\boldsymbol{t}\in\mathbb{R}^3\). </p>
+
 </div>
 </div>
 <a id="a7e0e8e2938a708493116741d9c2a752f" name="a7e0e8e2938a708493116741d9c2a752f"></a>
@@ -1549,6 +1723,8 @@ template&lt;<a class="el" href="#a13139cb8ba7b55cd7fad2565f12c60bf">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Vee operator implementation, which coverts the Lie algebra representation to a tangent-space vector representation: \(\mathfrak{se}(3) \rightarrow \mathbb{R}^6\). </p>
 
 </div>
 </div>

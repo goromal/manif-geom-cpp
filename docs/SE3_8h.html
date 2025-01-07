@@ -129,6 +129,7 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:adcafb2b194bfe529118f5ff38ab7fb45" id="r_adcafb2b194bfe529118f5ff38ab7fb45"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:adcafb2b194bfe529118f5ff38ab7fb45"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adcafb2b194bfe529118f5ff38ab7fb45">operator*</a> (const double &amp;l, const <a class="el" href="classSE3.html">SE3</a>&lt; T &gt; &amp;r)</td></tr>
+<tr class="memdesc:adcafb2b194bfe529118f5ff38ab7fb45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a transform by a scalar.  <br /></td></tr>
 <tr class="separator:adcafb2b194bfe529118f5ff38ab7fb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2581800bd9f81f334ead77297ef86c35" id="r_a2581800bd9f81f334ead77297ef86c35"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2581800bd9f81f334ead77297ef86c35"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSE3.html">SE3</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2581800bd9f81f334ead77297ef86c35">operator*</a> (const <a class="el" href="classSE3.html">SE3</a>&lt; T &gt; &amp;l, const double &amp;r)</td></tr>
@@ -175,6 +176,9 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Scale a transform by a scalar. </p>
+<p>Under the hood, this converts the transform into a tangent-space vector, scales the vector, then converts the scaled vector back to a transform. </p>
 
 </div>
 </div>

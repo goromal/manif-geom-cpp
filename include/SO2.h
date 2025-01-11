@@ -41,6 +41,9 @@ public:
         return q;
     }
 
+    /**
+     * @brief Obtain an identity \f$SO(2)\f$ rotation.
+     */
     static SO2 identity()
     {
         SO2 q;
@@ -48,6 +51,9 @@ public:
         return q;
     }
 
+    /**
+     * @brief Obtain a rotation full of NaNs.
+     */
     static SO2 nans()
     {
         SO2 x;
@@ -55,6 +61,9 @@ public:
         return x;
     }
 
+    /**
+     * @brief Convert an angle (in radians) into a rotation.
+     */
     static SO2 fromAngle(const T angle)
     {
         SO2 q;
@@ -62,6 +71,9 @@ public:
         return q;
     }
 
+    /**
+     * @brief Convert a rotation matrix \f$\boldsymbol{R}\in\mathbb{R}^{2\times 2}\f$ to a \f$SO(2)\f$ rotation.
+     */
     static SO2 fromR(const Mat2T& m)
     {
         SO2 q;
@@ -69,6 +81,10 @@ public:
         return q;
     }
 
+    /**
+     * @brief Given two unit vectors \f$\boldsymbol{u},\boldsymbol{v}\in \mathbb{R}^2\f$, returns the rotation that
+     * rotates \f$\boldsymbol{u}\rightarrow\boldsymbol{v}\f$.
+     */
     static SO2 fromTwoUnitVectors(const Vec2T& u, const Vec2T& v)
     {
         SO2 q;

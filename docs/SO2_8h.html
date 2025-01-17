@@ -26,6 +26,7 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -126,12 +127,15 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a1a4e58c80d8257ef331e98dac8efa8f9" id="r_a1a4e58c80d8257ef331e98dac8efa8f9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1a4e58c80d8257ef331e98dac8efa8f9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1a4e58c80d8257ef331e98dac8efa8f9">operator*</a> (const double &amp;l, const <a class="el" href="classSO2.html">SO2</a>&lt; T &gt; &amp;r)</td></tr>
+<tr class="memdesc:a1a4e58c80d8257ef331e98dac8efa8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a1a4e58c80d8257ef331e98dac8efa8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2d3d835863fe95b679cddb30831ba66" id="r_ab2d3d835863fe95b679cddb30831ba66"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab2d3d835863fe95b679cddb30831ba66"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab2d3d835863fe95b679cddb30831ba66">operator*</a> (const <a class="el" href="classSO2.html">SO2</a>&lt; T &gt; &amp;l, const double &amp;r)</td></tr>
+<tr class="memdesc:ab2d3d835863fe95b679cddb30831ba66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:ab2d3d835863fe95b679cddb30831ba66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49feba37c7a2afeb3577610a1fd4d9b5" id="r_a49feba37c7a2afeb3577610a1fd4d9b5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a49feba37c7a2afeb3577610a1fd4d9b5"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a49feba37c7a2afeb3577610a1fd4d9b5">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classSO2.html">SO2</a>&lt; T &gt; &amp;q)</td></tr>
+<tr class="memdesc:a49feba37c7a2afeb3577610a1fd4d9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the rotation in a stream.  <br /></td></tr>
 <tr class="separator:a49feba37c7a2afeb3577610a1fd4d9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -171,6 +175,9 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
+
 </div>
 </div>
 <a id="ab2d3d835863fe95b679cddb30831ba66" name="ab2d3d835863fe95b679cddb30831ba66"></a>
@@ -193,6 +200,9 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
 
 </div>
 </div>
@@ -224,6 +234,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Render the rotation in a stream. </p>
 
 </div>
 </div>

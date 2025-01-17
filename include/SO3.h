@@ -8,7 +8,7 @@
 using namespace Eigen;
 
 /**
- * @brief Class representing a member of the \f$SO(3)\f$ manifold, or a 3D rotation
+ * @brief Class representing a member of the \f$SO(3)\f$ manifold, or a 3D rotation.
  */
 template<typename T>
 class SO3
@@ -23,8 +23,17 @@ private:
 
 public:
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+    /**
+     * @brief Memory-mapped array representing all rotation fields in \f$\boldsymbol{q}\f$.
+     */
     Map<Vec4T> arr_;
 
+    /**
+     * @brief Obtain a random rotation.
+     * @return A random rotation \f$\boldsymbol{q}_B^W\in SO(3)\f$.
+     *
+     *  The rotation \f$\mathbf{q}_B^W\f$ will be normalized.
+     */
     static SO3 random()
     {
         SO3 q;
@@ -33,6 +42,9 @@ public:
         return q;
     }
 
+    /**
+     * @brief Obtain an identity \f$SO(3)\f$ rotation.
+     */
     static SO3 identity()
     {
         SO3 q;
@@ -40,6 +52,9 @@ public:
         return q;
     }
 
+    /**
+     * @brief Obtain a rotation full of NaNs.
+     */
     static SO3 nans()
     {
         SO3 x;
@@ -47,6 +62,9 @@ public:
         return x;
     }
 
+    /**
+     * @brief Convert an angle (in radians) with accompanying axis (defined by a vector) into a rotation.
+     */
     static SO3 fromAxisAngle(const Vec3T& axis, const T angle)
     {
         T     th2 = angle / 2.0;
@@ -57,6 +75,9 @@ public:
         return q;
     }
 
+    /**
+     * @brief Construct a rotation from yaw-pitch-roll successive-axes Euler angles.
+     */
     static SO3 fromEuler(const T roll, const T pitch, const T yaw)
     {
         SO3 q_roll  = SO3::fromAxisAngle((Vec3T() << (T)1., (T)0., (T)0.).finished(), roll);
@@ -67,6 +88,9 @@ public:
         return q_euler;
     }
 
+    /**
+     * @brief Convert a rotation matrix \f$\boldsymbol{R}\in\mathbb{R}^{3\times 3}\f$ to a \f$SO(3)\f$ rotation.
+     */
     static SO3 fromR(const Mat3T& m)
     {
         T s, qw, qx, qy, qz;
@@ -120,6 +144,12 @@ public:
         return q;
     }
 
+    /**
+     * @brief Given two unit vectors \f$\boldsymbol{u},\boldsymbol{v}\in \mathbb{R}^3\f$, returns the rotation that
+     * rotates \f$\boldsymbol{u}\rightarrow\boldsymbol{v}\f$.
+     *
+     * Naturally, there is roll ambiguity in such a transform, so watch out.
+     */
     static SO3 fromTwoUnitVectors(const Vec3T& u, const Vec3T& v)
     {
         SO3 q;
@@ -147,6 +177,13 @@ public:
         return q;
     }
 
+    /**
+     * @brief Construct a rotation from the individual fields.
+     * @param qw Real component of the rotation \f$\boldsymbol{q}\in SO(3)\f$.
+     * @param qx First imaginary component of the rotation \f$\boldsymbol{q}\in SO(3)\f$.
+     * @param qy Second imaginary component of the rotation \f$\boldsymbol{q}\in SO(3)\f$.
+     * @param qz Third imaginary component of the rotation \f$\boldsymbol{q}\in SO(3)\f$.
+     */
     static SO3 fromQuat(const T qw, const T qx, const T qy, const T qz)
     {
         SO3 q;

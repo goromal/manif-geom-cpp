@@ -234,7 +234,7 @@ public:
 
     /**
      * @brief Convert the transform to matrix representation \f$\begin{bmatrix}\boldsymbol{R} & \boldsymbol{t}
-     * \\ \boldsymbol{0} & 1\end{bmatrix}\in\mathbb{R}^{3\times 3}\f$
+     * \\ \boldsymbol{0} & 1\end{bmatrix}\in\mathbb{R}^{3\times 3}\f$.
      */
     Mat3T H() const
     {

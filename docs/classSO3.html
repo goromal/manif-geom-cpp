@@ -26,6 +26,7 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -212,20 +213,28 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f917b076fafeb3fa0e5566407b6b1e1" id="r_a6f917b076fafeb3fa0e5566407b6b1e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f917b076fafeb3fa0e5566407b6b1e1">random</a> ()</td></tr>
+<tr class="memdesc:a6f917b076fafeb3fa0e5566407b6b1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a random rotation.  <br /></td></tr>
 <tr class="separator:a6f917b076fafeb3fa0e5566407b6b1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d95da337a15f7ae4ffe329b9f84a659" id="r_a7d95da337a15f7ae4ffe329b9f84a659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d95da337a15f7ae4ffe329b9f84a659">identity</a> ()</td></tr>
+<tr class="memdesc:a7d95da337a15f7ae4ffe329b9f84a659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain an identity \(SO(3)\) rotation.  <br /></td></tr>
 <tr class="separator:a7d95da337a15f7ae4ffe329b9f84a659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a188ab6b6d9c7979dbffcce641edeb416" id="r_a188ab6b6d9c7979dbffcce641edeb416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a188ab6b6d9c7979dbffcce641edeb416">nans</a> ()</td></tr>
+<tr class="memdesc:a188ab6b6d9c7979dbffcce641edeb416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a rotation full of NaNs.  <br /></td></tr>
 <tr class="separator:a188ab6b6d9c7979dbffcce641edeb416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad09b9efba78c03312641a5c23ae9c08a" id="r_ad09b9efba78c03312641a5c23ae9c08a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad09b9efba78c03312641a5c23ae9c08a">fromAxisAngle</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">axis</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> angle)</td></tr>
+<tr class="memdesc:ad09b9efba78c03312641a5c23ae9c08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an angle (in radians) with accompanying axis (defined by a vector) into a rotation.  <br /></td></tr>
 <tr class="separator:ad09b9efba78c03312641a5c23ae9c08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade880bf9d392ea31311e0582ff4cc9d5" id="r_ade880bf9d392ea31311e0582ff4cc9d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade880bf9d392ea31311e0582ff4cc9d5">fromEuler</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#a6b5d9b33547e94bdd23e2bdc6995c196">roll</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#a112b9f00a4faac755e58ca63acb22eb1">pitch</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#a4d2d5c1da2287bd3d4a75becde422309">yaw</a>)</td></tr>
+<tr class="memdesc:ade880bf9d392ea31311e0582ff4cc9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from yaw-pitch-roll successive-axes Euler angles.  <br /></td></tr>
 <tr class="separator:ade880bf9d392ea31311e0582ff4cc9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2556042745d4c972f07b855fe8a7b200" id="r_a2556042745d4c972f07b855fe8a7b200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2556042745d4c972f07b855fe8a7b200">fromR</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Mat3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">m</a>)</td></tr>
+<tr class="memdesc:a2556042745d4c972f07b855fe8a7b200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a rotation matrix \(\boldsymbol{R}\in\mathbb{R}^{3\times 3}\) to a \(SO(3)\) rotation.  <br /></td></tr>
 <tr class="separator:a2556042745d4c972f07b855fe8a7b200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc61c267fae7ee35dc94c46675a412da" id="r_acc61c267fae7ee35dc94c46675a412da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc61c267fae7ee35dc94c46675a412da">fromTwoUnitVectors</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">u</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">v</a>)</td></tr>
+<tr class="memdesc:acc61c267fae7ee35dc94c46675a412da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two unit vectors \(\boldsymbol{u},\boldsymbol{v}\in \mathbb{R}^3\), returns the rotation that rotates \(\boldsymbol{u}\rightarrow\boldsymbol{v}\).  <br /></td></tr>
 <tr class="separator:acc61c267fae7ee35dc94c46675a412da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a223a973dce29d54fa319c2c7d955a0d9" id="r_a223a973dce29d54fa319c2c7d955a0d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a223a973dce29d54fa319c2c7d955a0d9">fromQuat</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qw</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qx</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qy</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qz</a>)</td></tr>
+<tr class="memdesc:a223a973dce29d54fa319c2c7d955a0d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from the individual fields.  <br /></td></tr>
 <tr class="separator:a223a973dce29d54fa319c2c7d955a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8e9d6e5e3e822a459a0136bb9abc265" id="r_af8e9d6e5e3e822a459a0136bb9abc265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8e9d6e5e3e822a459a0136bb9abc265">fromQuat</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec4T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qvec</a>)</td></tr>
 <tr class="separator:af8e9d6e5e3e822a459a0136bb9abc265"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,6 +256,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a171ef0a3b982fc4f8d66510a32960d99" id="r_a171ef0a3b982fc4f8d66510a32960d99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">EIGEN_MAKE_ALIGNED_OPERATOR_NEW</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Map</a>&lt; Vec4T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a171ef0a3b982fc4f8d66510a32960d99">arr_</a></td></tr>
+<tr class="memdesc:a171ef0a3b982fc4f8d66510a32960d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory-mapped array representing all rotation fields in \(\boldsymbol{q}\).  <br /></td></tr>
 <tr class="separator:a171ef0a3b982fc4f8d66510a32960d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -609,6 +619,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Convert an angle (in radians) with accompanying axis (defined by a vector) into a rotation. </p>
+
 </div>
 </div>
 <a id="ade880bf9d392ea31311e0582ff4cc9d5" name="ade880bf9d392ea31311e0582ff4cc9d5"></a>
@@ -644,6 +656,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a rotation from yaw-pitch-roll successive-axes Euler angles. </p>
 
 </div>
 </div>
@@ -713,6 +727,17 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a rotation from the individual fields. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qw</td><td>Real component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qx</td><td>First imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qy</td><td>Second imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qz</td><td>Third imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af8e9d6e5e3e822a459a0136bb9abc265" name="af8e9d6e5e3e822a459a0136bb9abc265"></a>
@@ -767,6 +792,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Convert a rotation matrix \(\boldsymbol{R}\in\mathbb{R}^{3\times 3}\) to a \(SO(3)\) rotation. </p>
+
 </div>
 </div>
 <a id="acc61c267fae7ee35dc94c46675a412da" name="acc61c267fae7ee35dc94c46675a412da"></a>
@@ -797,6 +824,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Given two unit vectors \(\boldsymbol{u},\boldsymbol{v}\in \mathbb{R}^3\), returns the rotation that rotates \(\boldsymbol{u}\rightarrow\boldsymbol{v}\). </p>
+<p>Naturally, there is roll ambiguity in such a transform, so watch out. </p>
 
 </div>
 </div>
@@ -851,6 +881,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtain an identity \(SO(3)\) rotation. </p>
 
 </div>
 </div>
@@ -986,6 +1018,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtain a rotation full of NaNs. </p>
 
 </div>
 </div>
@@ -1568,6 +1602,10 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain a random rotation. </p>
+<dl class="section return"><dt>Returns</dt><dd>A random rotation \(\boldsymbol{q}_B^W\in SO(3)\).</dd></dl>
+<p>The rotation \(\mathbf{q}_B^W\) will be normalized. </p>
+
 </div>
 </div>
 <a id="a6b5d9b33547e94bdd23e2bdc6995c196" name="a6b5d9b33547e94bdd23e2bdc6995c196"></a>
@@ -1908,6 +1946,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Memory-mapped array representing all rotation fields in \(\boldsymbol{q}\). </p>
 
 </div>
 </div>

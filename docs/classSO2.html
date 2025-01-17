@@ -26,6 +26,7 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -115,82 +116,123 @@ $(function(){initNavTree('classSO2.html',''); initResizable(); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a202ab23585a047e90d973370355441cf" id="r_a202ab23585a047e90d973370355441cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a202ab23585a047e90d973370355441cf">SO2</a> ()</td></tr>
+<tr class="memdesc:a202ab23585a047e90d973370355441cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a rotation (with garbage data).  <br /></td></tr>
 <tr class="separator:a202ab23585a047e90d973370355441cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3805f4ee2028c3ae4d92d81d6df6a8df" id="r_a3805f4ee2028c3ae4d92d81d6df6a8df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3805f4ee2028c3ae4d92d81d6df6a8df">SO2</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Ref</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec2T &gt; &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">arr</a>)</td></tr>
+<tr class="memdesc:a3805f4ee2028c3ae4d92d81d6df6a8df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a transform from an array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^2\).  <br /></td></tr>
 <tr class="separator:a3805f4ee2028c3ae4d92d81d6df6a8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a0ff389203a8c653fda52d32f8f3492" id="r_a4a0ff389203a8c653fda52d32f8f3492"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a0ff389203a8c653fda52d32f8f3492">SO2</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a> &amp;q)</td></tr>
+<tr class="memdesc:a4a0ff389203a8c653fda52d32f8f3492"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor from another rotation.  <br /></td></tr>
 <tr class="separator:a4a0ff389203a8c653fda52d32f8f3492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d68adef6db9978c409f4ee11f276fe2" id="r_a3d68adef6db9978c409f4ee11f276fe2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d68adef6db9978c409f4ee11f276fe2">SO2</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> *<a class="el" href="#a2cb10f1164a06d7e2a7b2d00a4b59aa7">data</a>)</td></tr>
+<tr class="memdesc:a3d68adef6db9978c409f4ee11f276fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a rotation from a pointer array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^2\).  <br /></td></tr>
 <tr class="separator:a3d68adef6db9978c409f4ee11f276fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a828d5d5478e8b6e763dc4334ac7b45c2" id="r_a828d5d5478e8b6e763dc4334ac7b45c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a828d5d5478e8b6e763dc4334ac7b45c2">operator[]</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">int</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">i</a>)</td></tr>
+<tr class="memdesc:a828d5d5478e8b6e763dc4334ac7b45c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access a field from \(\boldsymbol{q}\in\mathbb{R}^2\).  <br /></td></tr>
 <tr class="separator:a828d5d5478e8b6e763dc4334ac7b45c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85b79ec4681a8255dcb2584f4d2c9faa" id="r_a85b79ec4681a8255dcb2584f4d2c9faa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85b79ec4681a8255dcb2584f4d2c9faa">w</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a85b79ec4681a8255dcb2584f4d2c9faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the real element of the rotation.  <br /></td></tr>
 <tr class="separator:a85b79ec4681a8255dcb2584f4d2c9faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d3ee9b4e41f6ff0d15877c8b4ed1a8c" id="r_a7d3ee9b4e41f6ff0d15877c8b4ed1a8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d3ee9b4e41f6ff0d15877c8b4ed1a8c">x</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a7d3ee9b4e41f6ff0d15877c8b4ed1a8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:a7d3ee9b4e41f6ff0d15877c8b4ed1a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a937f7653ad442c5285bd7d86698d3c9b" id="r_a937f7653ad442c5285bd7d86698d3c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a937f7653ad442c5285bd7d86698d3c9b">w</a> ()</td></tr>
+<tr class="memdesc:a937f7653ad442c5285bd7d86698d3c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the real element of the rotation.  <br /></td></tr>
 <tr class="separator:a937f7653ad442c5285bd7d86698d3c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0317bf27abbb09fc56f22977d5563cd8" id="r_a0317bf27abbb09fc56f22977d5563cd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0317bf27abbb09fc56f22977d5563cd8">x</a> ()</td></tr>
+<tr class="memdesc:a0317bf27abbb09fc56f22977d5563cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:a0317bf27abbb09fc56f22977d5563cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00442a6ca50205cdff34e22456b6d5f2" id="r_a00442a6ca50205cdff34e22456b6d5f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec2T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00442a6ca50205cdff34e22456b6d5f2">elements</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a00442a6ca50205cdff34e22456b6d5f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access all elements of \(\boldsymbol{q}\in\mathbb{R}^2\).  <br /></td></tr>
 <tr class="separator:a00442a6ca50205cdff34e22456b6d5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a376e69257bef84fe0b31934e4699cfc9" id="r_a376e69257bef84fe0b31934e4699cfc9"><td class="memItemLeft" align="right" valign="top">Vec2T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a376e69257bef84fe0b31934e4699cfc9">array</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a376e69257bef84fe0b31934e4699cfc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access all elements of \(\boldsymbol{q}\in\mathbb{R}^2\).  <br /></td></tr>
 <tr class="separator:a376e69257bef84fe0b31934e4699cfc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cb10f1164a06d7e2a7b2d00a4b59aa7" id="r_a2cb10f1164a06d7e2a7b2d00a4b59aa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cb10f1164a06d7e2a7b2d00a4b59aa7">data</a> ()</td></tr>
+<tr class="memdesc:a2cb10f1164a06d7e2a7b2d00a4b59aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^2\).  <br /></td></tr>
 <tr class="separator:a2cb10f1164a06d7e2a7b2d00a4b59aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5867da18a26526b33ff0e72a295fc3ef" id="r_a5867da18a26526b33ff0e72a295fc3ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5867da18a26526b33ff0e72a295fc3ef">data</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a5867da18a26526b33ff0e72a295fc3ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^2\).  <br /></td></tr>
 <tr class="separator:a5867da18a26526b33ff0e72a295fc3ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4049a890bcf04ce1c03bc14a31615699" id="r_a4049a890bcf04ce1c03bc14a31615699"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4049a890bcf04ce1c03bc14a31615699">copy</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a4049a890bcf04ce1c03bc14a31615699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a deep copy of the current rotation.  <br /></td></tr>
 <tr class="separator:a4049a890bcf04ce1c03bc14a31615699"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e8ea673ddb4372aa5d3732fe72678bf" id="r_a8e8ea673ddb4372aa5d3732fe72678bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8ea673ddb4372aa5d3732fe72678bf">normalize</a> ()</td></tr>
+<tr class="memdesc:a8e8ea673ddb4372aa5d3732fe72678bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize the elements of \(\boldsymbol{q}\) to make it a valid rotation.  <br /></td></tr>
 <tr class="separator:a8e8ea673ddb4372aa5d3732fe72678bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae247f3286d6142a55452ee08b7a6c19" id="r_aae247f3286d6142a55452ee08b7a6c19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae247f3286d6142a55452ee08b7a6c19">normalized</a> ()</td></tr>
+<tr class="memdesc:aae247f3286d6142a55452ee08b7a6c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a normalized copy of the current rotation.  <br /></td></tr>
 <tr class="separator:aae247f3286d6142a55452ee08b7a6c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb4bc2b9498adc384d2d92afb09ba0c" id="r_a9cb4bc2b9498adc384d2d92afb09ba0c"><td class="memItemLeft" align="right" valign="top">Mat2T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cb4bc2b9498adc384d2d92afb09ba0c">R</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a9cb4bc2b9498adc384d2d92afb09ba0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the rotation to matrix representation \(\begin{bmatrix}\cos\theta &amp; -\sin\theta
+\\ \sin\theta &amp; \cos\theta\end{bmatrix}\).  <br /></td></tr>
 <tr class="separator:a9cb4bc2b9498adc384d2d92afb09ba0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60f370ff8aa0ae8bec644a5acc0fe8bd" id="r_a60f370ff8aa0ae8bec644a5acc0fe8bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60f370ff8aa0ae8bec644a5acc0fe8bd">inverse</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a60f370ff8aa0ae8bec644a5acc0fe8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the inverse rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\).  <br /></td></tr>
 <tr class="separator:a60f370ff8aa0ae8bec644a5acc0fe8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa691fbb6ee090049f0d27df65deece6a" id="r_aa691fbb6ee090049f0d27df65deece6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa691fbb6ee090049f0d27df65deece6a">invert</a> ()</td></tr>
+<tr class="memdesc:aa691fbb6ee090049f0d27df65deece6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert the current rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\).  <br /></td></tr>
 <tr class="separator:aa691fbb6ee090049f0d27df65deece6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae61ee5b45bc8157a55275414852e9a3c" id="r_ae61ee5b45bc8157a55275414852e9a3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae61ee5b45bc8157a55275414852e9a3c">angle</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:ae61ee5b45bc8157a55275414852e9a3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the equivalent scalar angle \(\theta\) of the rotation.  <br /></td></tr>
 <tr class="separator:ae61ee5b45bc8157a55275414852e9a3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a820a9185f6c4986808d915f0a677beea" id="r_a820a9185f6c4986808d915f0a677beea"><td class="memTemplParams" colspan="2">template&lt;typename Tout  = T, typename T2 &gt; </td></tr>
 <tr class="memitem:a820a9185f6c4986808d915f0a677beea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&lt; Tout &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">otimes</a> (const <a class="el" href="classSO2.html">SO2</a>&lt; T2 &gt; &amp;q) const</td></tr>
+<tr class="memdesc:a820a9185f6c4986808d915f0a677beea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of group composition: \(\boldsymbol{q}_B^C \otimes \boldsymbol{q}_A^B\rightarrow
+\boldsymbol{q}_A^C\).  <br /></td></tr>
 <tr class="separator:a820a9185f6c4986808d915f0a677beea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9068840fdd35a9e585d20dff489e1af7" id="r_a9068840fdd35a9e585d20dff489e1af7"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Tout</a>  = T, <a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; </td></tr>
 <tr class="memitem:a9068840fdd35a9e585d20dff489e1af7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Tout</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9068840fdd35a9e585d20dff489e1af7">oplus</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Matrix</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a>, 1, 1 &gt; &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">delta</a>) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a9068840fdd35a9e585d20dff489e1af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of tangent space group perturbations: \(\boldsymbol{q}_A^B\oplus
+\boldsymbol{\theta}_B^{B&#39;} \rightarrow \boldsymbol{q}_A^{B&#39;}\).  <br /></td></tr>
 <tr class="separator:a9068840fdd35a9e585d20dff489e1af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef6326e78afeedbdf4ff3f4b6d8e1def" id="r_aef6326e78afeedbdf4ff3f4b6d8e1def"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Tout</a>  = T, <a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; </td></tr>
 <tr class="memitem:aef6326e78afeedbdf4ff3f4b6d8e1def"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">Matrix</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Tout</a>, 1, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aef6326e78afeedbdf4ff3f4b6d8e1def">ominus</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; &amp;q) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:aef6326e78afeedbdf4ff3f4b6d8e1def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of group subtraction: \(\boldsymbol{q}_A^B\ominus \boldsymbol{q}_A^{B&#39;} \rightarrow
+\boldsymbol{\theta}_B^{B&#39;}\).  <br /></td></tr>
 <tr class="separator:aef6326e78afeedbdf4ff3f4b6d8e1def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53c00574dccce31d8c68342c4282b822" id="r_a53c00574dccce31d8c68342c4282b822"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53c00574dccce31d8c68342c4282b822">operator=</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a> &amp;q)</td></tr>
+<tr class="memdesc:a53c00574dccce31d8c68342c4282b822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
 <tr class="separator:a53c00574dccce31d8c68342c4282b822"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0969d31a950336a085b25125b55604c1" id="r_a0969d31a950336a085b25125b55604c1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; </td></tr>
 <tr class="memitem:a0969d31a950336a085b25125b55604c1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0969d31a950336a085b25125b55604c1">operator*</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; &amp;q) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a0969d31a950336a085b25125b55604c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of otimes via multiplication.  <br /></td></tr>
 <tr class="separator:a0969d31a950336a085b25125b55604c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95744aa4f581f46ad008c69990f9be45" id="r_a95744aa4f581f46ad008c69990f9be45"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; </td></tr>
 <tr class="memitem:a95744aa4f581f46ad008c69990f9be45"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a95744aa4f581f46ad008c69990f9be45">operator*=</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; &amp;q)</td></tr>
+<tr class="memdesc:a95744aa4f581f46ad008c69990f9be45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of otimes via multiplication.  <br /></td></tr>
 <tr class="separator:a95744aa4f581f46ad008c69990f9be45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16e09c1d9fb76cd69f62bbd354447f01" id="r_a16e09c1d9fb76cd69f62bbd354447f01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16e09c1d9fb76cd69f62bbd354447f01">operator*=</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">double</a> &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">s</a>)</td></tr>
+<tr class="memdesc:a16e09c1d9fb76cd69f62bbd354447f01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a16e09c1d9fb76cd69f62bbd354447f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aefabbb237a00b3a910c2a0ec7af674b8" id="r_aefabbb237a00b3a910c2a0ec7af674b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefabbb237a00b3a910c2a0ec7af674b8">operator/=</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">double</a> &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">s</a>)</td></tr>
+<tr class="memdesc:aefabbb237a00b3a910c2a0ec7af674b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:aefabbb237a00b3a910c2a0ec7af674b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c91989ba2f69e2fd3b5a560d7c11d09" id="r_a4c91989ba2f69e2fd3b5a560d7c11d09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c91989ba2f69e2fd3b5a560d7c11d09">operator/</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">double</a> &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">s</a>) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a4c91989ba2f69e2fd3b5a560d7c11d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a4c91989ba2f69e2fd3b5a560d7c11d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a366ce72a28ece473236283924d94303e" id="r_a366ce72a28ece473236283924d94303e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Tout</a>  = T, <a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; </td></tr>
 <tr class="memitem:a366ce72a28ece473236283924d94303e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">Matrix</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Tout</a>, 2, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a366ce72a28ece473236283924d94303e">operator*</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">Matrix</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a>, 2, 1 &gt; &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">v</a>) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a366ce72a28ece473236283924d94303e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\).  <br /></td></tr>
 <tr class="separator:a366ce72a28ece473236283924d94303e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab644c6f48d41d2d06ac897b9699f6b4f" id="r_ab644c6f48d41d2d06ac897b9699f6b4f"><td class="memItemLeft" align="right" valign="top">Vec2T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab644c6f48d41d2d06ac897b9699f6b4f">operator*</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec2T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">v</a>) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:ab644c6f48d41d2d06ac897b9699f6b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\).  <br /></td></tr>
 <tr class="separator:ab644c6f48d41d2d06ac897b9699f6b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07df58cfdb84dc2b0f1a5bbaa21a89de" id="r_a07df58cfdb84dc2b0f1a5bbaa21a89de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07df58cfdb84dc2b0f1a5bbaa21a89de">operator+</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec1T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">v</a>) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a07df58cfdb84dc2b0f1a5bbaa21a89de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of oplus via addition.  <br /></td></tr>
 <tr class="separator:a07df58cfdb84dc2b0f1a5bbaa21a89de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa35dd56512eb533ade02b7925756e51" id="r_aaa35dd56512eb533ade02b7925756e51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa35dd56512eb533ade02b7925756e51">operator+=</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec1T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">v</a>)</td></tr>
+<tr class="memdesc:aaa35dd56512eb533ade02b7925756e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of oplus via addition.  <br /></td></tr>
 <tr class="separator:aaa35dd56512eb533ade02b7925756e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc502a104e59139153fdc59a4664bae2" id="r_abc502a104e59139153fdc59a4664bae2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; </td></tr>
 <tr class="memitem:abc502a104e59139153fdc59a4664bae2"><td class="memTemplItemLeft" align="right" valign="top">Vec1T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abc502a104e59139153fdc59a4664bae2">operator-</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; &amp;q) <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:abc502a104e59139153fdc59a4664bae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of ominus via subtraction.  <br /></td></tr>
 <tr class="separator:abc502a104e59139153fdc59a4664bae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42acd8ef47ffc62f61d17282027fd0bb" id="r_a42acd8ef47ffc62f61d17282027fd0bb"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt; </td></tr>
 <tr class="memitem:a42acd8ef47ffc62f61d17282027fd0bb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&lt; <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T2</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a42acd8ef47ffc62f61d17282027fd0bb">cast</a> () <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a></td></tr>
+<tr class="memdesc:a42acd8ef47ffc62f61d17282027fd0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast the underlying numeric type.  <br /></td></tr>
 <tr class="separator:a42acd8ef47ffc62f61d17282027fd0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -214,20 +256,28 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:add1816ed936072e1261f4636e4248250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two unit vectors \(\boldsymbol{u},\boldsymbol{v}\in \mathbb{R}^2\), returns the rotation that rotates \(\boldsymbol{u}\rightarrow\boldsymbol{v}\).  <br /></td></tr>
 <tr class="separator:add1816ed936072e1261f4636e4248250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff21518f089fd1eb7011dc7e9609f0d0" id="r_aff21518f089fd1eb7011dc7e9609f0d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> <a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff21518f089fd1eb7011dc7e9609f0d0">fromComplex</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">qw</a>, <a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">T</a> <a class="el" href="#a820a9185f6c4986808d915f0a677beea">qx</a>)</td></tr>
+<tr class="memdesc:aff21518f089fd1eb7011dc7e9609f0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from the individual fields.  <br /></td></tr>
 <tr class="separator:aff21518f089fd1eb7011dc7e9609f0d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c695a95d0f3078f8d31786705c99bee" id="r_a0c695a95d0f3078f8d31786705c99bee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> <a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c695a95d0f3078f8d31786705c99bee">fromComplex</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec2T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">qvec</a>)</td></tr>
+<tr class="memdesc:a0c695a95d0f3078f8d31786705c99bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from a rotation fields vector.  <br /></td></tr>
 <tr class="separator:a0c695a95d0f3078f8d31786705c99bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab09aa3982e473ba32a097e15e63e9d1" id="r_aab09aa3982e473ba32a097e15e63e9d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> Mat2T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab09aa3982e473ba32a097e15e63e9d1">hat</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec1T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">omega</a>)</td></tr>
+<tr class="memdesc:aab09aa3982e473ba32a097e15e63e9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hat operator implementation, which coverts the tangent-space vector representation to the corresponding Lie algebra: \(\mathbb{R}\rightarrow \mathfrak{so}(2)\).  <br /></td></tr>
 <tr class="separator:aab09aa3982e473ba32a097e15e63e9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a0a0b8b68d81b6df904259da150d19b" id="r_a0a0a0b8b68d81b6df904259da150d19b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> Vec1T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a0a0b8b68d81b6df904259da150d19b">vee</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Mat2T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">Omega</a>)</td></tr>
+<tr class="memdesc:a0a0a0b8b68d81b6df904259da150d19b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vee operator implementation, which coverts the Lie algebra representation to a tangent-space vector representation: \(\mathfrak{so}(2) \rightarrow \mathbb{R}\).  <br /></td></tr>
 <tr class="separator:a0a0a0b8b68d81b6df904259da150d19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37347d173b6a0d8aa2d898297b225f46" id="r_a37347d173b6a0d8aa2d898297b225f46"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> Mat2T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37347d173b6a0d8aa2d898297b225f46">log</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a> &amp;q)</td></tr>
+<tr class="memdesc:a37347d173b6a0d8aa2d898297b225f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic chart map implementation: \(SO(2) \rightarrow \mathfrak{so}(2)\).  <br /></td></tr>
 <tr class="separator:a37347d173b6a0d8aa2d898297b225f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ccf354b1669f82ae7971b90ce3ca01" id="r_a83ccf354b1669f82ae7971b90ce3ca01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> Vec1T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83ccf354b1669f82ae7971b90ce3ca01">Log</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> <a class="el" href="classSO2.html">SO2</a> &amp;q)</td></tr>
+<tr class="memdesc:a83ccf354b1669f82ae7971b90ce3ca01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic chart map implementation: \(SO(2) \rightarrow \mathbb{R}\).  <br /></td></tr>
 <tr class="separator:a83ccf354b1669f82ae7971b90ce3ca01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0949225b3090c21acb4358f907cdd49" id="r_aa0949225b3090c21acb4358f907cdd49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> <a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0949225b3090c21acb4358f907cdd49">exp</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Mat2T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">Omega</a>)</td></tr>
+<tr class="memdesc:aa0949225b3090c21acb4358f907cdd49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential chart map implementation: \(\mathfrak{so}(2) \rightarrow SO(2)\).  <br /></td></tr>
 <tr class="separator:aa0949225b3090c21acb4358f907cdd49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a107f4743938ee4db75f79c02ee06cf96" id="r_a107f4743938ee4db75f79c02ee06cf96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a820a9185f6c4986808d915f0a677beea">static</a> <a class="el" href="classSO2.html">SO2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a107f4743938ee4db75f79c02ee06cf96">Exp</a> (<a class="el" href="#a820a9185f6c4986808d915f0a677beea">const</a> Vec1T &amp;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">omega</a>)</td></tr>
+<tr class="memdesc:a107f4743938ee4db75f79c02ee06cf96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential chart map implementation: \(\mathbb{R} \rightarrow SO(2)\).  <br /></td></tr>
 <tr class="separator:a107f4743938ee4db75f79c02ee06cf96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -265,6 +315,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Create a rotation (with garbage data). </p>
+
 </div>
 </div>
 <a id="a3805f4ee2028c3ae4d92d81d6df6a8df" name="a3805f4ee2028c3ae4d92d81d6df6a8df"></a>
@@ -291,6 +343,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create a transform from an array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^2\). </p>
 
 </div>
 </div>
@@ -319,6 +373,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Copy constructor from another rotation. </p>
+
 </div>
 </div>
 <a id="a3d68adef6db9978c409f4ee11f276fe2" name="a3d68adef6db9978c409f4ee11f276fe2"></a>
@@ -345,6 +401,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create a rotation from a pointer array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^2\). </p>
 
 </div>
 </div>
@@ -374,6 +432,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain the equivalent scalar angle \(\theta\) of the rotation. </p>
+<p>\(-\pi \leq \theta \leq \pi\). </p>
+
 </div>
 </div>
 <a id="a376e69257bef84fe0b31934e4699cfc9" name="a376e69257bef84fe0b31934e4699cfc9"></a>
@@ -400,6 +461,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access all elements of \(\boldsymbol{q}\in\mathbb{R}^2\). </p>
 
 </div>
 </div>
@@ -430,6 +493,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Cast the underlying numeric type. </p>
+
 </div>
 </div>
 <a id="a4049a890bcf04ce1c03bc14a31615699" name="a4049a890bcf04ce1c03bc14a31615699"></a>
@@ -456,6 +521,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get a deep copy of the current rotation. </p>
 
 </div>
 </div>
@@ -484,6 +551,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^2\). </p>
+
 </div>
 </div>
 <a id="a5867da18a26526b33ff0e72a295fc3ef" name="a5867da18a26526b33ff0e72a295fc3ef"></a>
@@ -510,6 +579,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^2\). </p>
 
 </div>
 </div>
@@ -538,6 +609,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access all elements of \(\boldsymbol{q}\in\mathbb{R}^2\). </p>
+
 </div>
 </div>
 <a id="aa0949225b3090c21acb4358f907cdd49" name="aa0949225b3090c21acb4358f907cdd49"></a>
@@ -565,6 +638,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Exponential chart map implementation: \(\mathfrak{so}(2) \rightarrow SO(2)\). </p>
+
 </div>
 </div>
 <a id="a107f4743938ee4db75f79c02ee06cf96" name="a107f4743938ee4db75f79c02ee06cf96"></a>
@@ -591,6 +666,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Exponential chart map implementation: \(\mathbb{R} \rightarrow SO(2)\). </p>
 
 </div>
 </div>
@@ -652,6 +729,15 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a rotation from the individual fields. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qw</td><td>Real component of the rotation \(\boldsymbol{q}\in SO(2)\). </td></tr>
+    <tr><td class="paramname">qx</td><td>Imaginary component of the rotation \(\boldsymbol{q}\in SO(2)\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0c695a95d0f3078f8d31786705c99bee" name="a0c695a95d0f3078f8d31786705c99bee"></a>
@@ -678,6 +764,14 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a rotation from a rotation fields vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qvec</td><td>The rotation represented as an array \(\boldsymbol{q}\in\mathbb{R}^2\). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -768,6 +862,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Hat operator implementation, which coverts the tangent-space vector representation to the corresponding Lie algebra: \(\mathbb{R}\rightarrow \mathfrak{so}(2)\). </p>
+
 </div>
 </div>
 <a id="a084ebe9ab60849dbac23fe16cb49ff63" name="a084ebe9ab60849dbac23fe16cb49ff63"></a>
@@ -824,6 +920,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain the inverse rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\). </p>
+
 </div>
 </div>
 <a id="aa691fbb6ee090049f0d27df65deece6a" name="aa691fbb6ee090049f0d27df65deece6a"></a>
@@ -850,6 +948,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Invert the current rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\). </p>
 
 </div>
 </div>
@@ -878,6 +978,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Logarithmic chart map implementation: \(SO(2) \rightarrow \mathfrak{so}(2)\). </p>
+
 </div>
 </div>
 <a id="a83ccf354b1669f82ae7971b90ce3ca01" name="a83ccf354b1669f82ae7971b90ce3ca01"></a>
@@ -904,6 +1006,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Logarithmic chart map implementation: \(SO(2) \rightarrow \mathbb{R}\). </p>
 
 </div>
 </div>
@@ -961,6 +1065,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Normalize the elements of \(\boldsymbol{q}\) to make it a valid rotation. </p>
+
 </div>
 </div>
 <a id="aae247f3286d6142a55452ee08b7a6c19" name="aae247f3286d6142a55452ee08b7a6c19"></a>
@@ -987,6 +1093,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtain a normalized copy of the current rotation. </p>
 
 </div>
 </div>
@@ -1017,6 +1125,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of group subtraction: \(\boldsymbol{q}_A^B\ominus \boldsymbol{q}_A^{B&#39;} \rightarrow
+\boldsymbol{\theta}_B^{B&#39;}\). </p>
+
 </div>
 </div>
 <a id="a366ce72a28ece473236283924d94303e" name="a366ce72a28ece473236283924d94303e"></a>
@@ -1045,6 +1156,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\). </p>
 
 </div>
 </div>
@@ -1075,6 +1189,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of otimes via multiplication. </p>
+
 </div>
 </div>
 <a id="ab644c6f48d41d2d06ac897b9699f6b4f" name="ab644c6f48d41d2d06ac897b9699f6b4f"></a>
@@ -1102,6 +1218,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\). </p>
+
 </div>
 </div>
 <a id="a16e09c1d9fb76cd69f62bbd354447f01" name="a16e09c1d9fb76cd69f62bbd354447f01"></a>
@@ -1128,6 +1247,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
 
 </div>
 </div>
@@ -1158,6 +1280,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of otimes via multiplication. </p>
+
 </div>
 </div>
 <a id="a07df58cfdb84dc2b0f1a5bbaa21a89de" name="a07df58cfdb84dc2b0f1a5bbaa21a89de"></a>
@@ -1185,6 +1309,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of oplus via addition. </p>
+
 </div>
 </div>
 <a id="aaa35dd56512eb533ade02b7925756e51" name="aaa35dd56512eb533ade02b7925756e51"></a>
@@ -1211,6 +1337,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Invocation of oplus via addition. </p>
 
 </div>
 </div>
@@ -1241,6 +1369,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of ominus via subtraction. </p>
+
 </div>
 </div>
 <a id="a4c91989ba2f69e2fd3b5a560d7c11d09" name="a4c91989ba2f69e2fd3b5a560d7c11d09"></a>
@@ -1267,6 +1397,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
 
 </div>
 </div>
@@ -1295,6 +1428,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
+
 </div>
 </div>
 <a id="a53c00574dccce31d8c68342c4282b822" name="a53c00574dccce31d8c68342c4282b822"></a>
@@ -1322,6 +1458,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Copy constructor. </p>
+
 </div>
 </div>
 <a id="a828d5d5478e8b6e763dc4334ac7b45c2" name="a828d5d5478e8b6e763dc4334ac7b45c2"></a>
@@ -1348,6 +1486,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access a field from \(\boldsymbol{q}\in\mathbb{R}^2\). </p>
 
 </div>
 </div>
@@ -1378,6 +1518,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of tangent space group perturbations: \(\boldsymbol{q}_A^B\oplus
+\boldsymbol{\theta}_B^{B&#39;} \rightarrow \boldsymbol{q}_A^{B&#39;}\). </p>
+
 </div>
 </div>
 <a id="a820a9185f6c4986808d915f0a677beea" name="a820a9185f6c4986808d915f0a677beea"></a>
@@ -1407,6 +1550,9 @@ template&lt;typename Tout  = T, typename T2 &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of group composition: \(\boldsymbol{q}_B^C \otimes \boldsymbol{q}_A^B\rightarrow
+\boldsymbol{q}_A^C\). </p>
+
 </div>
 </div>
 <a id="a9cb4bc2b9498adc384d2d92afb09ba0c" name="a9cb4bc2b9498adc384d2d92afb09ba0c"></a>
@@ -1433,6 +1579,9 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convert the rotation to matrix representation \(\begin{bmatrix}\cos\theta &amp; -\sin\theta
+\\ \sin\theta &amp; \cos\theta\end{bmatrix}\). </p>
 
 </div>
 </div>
@@ -1462,8 +1611,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </div><div class="memdoc">
 
 <p>Obtain a random rotation. </p>
-<dl class="section return"><dt>Returns</dt><dd>A random rotation \(\boldsymbol{q}_B^W\in SO(3)\).</dd></dl>
-<p>The rotation \(\mathbf{q}_B^W\) will be normalized, but the translation component \(\mathbf{t}_{B/W}^W\) will not (each component will be between 0 and 1). </p>
+<dl class="section return"><dt>Returns</dt><dd>A random rotation \(\boldsymbol{q}_B^W\in SO(2)\).</dd></dl>
+<p>The rotation \(\mathbf{q}_B^W\) will be normalized. </p>
 
 </div>
 </div>
@@ -1492,6 +1641,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Vee operator implementation, which coverts the Lie algebra representation to a tangent-space vector representation: \(\mathfrak{so}(2) \rightarrow \mathbb{R}\). </p>
+
 </div>
 </div>
 <a id="a937f7653ad442c5285bd7d86698d3c9b" name="a937f7653ad442c5285bd7d86698d3c9b"></a>
@@ -1518,6 +1669,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access the real element of the rotation. </p>
 
 </div>
 </div>
@@ -1546,6 +1699,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the real element of the rotation. </p>
+
 </div>
 </div>
 <a id="a0317bf27abbb09fc56f22977d5563cd8" name="a0317bf27abbb09fc56f22977d5563cd8"></a>
@@ -1573,6 +1728,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the imaginary element of the rotation. </p>
+
 </div>
 </div>
 <a id="a7d3ee9b4e41f6ff0d15877c8b4ed1a8c" name="a7d3ee9b4e41f6ff0d15877c8b4ed1a8c"></a>
@@ -1599,6 +1756,8 @@ template&lt;<a class="el" href="#a820a9185f6c4986808d915f0a677beea">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access the imaginary element of the rotation. </p>
 
 </div>
 </div>

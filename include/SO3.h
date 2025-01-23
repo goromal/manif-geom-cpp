@@ -191,6 +191,10 @@ public:
         return q;
     }
 
+    /**
+     * @brief Construct a rotation from a rotation fields vector.
+     * @param qvec The rotation represented as an array \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     static SO3 fromQuat(const Vec4T& qvec)
     {
         SO3 q;
@@ -198,6 +202,10 @@ public:
         return q;
     }
 
+    /**
+     * @brief Construct a rotation from an Eigen quaternion.
+     * @param quat The Eigen quaternion.
+     */
     static SO3 fromQuat(const Quaternion<T> quat)
     {
         SO3 q;
@@ -205,73 +213,140 @@ public:
         return q;
     }
 
+    /**
+     * @brief Create a rotation (with garbage data).
+     */
     SO3() : arr_(buf_) {}
 
+    /**
+     * @brief Create a transform from an array representing all rotation fields in \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     SO3(const Ref<const Vec4T>& arr) : arr_(buf_)
     {
         arr_ = arr;
     }
 
+    /**
+     * @brief Copy constructor from another rotation.
+     */
     SO3(const SO3& q) : arr_(buf_)
     {
         arr_ = q.arr_;
     }
 
+    /**
+     * @brief Create a rotation from a pointer array representing all rotation fields in
+     * \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     SO3(const T* data) : arr_(const_cast<T*>(data)) {}
 
+    /**
+     * @brief Access a field from \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     inline T& operator[](int i)
     {
         return arr_[i];
     }
+
+    /**
+     * @brief Access the real element of the rotation.
+     */
     inline const T& w() const
     {
         return arr_(0);
     }
+
+    /**
+     * @brief Access the first imaginary element of the rotation.
+     */
     inline const T& x() const
     {
         return arr_(1);
     }
+
+    /**
+     * @brief Access the second imaginary element of the rotation.
+     */
     inline const T& y() const
     {
         return arr_(2);
     }
+
+    /**
+     * @brief Access the third imaginary element of the rotation.
+     */
     inline const T& z() const
     {
         return arr_(3);
     }
+
+    /**
+     * @brief Access the real element of the rotation.
+     */
     inline T& w()
     {
         return arr_(0);
     }
+
+    /**
+     * @brief Access the first imaginary element of the rotation.
+     */
     inline T& x()
     {
         return arr_(1);
     }
+
+    /**
+     * @brief Access the second imaginary element of the rotation.
+     */
     inline T& y()
     {
         return arr_(2);
     }
+
+    /**
+     * @brief Access the third imaginary element of the rotation.
+     */
     inline T& z()
     {
         return arr_(3);
     }
+
+    /**
+     * @brief Access all elements of \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     inline const Vec4T elements() const
     {
         return arr_;
     }
+
+    /**
+     * @brief Access all elements of \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     inline Vec4T array() const
     {
         return arr_;
     }
+
+    /**
+     * @brief Access pointer to all elements of \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     inline T* data()
     {
         return arr_.data();
     }
+
+    /**
+     * @brief Access pointer to all elements of \f$\boldsymbol{q}\in\mathbb{R}^4\f$.
+     */
     inline const T* data() const
     {
         return arr_.data();
     }
 
+    /**
+     * @brief Get a deep copy of the current rotation.
+     */
     SO3 copy() const
     {
         SO3 tmp;
@@ -279,6 +354,9 @@ public:
         return tmp;
     }
 
+    /**
+     * @brief Normalize the elements of \f$\boldsymbol{q}\f$ to make it a valid rotation.
+     */
     void normalize()
     {
         arr_ /= arr_.norm();
@@ -286,6 +364,9 @@ public:
             arr_ *= (T)-1.0;
     }
 
+    /**
+     * @brief Obtain a normalized copy of the current rotation.
+     */
     SO3 normalized()
     {
         SO3 tmp = copy();
@@ -293,6 +374,9 @@ public:
         return tmp;
     }
 
+    /**
+     * @brief Convert the rotation to matrix representation \f$\boldsymbol{R}\in \mathbb{R}^{3\times 3}\f$.
+     */
     Mat3T R() const
     {
         T     wx = w() * x();
@@ -310,6 +394,9 @@ public:
         return out;
     }
 
+    /**
+     * @brief Obtain the inverse rotation \f$\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\f$.
+     */
     SO3 inverse() const
     {
         SO3 q;
@@ -320,17 +407,26 @@ public:
         return q;
     }
 
+    /**
+     * @brief Invert the current rotation \f$\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\f$.
+     */
     SO3& invert()
     {
         arr_.template block<3, 1>(1, 0) *= (T)-1.0;
         return *this;
     }
 
+    /**
+     * @brief Obtain the roll component of the yaw-pitch-roll successive-axes Euler angle representation.
+     */
     T roll() const
     {
         return atan2(T(2.0) * (w() * x() + y() * z()), T(1.0) - T(2.0) * (x() * x() + y() * y()));
     }
 
+    /**
+     * @brief Obtain the pitch component of the yaw-pitch-roll successive-axes Euler angle representation.
+     */
     T pitch() const
     {
         const T val = T(2.0) * (w() * y() - x() * z());
@@ -342,11 +438,17 @@ public:
             return asin(val);
     }
 
+    /**
+     * @brief Obtain the yaw component of the yaw-pitch-roll successive-axes Euler angle representation.
+     */
     T yaw() const
     {
         return atan2(T(2.0) * (w() * z() + x() * y()), T(1.0) - T(2.0) * (y() * y() + z() * z()));
     }
 
+    /**
+     * @brief Obtain the Euler angle representation as a 3-vector.
+     */
     Vec3T toEuler() const
     {
         Vec3T out;
@@ -354,6 +456,11 @@ public:
         return out;
     }
 
+    /**
+     * @brief Obtain an equivalent 4-by-4 matrix representation of \f$\boldsymbol{q}\rightarrow [\boldsymbol{q}]_L\f$
+     * such that \f$\boldsymbol{q}\otimes \boldsymbol{q}_{\text{other}}=[\boldsymbol{q}]_L
+     * \boldsymbol{q}_{\text{other}}\f$.
+     */
     Mat4T qMatLeft() const
     {
         Mat4T qL;
@@ -361,6 +468,10 @@ public:
         return qL;
     }
 
+    /**
+     * @brief Implementation of group composition: \f$\boldsymbol{q}_B^C \otimes \boldsymbol{q}_A^B\rightarrow
+     * \boldsymbol{q}_A^C\f$.
+     */
     template<typename Tout = T, typename T2>
     SO3<Tout> otimes(const SO3<T2>& q) const
     {
@@ -372,12 +483,20 @@ public:
         return qout;
     }
 
+    /**
+     * @brief Implementation of tangent space group perturbations: \f$\boldsymbol{q}_A^B\oplus
+     * \boldsymbol{\theta}_B^{B'} \rightarrow \boldsymbol{q}_A^{B'}\f$.
+     */
     template<typename Tout = T, typename T2>
     SO3<Tout> oplus(const Matrix<T2, 3, 1>& delta) const
     {
         return otimes<Tout, T2>(SO3<T2>::Exp(delta));
     }
 
+    /**
+     * @brief Implementation of group subtraction: \f$\boldsymbol{q}_A^B\ominus \boldsymbol{q}_A^{B'} \rightarrow
+     * \boldsymbol{\theta}_B^{B'}\f$.
+     */
     template<typename Tout = T, typename T2>
     Matrix<Tout, 3, 1> ominus(const SO3<T2>& q) const
     {
@@ -389,18 +508,27 @@ public:
         return SO3<Tout>::Log(dq);
     }
 
+    /**
+     * @brief Copy constructor.
+     */
     SO3& operator=(const SO3& q)
     {
         arr_ = q.elements();
         return *this;
     }
 
+    /**
+     * @brief Invocation of otimes via multiplication.
+     */
     template<typename T2>
     SO3 operator*(const SO3<T2>& q) const
     {
         return otimes(q);
     }
 
+    /**
+     * @brief Invocation of otimes via multiplication.
+     */
     template<typename T2>
     SO3& operator*=(const SO3<T2>& q)
     {
@@ -408,18 +536,36 @@ public:
         return *this;
     }
 
+    /**
+     * @brief Scale a rotation by a scalar.
+     *
+     * Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the
+     * scaled vector back to a rotation.
+     */
     SO3& operator*=(const double& s)
     {
         arr_ = SO3::Exp(s * SO3::Log(*this)).elements();
         return *this;
     }
 
+    /**
+     * @brief Scale a rotation by a scalar.
+     *
+     * Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the
+     * scaled vector back to a rotation.
+     */
     SO3& operator/=(const double& s)
     {
         arr_ = SO3::Exp(SO3::Log(*this) / s).elements();
         return *this;
     }
 
+    /**
+     * @brief Scale a rotation by a scalar.
+     *
+     * Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the
+     * scaled vector back to a rotation.
+     */
     SO3 operator/(const double& s) const
     {
         SO3 qs;
@@ -427,6 +573,10 @@ public:
         return qs;
     }
 
+    /**
+     * @brief Transform a vector via multiplication: \f$\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+     * \boldsymbol{t}^B\f$.
+     */
     template<typename Tout = T, typename T2>
     Matrix<Tout, 3, 1> operator*(const Matrix<T2, 3, 1>& v) const
     {
@@ -435,6 +585,10 @@ public:
         return v - w() * t + t.cross(qv);
     }
 
+    /**
+     * @brief Transform a vector via multiplication: \f$\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+     * \boldsymbol{t}^B\f$.
+     */
     Vec3T operator*(const Vec3T& v) const
     {
         Vec3T qv = arr_.template block<3, 1>(1, 0);
@@ -442,23 +596,36 @@ public:
         return v - w() * t + t.cross(qv);
     }
 
+    /**
+     * @brief Invocation of oplus via addition.
+     */
     SO3 operator+(const Vec3T& v) const
     {
         return oplus(v);
     }
 
+    /**
+     * @brief Invocation of oplus via addition.
+     */
     SO3& operator+=(const Vec3T& v)
     {
         arr_ = oplus(v).elements();
         return *this;
     }
 
+    /**
+     * @brief Invocation of ominus via subtraction.
+     */
     template<typename T2>
     Vec3T operator-(const SO3<T2>& q) const
     {
         return ominus(q);
     }
 
+    /**
+     * @brief Hat operator implementation, which coverts the tangent-space vector representation to the corresponding
+     * Lie algebra: \f$\mathbb{R}^3\rightarrow \mathfrak{so}(3)\f$.
+     */
     static Mat3T hat(const Vec3T& omega)
     {
         Mat3T Omega;
@@ -466,6 +633,10 @@ public:
         return Omega;
     }
 
+    /**
+     * @brief Vee operator implementation, which coverts the Lie algebra representation to a tangent-space vector
+     * representation: \f$\mathfrak{so}(3) \rightarrow \mathbb{R}^3\f$.
+     */
     static Vec3T vee(const Mat3T& Omega)
     {
         Vec3T omega;
@@ -473,11 +644,17 @@ public:
         return omega;
     }
 
+    /**
+     * @brief Logarithmic chart map implementation: \f$SO(3) \rightarrow \mathfrak{so}(3)\f$.
+     */
     static Mat3T log(const SO3& q)
     {
         return hat(SO3::Log(q));
     }
 
+    /**
+     * @brief Logarithmic chart map implementation: \f$SO(3) \rightarrow \mathbb{R}^3\f$.
+     */
     static Vec3T Log(const SO3& q)
     {
         Vec3T qv = q.elements().template block<3, 1>(1, 0);
@@ -490,11 +667,17 @@ public:
             return qv;
     }
 
+    /**
+     * @brief Exponential chart map implementation: \f$\mathfrak{so}(3) \rightarrow SO(3)\f$.
+     */
     static SO3 exp(const Mat3T& Omega)
     {
         return SO3::Exp(vee(Omega));
     }
 
+    /**
+     * @brief Exponential chart map implementation: \f$\mathbb{R}^3 \rightarrow SO(3)\f$.
+     */
     static SO3 Exp(const Vec3T& omega)
     {
         T th = omega.norm();
@@ -516,6 +699,9 @@ public:
         return q;
     }
 
+    /**
+     * @brief Cast the underlying numeric type.
+     */
     template<typename T2>
     SO3<T2> cast() const
     {
@@ -525,6 +711,12 @@ public:
     }
 };
 
+/**
+ * @brief Scale a rotation by a scalar.
+ *
+ * Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the
+ * scaled vector back to a rotation.
+ */
 template<typename T>
 SO3<T> operator*(const double& l, const SO3<T>& r)
 {
@@ -533,6 +725,12 @@ SO3<T> operator*(const double& l, const SO3<T>& r)
     return lr;
 }
 
+/**
+ * @brief Scale a rotation by a scalar.
+ *
+ * Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the
+ * scaled vector back to a rotation.
+ */
 template<typename T>
 SO3<T> operator*(const SO3<T>& l, const double& r)
 {
@@ -541,6 +739,9 @@ SO3<T> operator*(const SO3<T>& l, const double& r)
     return lr;
 }
 
+/**
+ * @brief Render the rotation in a stream.
+ */
 template<typename T>
 inline std::ostream& operator<<(std::ostream& os, const SO3<T>& q)
 {

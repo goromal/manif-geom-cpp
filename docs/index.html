@@ -106,6 +106,7 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 Introduction</h1>
 <p>Templated, header-only library implementing the most common manifolds in robotics in 2D and 3D. Operationally very similar to variations on Eigen's <code>Quaternion&lt;T&gt;</code> class, but with added chart maps and rules for addition and subtraction on tangent spaces. Meant to be used with nonlinear least-squares solvers like Ceres Solver (<a href="http://ceres-solver.org/">http://ceres-solver.org/</a>) which take advantage of templating to implement auto-differentiation on arbitrary mathematical formulations in code.</p>
 <p>The \(SO(3)\) math is based on <a href="https://andrewtorgesen.com/notes/Autonomy/Math_Fundamentals/3D_Geometry/Rotations_Robotics_Field_Guide.html">my notes on 3D rotation representations</a>.</p>
+<p>For more information, see <a href="https://andrewtorgesen.com/anixpkgs/cpp/manif-geom-cpp.html">https://andrewtorgesen.com/anixpkgs/cpp/manif-geom-cpp.html</a>.</p>
 <h1><a class="anchor" id="install"></a>
 Installation</h1>
 <p>This code is meant to be built as a static library with CMake. It should be compatible with the latest versions of Eigen and Boost (unit test framework only).</p>

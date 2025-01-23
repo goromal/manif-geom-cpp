@@ -128,12 +128,15 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a9a32a1e23c17eb4c2dcb8821633ad5a4" id="r_a9a32a1e23c17eb4c2dcb8821633ad5a4"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a9a32a1e23c17eb4c2dcb8821633ad5a4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9a32a1e23c17eb4c2dcb8821633ad5a4">operator*</a> (const double &amp;l, const <a class="el" href="classSO3.html">SO3</a>&lt; T &gt; &amp;r)</td></tr>
+<tr class="memdesc:a9a32a1e23c17eb4c2dcb8821633ad5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a9a32a1e23c17eb4c2dcb8821633ad5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f50c754edd6d1ea50fe1e00a9c8198d" id="r_a2f50c754edd6d1ea50fe1e00a9c8198d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a2f50c754edd6d1ea50fe1e00a9c8198d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2f50c754edd6d1ea50fe1e00a9c8198d">operator*</a> (const <a class="el" href="classSO3.html">SO3</a>&lt; T &gt; &amp;l, const double &amp;r)</td></tr>
+<tr class="memdesc:a2f50c754edd6d1ea50fe1e00a9c8198d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a2f50c754edd6d1ea50fe1e00a9c8198d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab69fa5ad441bf95cc71fd1b639e731bc" id="r_ab69fa5ad441bf95cc71fd1b639e731bc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab69fa5ad441bf95cc71fd1b639e731bc"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab69fa5ad441bf95cc71fd1b639e731bc">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classSO3.html">SO3</a>&lt; T &gt; &amp;q)</td></tr>
+<tr class="memdesc:ab69fa5ad441bf95cc71fd1b639e731bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the rotation in a stream.  <br /></td></tr>
 <tr class="separator:ab69fa5ad441bf95cc71fd1b639e731bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -173,6 +176,9 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
+
 </div>
 </div>
 <a id="a2f50c754edd6d1ea50fe1e00a9c8198d" name="a2f50c754edd6d1ea50fe1e00a9c8198d"></a>
@@ -195,6 +201,9 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
 
 </div>
 </div>
@@ -226,6 +235,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Render the rotation in a stream. </p>
 
 </div>
 </div>

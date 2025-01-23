@@ -16,6 +16,9 @@
  * The \f$SO(3)\f$ math is based on [my notes on 3D rotation
  * representations](https://andrewtorgesen.com/notes/Autonomy/Math_Fundamentals/3D_Geometry/Rotations_Robotics_Field_Guide.html).
  *
+ * For more information, see
+ * [https://andrewtorgesen.com/anixpkgs/cpp/manif-geom-cpp.html](https://andrewtorgesen.com/anixpkgs/cpp/manif-geom-cpp.html).
+ *
  * @section install Installation
  * This code is meant to be built as a static library with CMake. It should be compatible with the latest versions of
  * Eigen and Boost (unit test framework only).

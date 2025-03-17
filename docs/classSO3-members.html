@@ -10,6 +10,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -22,6 +26,7 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -55,6 +60,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classSO3.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,7 +98,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">SO3&lt; T &gt; Member List</div></div>
 </div><!--header-->
@@ -106,47 +127,51 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#ae1db7ce0f52c807d71e3a48113edfae6">invert</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classSO3.html#af9b4196aff9e7d66532e058d0fd58bb8">Log</a>(const SO3 &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#aa31411c409babf6e07efd30b8e0a4eaf">log</a>(const SO3 &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a97a7b8a854eb1a2eae3f3ae40d5d7cbc">normalize</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#aa8174950d5665069e59b3f6c8cf9febc">normalized</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#ac65ab114f6e2c0fc66ccc13b7cf9fc49">ominus</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#ab08d0b4681e9ce11b24f9ca4fc92c8ba">operator*</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a3107f75505ef79f183bce74a670f0ccc">operator*</a>(const Matrix&lt; T2, 3, 1 &gt; &amp;v) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#afeae32814c1918bf4bfbcd35851f489e">operator*</a>(const Vec3T &amp;v) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a9bf1ad94a4b219fa9eb3fedb6ca827f3">operator*=</a>(const SO3&lt; T2 &gt; &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#aa6fcc58210eb0aec5c5f835833243b59">operator*=</a>(const double &amp;s)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#ae520c687b830f4ff82d7886648fb7fa3">operator+</a>(const Vec3T &amp;v) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a3ca9cdd361d8d6afb6ccd3d876958111">operator+=</a>(const Vec3T &amp;v)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#ae70d9360603eae95088c5e8d1404df78">operator-</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a660e3500d51c9c03575e1d0e7fc60d42">operator/</a>(const double &amp;s) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a47b4cf1c9eb28142c75e938a70a71304">operator/=</a>(const double &amp;s)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#aab901a8c67a80c021b53057c42d177cd">operator=</a>(const SO3 &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a404ce659e2a8165026d5bd5899bbf2b0">operator[]</a>(int i)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#acdb7cacc087f92e94121aa10966902b8">oplus</a>(const Matrix&lt; T2, 3, 1 &gt; &amp;delta) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#aafe7f5c27ea12eae57f7836fd1326ef4">otimes</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a112b9f00a4faac755e58ca63acb22eb1">pitch</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#adfb964b29c43ee214a24751e6270fbe2">qMatLeft</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a962f51eec1a1bd855a993f051439310f">R</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a6f917b076fafeb3fa0e5566407b6b1e1">random</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a6b5d9b33547e94bdd23e2bdc6995c196">roll</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a2847577b5a69639b46ba3bf729008949">SO3</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a995891b9a5567ceb2543b7db9d6a3430">SO3</a>(const Ref&lt; const Vec4T &gt; &amp;arr)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#aed09460eb0d4a166a25c1184610610f5">SO3</a>(const SO3 &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#abb7e020c1cde2d7da68e4138c9ee8320">SO3</a>(const T *data)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a6d2665d68f95530f5a35b82528ed8854">toEuler</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a0ed07758752832b42aa56d25403c2bb7">vee</a>(const Mat3T &amp;Omega)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a498d842f18ea0a35ba4aab8df18f5eff">w</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#ad7fd7eadb2e91dbb9064d61721225da4">w</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#ab310803de074e7bc1ead95482b5719c3">x</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#acd92c4585070f8ea276c0dc99797c1c7">x</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a7683bf5cf9690e0a73fb9937fe8a1e18">y</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a882177c61902dcf3905d0268067076ff">y</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a4d2d5c1da2287bd3d4a75becde422309">yaw</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#af55500cdc6b41cbffff27e8229cb1a20">z</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a206809c5d9c90af29d1989b8323d2c83">z</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a188ab6b6d9c7979dbffcce641edeb416">nans</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a97a7b8a854eb1a2eae3f3ae40d5d7cbc">normalize</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#aa8174950d5665069e59b3f6c8cf9febc">normalized</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#ac65ab114f6e2c0fc66ccc13b7cf9fc49">ominus</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#ab08d0b4681e9ce11b24f9ca4fc92c8ba">operator*</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a3107f75505ef79f183bce74a670f0ccc">operator*</a>(const Matrix&lt; T2, 3, 1 &gt; &amp;v) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#afeae32814c1918bf4bfbcd35851f489e">operator*</a>(const Vec3T &amp;v) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a9bf1ad94a4b219fa9eb3fedb6ca827f3">operator*=</a>(const SO3&lt; T2 &gt; &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#aa6fcc58210eb0aec5c5f835833243b59">operator*=</a>(const double &amp;s)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#ae520c687b830f4ff82d7886648fb7fa3">operator+</a>(const Vec3T &amp;v) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a3ca9cdd361d8d6afb6ccd3d876958111">operator+=</a>(const Vec3T &amp;v)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#ae70d9360603eae95088c5e8d1404df78">operator-</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a660e3500d51c9c03575e1d0e7fc60d42">operator/</a>(const double &amp;s) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a47b4cf1c9eb28142c75e938a70a71304">operator/=</a>(const double &amp;s)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#aab901a8c67a80c021b53057c42d177cd">operator=</a>(const SO3 &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a404ce659e2a8165026d5bd5899bbf2b0">operator[]</a>(int i)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#acdb7cacc087f92e94121aa10966902b8">oplus</a>(const Matrix&lt; T2, 3, 1 &gt; &amp;delta) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#aafe7f5c27ea12eae57f7836fd1326ef4">otimes</a>(const SO3&lt; T2 &gt; &amp;q) const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a112b9f00a4faac755e58ca63acb22eb1">pitch</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#adfb964b29c43ee214a24751e6270fbe2">qMatLeft</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a962f51eec1a1bd855a993f051439310f">R</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a6f917b076fafeb3fa0e5566407b6b1e1">random</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a6b5d9b33547e94bdd23e2bdc6995c196">roll</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a2847577b5a69639b46ba3bf729008949">SO3</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a995891b9a5567ceb2543b7db9d6a3430">SO3</a>(const Ref&lt; const Vec4T &gt; &amp;arr)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#aed09460eb0d4a166a25c1184610610f5">SO3</a>(const SO3 &amp;q)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#abb7e020c1cde2d7da68e4138c9ee8320">SO3</a>(const T *data)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a6d2665d68f95530f5a35b82528ed8854">toEuler</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a0ed07758752832b42aa56d25403c2bb7">vee</a>(const Mat3T &amp;Omega)</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a498d842f18ea0a35ba4aab8df18f5eff">w</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#ad7fd7eadb2e91dbb9064d61721225da4">w</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#ab310803de074e7bc1ead95482b5719c3">x</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#acd92c4585070f8ea276c0dc99797c1c7">x</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a7683bf5cf9690e0a73fb9937fe8a1e18">y</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#a882177c61902dcf3905d0268067076ff">y</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a4d2d5c1da2287bd3d4a75becde422309">yaw</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classSO3.html#af55500cdc6b41cbffff27e8229cb1a20">z</a>() const</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classSO3.html#a206809c5d9c90af29d1989b8323d2c83">z</a>()</td><td class="entry"><a class="el" href="classSO3.html">SO3&lt; T &gt;</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
 </table></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
 </body>
 </html>

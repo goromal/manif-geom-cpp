@@ -10,6 +10,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -22,6 +26,7 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -55,6 +60,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classSO3.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,7 +98,6 @@ $(function() {
 </div>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -95,136 +116,204 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2847577b5a69639b46ba3bf729008949" id="r_a2847577b5a69639b46ba3bf729008949"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2847577b5a69639b46ba3bf729008949">SO3</a> ()</td></tr>
+<tr class="memdesc:a2847577b5a69639b46ba3bf729008949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a rotation (with garbage data).  <br /></td></tr>
 <tr class="separator:a2847577b5a69639b46ba3bf729008949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a995891b9a5567ceb2543b7db9d6a3430" id="r_a995891b9a5567ceb2543b7db9d6a3430"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a995891b9a5567ceb2543b7db9d6a3430">SO3</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Ref</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec4T &gt; &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">arr</a>)</td></tr>
+<tr class="memdesc:a995891b9a5567ceb2543b7db9d6a3430"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a transform from an array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^4\).  <br /></td></tr>
 <tr class="separator:a995891b9a5567ceb2543b7db9d6a3430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed09460eb0d4a166a25c1184610610f5" id="r_aed09460eb0d4a166a25c1184610610f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed09460eb0d4a166a25c1184610610f5">SO3</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a> &amp;q)</td></tr>
+<tr class="memdesc:aed09460eb0d4a166a25c1184610610f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor from another rotation.  <br /></td></tr>
 <tr class="separator:aed09460eb0d4a166a25c1184610610f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb7e020c1cde2d7da68e4138c9ee8320" id="r_abb7e020c1cde2d7da68e4138c9ee8320"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb7e020c1cde2d7da68e4138c9ee8320">SO3</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> *<a class="el" href="#ac4a44576af60197d91563005fb49d3e5">data</a>)</td></tr>
+<tr class="memdesc:abb7e020c1cde2d7da68e4138c9ee8320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a rotation from a pointer array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^4\).  <br /></td></tr>
 <tr class="separator:abb7e020c1cde2d7da68e4138c9ee8320"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404ce659e2a8165026d5bd5899bbf2b0" id="r_a404ce659e2a8165026d5bd5899bbf2b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a404ce659e2a8165026d5bd5899bbf2b0">operator[]</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">int</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">i</a>)</td></tr>
+<tr class="memdesc:a404ce659e2a8165026d5bd5899bbf2b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access a field from \(\boldsymbol{q}\in\mathbb{R}^4\).  <br /></td></tr>
 <tr class="separator:a404ce659e2a8165026d5bd5899bbf2b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a498d842f18ea0a35ba4aab8df18f5eff" id="r_a498d842f18ea0a35ba4aab8df18f5eff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a498d842f18ea0a35ba4aab8df18f5eff">w</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a498d842f18ea0a35ba4aab8df18f5eff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the real element of the rotation.  <br /></td></tr>
 <tr class="separator:a498d842f18ea0a35ba4aab8df18f5eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab310803de074e7bc1ead95482b5719c3" id="r_ab310803de074e7bc1ead95482b5719c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab310803de074e7bc1ead95482b5719c3">x</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:ab310803de074e7bc1ead95482b5719c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the first imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:ab310803de074e7bc1ead95482b5719c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7683bf5cf9690e0a73fb9937fe8a1e18" id="r_a7683bf5cf9690e0a73fb9937fe8a1e18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7683bf5cf9690e0a73fb9937fe8a1e18">y</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a7683bf5cf9690e0a73fb9937fe8a1e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the second imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:a7683bf5cf9690e0a73fb9937fe8a1e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af55500cdc6b41cbffff27e8229cb1a20" id="r_af55500cdc6b41cbffff27e8229cb1a20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af55500cdc6b41cbffff27e8229cb1a20">z</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:af55500cdc6b41cbffff27e8229cb1a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the third imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:af55500cdc6b41cbffff27e8229cb1a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7fd7eadb2e91dbb9064d61721225da4" id="r_ad7fd7eadb2e91dbb9064d61721225da4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7fd7eadb2e91dbb9064d61721225da4">w</a> ()</td></tr>
+<tr class="memdesc:ad7fd7eadb2e91dbb9064d61721225da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the real element of the rotation.  <br /></td></tr>
 <tr class="separator:ad7fd7eadb2e91dbb9064d61721225da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd92c4585070f8ea276c0dc99797c1c7" id="r_acd92c4585070f8ea276c0dc99797c1c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd92c4585070f8ea276c0dc99797c1c7">x</a> ()</td></tr>
+<tr class="memdesc:acd92c4585070f8ea276c0dc99797c1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the first imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:acd92c4585070f8ea276c0dc99797c1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a882177c61902dcf3905d0268067076ff" id="r_a882177c61902dcf3905d0268067076ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882177c61902dcf3905d0268067076ff">y</a> ()</td></tr>
+<tr class="memdesc:a882177c61902dcf3905d0268067076ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the second imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:a882177c61902dcf3905d0268067076ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a206809c5d9c90af29d1989b8323d2c83" id="r_a206809c5d9c90af29d1989b8323d2c83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a206809c5d9c90af29d1989b8323d2c83">z</a> ()</td></tr>
+<tr class="memdesc:a206809c5d9c90af29d1989b8323d2c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the third imaginary element of the rotation.  <br /></td></tr>
 <tr class="separator:a206809c5d9c90af29d1989b8323d2c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a332d923535f808e152e4297afe9a8082" id="r_a332d923535f808e152e4297afe9a8082"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec4T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a332d923535f808e152e4297afe9a8082">elements</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a332d923535f808e152e4297afe9a8082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access all elements of \(\boldsymbol{q}\in\mathbb{R}^4\).  <br /></td></tr>
 <tr class="separator:a332d923535f808e152e4297afe9a8082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69ef1b83a87a0b105c8546add56b38c8" id="r_a69ef1b83a87a0b105c8546add56b38c8"><td class="memItemLeft" align="right" valign="top">Vec4T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69ef1b83a87a0b105c8546add56b38c8">array</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a69ef1b83a87a0b105c8546add56b38c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access all elements of \(\boldsymbol{q}\in\mathbb{R}^4\).  <br /></td></tr>
 <tr class="separator:a69ef1b83a87a0b105c8546add56b38c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4a44576af60197d91563005fb49d3e5" id="r_ac4a44576af60197d91563005fb49d3e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a44576af60197d91563005fb49d3e5">data</a> ()</td></tr>
+<tr class="memdesc:ac4a44576af60197d91563005fb49d3e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^4\).  <br /></td></tr>
 <tr class="separator:ac4a44576af60197d91563005fb49d3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae46ba421d9edb5e0b3783bd2b25f2996" id="r_ae46ba421d9edb5e0b3783bd2b25f2996"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae46ba421d9edb5e0b3783bd2b25f2996">data</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:ae46ba421d9edb5e0b3783bd2b25f2996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^4\).  <br /></td></tr>
 <tr class="separator:ae46ba421d9edb5e0b3783bd2b25f2996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af36e839a744d834ff89539b22257c67e" id="r_af36e839a744d834ff89539b22257c67e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af36e839a744d834ff89539b22257c67e">copy</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:af36e839a744d834ff89539b22257c67e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a deep copy of the current rotation.  <br /></td></tr>
 <tr class="separator:af36e839a744d834ff89539b22257c67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97a7b8a854eb1a2eae3f3ae40d5d7cbc" id="r_a97a7b8a854eb1a2eae3f3ae40d5d7cbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97a7b8a854eb1a2eae3f3ae40d5d7cbc">normalize</a> ()</td></tr>
+<tr class="memdesc:a97a7b8a854eb1a2eae3f3ae40d5d7cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalize the elements of \(\boldsymbol{q}\) to make it a valid rotation.  <br /></td></tr>
 <tr class="separator:a97a7b8a854eb1a2eae3f3ae40d5d7cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8174950d5665069e59b3f6c8cf9febc" id="r_aa8174950d5665069e59b3f6c8cf9febc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8174950d5665069e59b3f6c8cf9febc">normalized</a> ()</td></tr>
+<tr class="memdesc:aa8174950d5665069e59b3f6c8cf9febc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a normalized copy of the current rotation.  <br /></td></tr>
 <tr class="separator:aa8174950d5665069e59b3f6c8cf9febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a962f51eec1a1bd855a993f051439310f" id="r_a962f51eec1a1bd855a993f051439310f"><td class="memItemLeft" align="right" valign="top">Mat3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a962f51eec1a1bd855a993f051439310f">R</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a962f51eec1a1bd855a993f051439310f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the rotation to matrix representation \(\boldsymbol{R}\in \mathbb{R}^{3\times 3}\).  <br /></td></tr>
 <tr class="separator:a962f51eec1a1bd855a993f051439310f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1545ff27fecf535309b0ecd4ac6dd74" id="r_ad1545ff27fecf535309b0ecd4ac6dd74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1545ff27fecf535309b0ecd4ac6dd74">inverse</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:ad1545ff27fecf535309b0ecd4ac6dd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the inverse rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\).  <br /></td></tr>
 <tr class="separator:ad1545ff27fecf535309b0ecd4ac6dd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1db7ce0f52c807d71e3a48113edfae6" id="r_ae1db7ce0f52c807d71e3a48113edfae6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1db7ce0f52c807d71e3a48113edfae6">invert</a> ()</td></tr>
+<tr class="memdesc:ae1db7ce0f52c807d71e3a48113edfae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert the current rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\).  <br /></td></tr>
 <tr class="separator:ae1db7ce0f52c807d71e3a48113edfae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b5d9b33547e94bdd23e2bdc6995c196" id="r_a6b5d9b33547e94bdd23e2bdc6995c196"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b5d9b33547e94bdd23e2bdc6995c196">roll</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a6b5d9b33547e94bdd23e2bdc6995c196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the roll component of the yaw-pitch-roll successive-axes Euler angle representation.  <br /></td></tr>
 <tr class="separator:a6b5d9b33547e94bdd23e2bdc6995c196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a112b9f00a4faac755e58ca63acb22eb1" id="r_a112b9f00a4faac755e58ca63acb22eb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a112b9f00a4faac755e58ca63acb22eb1">pitch</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a112b9f00a4faac755e58ca63acb22eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the pitch component of the yaw-pitch-roll successive-axes Euler angle representation.  <br /></td></tr>
 <tr class="separator:a112b9f00a4faac755e58ca63acb22eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d2d5c1da2287bd3d4a75becde422309" id="r_a4d2d5c1da2287bd3d4a75becde422309"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d2d5c1da2287bd3d4a75becde422309">yaw</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a4d2d5c1da2287bd3d4a75becde422309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the yaw component of the yaw-pitch-roll successive-axes Euler angle representation.  <br /></td></tr>
 <tr class="separator:a4d2d5c1da2287bd3d4a75becde422309"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d2665d68f95530f5a35b82528ed8854" id="r_a6d2665d68f95530f5a35b82528ed8854"><td class="memItemLeft" align="right" valign="top">Vec3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d2665d68f95530f5a35b82528ed8854">toEuler</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a6d2665d68f95530f5a35b82528ed8854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain the Euler angle representation as a 3-vector.  <br /></td></tr>
 <tr class="separator:a6d2665d68f95530f5a35b82528ed8854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfb964b29c43ee214a24751e6270fbe2" id="r_adfb964b29c43ee214a24751e6270fbe2"><td class="memItemLeft" align="right" valign="top">Mat4T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfb964b29c43ee214a24751e6270fbe2">qMatLeft</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:adfb964b29c43ee214a24751e6270fbe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain an equivalent 4-by-4 matrix representation of \(\boldsymbol{q}\rightarrow [\boldsymbol{q}]_L\) such that \(\boldsymbol{q}\otimes \boldsymbol{q}_{\text{other}}=[\boldsymbol{q}]_L
+\boldsymbol{q}_{\text{other}}\).  <br /></td></tr>
 <tr class="separator:adfb964b29c43ee214a24751e6270fbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafe7f5c27ea12eae57f7836fd1326ef4" id="r_aafe7f5c27ea12eae57f7836fd1326ef4"><td class="memTemplParams" colspan="2">template&lt;typename Tout  = T, typename T2 &gt; </td></tr>
 <tr class="memitem:aafe7f5c27ea12eae57f7836fd1326ef4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&lt; Tout &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">otimes</a> (const <a class="el" href="classSO3.html">SO3</a>&lt; T2 &gt; &amp;q) const</td></tr>
+<tr class="memdesc:aafe7f5c27ea12eae57f7836fd1326ef4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of group composition: \(\boldsymbol{q}_B^C \otimes \boldsymbol{q}_A^B\rightarrow
+\boldsymbol{q}_A^C\).  <br /></td></tr>
 <tr class="separator:aafe7f5c27ea12eae57f7836fd1326ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdb7cacc087f92e94121aa10966902b8" id="r_acdb7cacc087f92e94121aa10966902b8"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Tout</a>  = T, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; </td></tr>
 <tr class="memitem:acdb7cacc087f92e94121aa10966902b8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Tout</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acdb7cacc087f92e94121aa10966902b8">oplus</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Matrix</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a>, 3, 1 &gt; &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">delta</a>) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:acdb7cacc087f92e94121aa10966902b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of tangent space group perturbations: \(\boldsymbol{q}_A^B\oplus
+\boldsymbol{\theta}_B^{B&#39;} \rightarrow \boldsymbol{q}_A^{B&#39;}\).  <br /></td></tr>
 <tr class="separator:acdb7cacc087f92e94121aa10966902b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac65ab114f6e2c0fc66ccc13b7cf9fc49" id="r_ac65ab114f6e2c0fc66ccc13b7cf9fc49"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Tout</a>  = T, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; </td></tr>
 <tr class="memitem:ac65ab114f6e2c0fc66ccc13b7cf9fc49"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Matrix</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Tout</a>, 3, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac65ab114f6e2c0fc66ccc13b7cf9fc49">ominus</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; &amp;q) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:ac65ab114f6e2c0fc66ccc13b7cf9fc49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation of group subtraction: \(\boldsymbol{q}_A^B\ominus \boldsymbol{q}_A^{B&#39;} \rightarrow
+\boldsymbol{\theta}_B^{B&#39;}\).  <br /></td></tr>
 <tr class="separator:ac65ab114f6e2c0fc66ccc13b7cf9fc49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab901a8c67a80c021b53057c42d177cd" id="r_aab901a8c67a80c021b53057c42d177cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab901a8c67a80c021b53057c42d177cd">operator=</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a> &amp;q)</td></tr>
+<tr class="memdesc:aab901a8c67a80c021b53057c42d177cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <br /></td></tr>
 <tr class="separator:aab901a8c67a80c021b53057c42d177cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab08d0b4681e9ce11b24f9ca4fc92c8ba" id="r_ab08d0b4681e9ce11b24f9ca4fc92c8ba"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; </td></tr>
 <tr class="memitem:ab08d0b4681e9ce11b24f9ca4fc92c8ba"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab08d0b4681e9ce11b24f9ca4fc92c8ba">operator*</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; &amp;q) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:ab08d0b4681e9ce11b24f9ca4fc92c8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of otimes via multiplication.  <br /></td></tr>
 <tr class="separator:ab08d0b4681e9ce11b24f9ca4fc92c8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf1ad94a4b219fa9eb3fedb6ca827f3" id="r_a9bf1ad94a4b219fa9eb3fedb6ca827f3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; </td></tr>
 <tr class="memitem:a9bf1ad94a4b219fa9eb3fedb6ca827f3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9bf1ad94a4b219fa9eb3fedb6ca827f3">operator*=</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; &amp;q)</td></tr>
+<tr class="memdesc:a9bf1ad94a4b219fa9eb3fedb6ca827f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of otimes via multiplication.  <br /></td></tr>
 <tr class="separator:a9bf1ad94a4b219fa9eb3fedb6ca827f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6fcc58210eb0aec5c5f835833243b59" id="r_aa6fcc58210eb0aec5c5f835833243b59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6fcc58210eb0aec5c5f835833243b59">operator*=</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">double</a> &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">s</a>)</td></tr>
+<tr class="memdesc:aa6fcc58210eb0aec5c5f835833243b59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:aa6fcc58210eb0aec5c5f835833243b59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47b4cf1c9eb28142c75e938a70a71304" id="r_a47b4cf1c9eb28142c75e938a70a71304"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47b4cf1c9eb28142c75e938a70a71304">operator/=</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">double</a> &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">s</a>)</td></tr>
+<tr class="memdesc:a47b4cf1c9eb28142c75e938a70a71304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a47b4cf1c9eb28142c75e938a70a71304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a660e3500d51c9c03575e1d0e7fc60d42" id="r_a660e3500d51c9c03575e1d0e7fc60d42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a660e3500d51c9c03575e1d0e7fc60d42">operator/</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">double</a> &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">s</a>) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a660e3500d51c9c03575e1d0e7fc60d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a660e3500d51c9c03575e1d0e7fc60d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3107f75505ef79f183bce74a670f0ccc" id="r_a3107f75505ef79f183bce74a670f0ccc"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Tout</a>  = T, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; </td></tr>
 <tr class="memitem:a3107f75505ef79f183bce74a670f0ccc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Matrix</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Tout</a>, 3, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3107f75505ef79f183bce74a670f0ccc">operator*</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Matrix</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a>, 3, 1 &gt; &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">v</a>) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a3107f75505ef79f183bce74a670f0ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\).  <br /></td></tr>
 <tr class="separator:a3107f75505ef79f183bce74a670f0ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeae32814c1918bf4bfbcd35851f489e" id="r_afeae32814c1918bf4bfbcd35851f489e"><td class="memItemLeft" align="right" valign="top">Vec3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afeae32814c1918bf4bfbcd35851f489e">operator*</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">v</a>) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:afeae32814c1918bf4bfbcd35851f489e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\).  <br /></td></tr>
 <tr class="separator:afeae32814c1918bf4bfbcd35851f489e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae520c687b830f4ff82d7886648fb7fa3" id="r_ae520c687b830f4ff82d7886648fb7fa3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae520c687b830f4ff82d7886648fb7fa3">operator+</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">v</a>) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:ae520c687b830f4ff82d7886648fb7fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of oplus via addition.  <br /></td></tr>
 <tr class="separator:ae520c687b830f4ff82d7886648fb7fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ca9cdd361d8d6afb6ccd3d876958111" id="r_a3ca9cdd361d8d6afb6ccd3d876958111"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ca9cdd361d8d6afb6ccd3d876958111">operator+=</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">v</a>)</td></tr>
+<tr class="memdesc:a3ca9cdd361d8d6afb6ccd3d876958111"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of oplus via addition.  <br /></td></tr>
 <tr class="separator:a3ca9cdd361d8d6afb6ccd3d876958111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae70d9360603eae95088c5e8d1404df78" id="r_ae70d9360603eae95088c5e8d1404df78"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; </td></tr>
 <tr class="memitem:ae70d9360603eae95088c5e8d1404df78"><td class="memTemplItemLeft" align="right" valign="top">Vec3T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae70d9360603eae95088c5e8d1404df78">operator-</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; &amp;q) <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:ae70d9360603eae95088c5e8d1404df78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invocation of ominus via subtraction.  <br /></td></tr>
 <tr class="separator:ae70d9360603eae95088c5e8d1404df78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bf360157155cb8d2f3d678919611f67" id="r_a9bf360157155cb8d2f3d678919611f67"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt; </td></tr>
 <tr class="memitem:a9bf360157155cb8d2f3d678919611f67"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T2</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9bf360157155cb8d2f3d678919611f67">cast</a> () <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a></td></tr>
+<tr class="memdesc:a9bf360157155cb8d2f3d678919611f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cast the underlying numeric type.  <br /></td></tr>
 <tr class="separator:a9bf360157155cb8d2f3d678919611f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6f917b076fafeb3fa0e5566407b6b1e1" id="r_a6f917b076fafeb3fa0e5566407b6b1e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f917b076fafeb3fa0e5566407b6b1e1">random</a> ()</td></tr>
+<tr class="memdesc:a6f917b076fafeb3fa0e5566407b6b1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a random rotation.  <br /></td></tr>
 <tr class="separator:a6f917b076fafeb3fa0e5566407b6b1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d95da337a15f7ae4ffe329b9f84a659" id="r_a7d95da337a15f7ae4ffe329b9f84a659"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d95da337a15f7ae4ffe329b9f84a659">identity</a> ()</td></tr>
+<tr class="memdesc:a7d95da337a15f7ae4ffe329b9f84a659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain an identity \(SO(3)\) rotation.  <br /></td></tr>
 <tr class="separator:a7d95da337a15f7ae4ffe329b9f84a659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188ab6b6d9c7979dbffcce641edeb416" id="r_a188ab6b6d9c7979dbffcce641edeb416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a188ab6b6d9c7979dbffcce641edeb416">nans</a> ()</td></tr>
+<tr class="memdesc:a188ab6b6d9c7979dbffcce641edeb416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a rotation full of NaNs.  <br /></td></tr>
+<tr class="separator:a188ab6b6d9c7979dbffcce641edeb416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad09b9efba78c03312641a5c23ae9c08a" id="r_ad09b9efba78c03312641a5c23ae9c08a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad09b9efba78c03312641a5c23ae9c08a">fromAxisAngle</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">axis</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> angle)</td></tr>
+<tr class="memdesc:ad09b9efba78c03312641a5c23ae9c08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an angle (in radians) with accompanying axis (defined by a vector) into a rotation.  <br /></td></tr>
 <tr class="separator:ad09b9efba78c03312641a5c23ae9c08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade880bf9d392ea31311e0582ff4cc9d5" id="r_ade880bf9d392ea31311e0582ff4cc9d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade880bf9d392ea31311e0582ff4cc9d5">fromEuler</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#a6b5d9b33547e94bdd23e2bdc6995c196">roll</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#a112b9f00a4faac755e58ca63acb22eb1">pitch</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#a4d2d5c1da2287bd3d4a75becde422309">yaw</a>)</td></tr>
+<tr class="memdesc:ade880bf9d392ea31311e0582ff4cc9d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from yaw-pitch-roll successive-axes Euler angles.  <br /></td></tr>
 <tr class="separator:ade880bf9d392ea31311e0582ff4cc9d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2556042745d4c972f07b855fe8a7b200" id="r_a2556042745d4c972f07b855fe8a7b200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2556042745d4c972f07b855fe8a7b200">fromR</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Mat3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">m</a>)</td></tr>
+<tr class="memdesc:a2556042745d4c972f07b855fe8a7b200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a rotation matrix \(\boldsymbol{R}\in\mathbb{R}^{3\times 3}\) to a \(SO(3)\) rotation.  <br /></td></tr>
 <tr class="separator:a2556042745d4c972f07b855fe8a7b200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc61c267fae7ee35dc94c46675a412da" id="r_acc61c267fae7ee35dc94c46675a412da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc61c267fae7ee35dc94c46675a412da">fromTwoUnitVectors</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">u</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">v</a>)</td></tr>
+<tr class="memdesc:acc61c267fae7ee35dc94c46675a412da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Given two unit vectors \(\boldsymbol{u},\boldsymbol{v}\in \mathbb{R}^3\), returns the rotation that rotates \(\boldsymbol{u}\rightarrow\boldsymbol{v}\).  <br /></td></tr>
 <tr class="separator:acc61c267fae7ee35dc94c46675a412da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a223a973dce29d54fa319c2c7d955a0d9" id="r_a223a973dce29d54fa319c2c7d955a0d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a223a973dce29d54fa319c2c7d955a0d9">fromQuat</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qw</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qx</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qy</a>, <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qz</a>)</td></tr>
+<tr class="memdesc:a223a973dce29d54fa319c2c7d955a0d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from the individual fields.  <br /></td></tr>
 <tr class="separator:a223a973dce29d54fa319c2c7d955a0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8e9d6e5e3e822a459a0136bb9abc265" id="r_af8e9d6e5e3e822a459a0136bb9abc265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8e9d6e5e3e822a459a0136bb9abc265">fromQuat</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec4T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">qvec</a>)</td></tr>
+<tr class="memdesc:af8e9d6e5e3e822a459a0136bb9abc265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from a rotation fields vector.  <br /></td></tr>
 <tr class="separator:af8e9d6e5e3e822a459a0136bb9abc265"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac445171a5231bac2c32ff6fa2658ed55" id="r_ac445171a5231bac2c32ff6fa2658ed55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac445171a5231bac2c32ff6fa2658ed55">fromQuat</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Quaternion</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &gt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">quat</a>)</td></tr>
+<tr class="memdesc:ac445171a5231bac2c32ff6fa2658ed55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a rotation from an Eigen quaternion.  <br /></td></tr>
 <tr class="separator:ac445171a5231bac2c32ff6fa2658ed55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1be01fd0d41e6d51bc7b06c98d83a548" id="r_a1be01fd0d41e6d51bc7b06c98d83a548"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> Mat3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be01fd0d41e6d51bc7b06c98d83a548">hat</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">omega</a>)</td></tr>
+<tr class="memdesc:a1be01fd0d41e6d51bc7b06c98d83a548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hat operator implementation, which coverts the tangent-space vector representation to the corresponding Lie algebra: \(\mathbb{R}^3\rightarrow \mathfrak{so}(3)\).  <br /></td></tr>
 <tr class="separator:a1be01fd0d41e6d51bc7b06c98d83a548"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ed07758752832b42aa56d25403c2bb7" id="r_a0ed07758752832b42aa56d25403c2bb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> Vec3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ed07758752832b42aa56d25403c2bb7">vee</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Mat3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Omega</a>)</td></tr>
+<tr class="memdesc:a0ed07758752832b42aa56d25403c2bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vee operator implementation, which coverts the Lie algebra representation to a tangent-space vector representation: \(\mathfrak{so}(3) \rightarrow \mathbb{R}^3\).  <br /></td></tr>
 <tr class="separator:a0ed07758752832b42aa56d25403c2bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa31411c409babf6e07efd30b8e0a4eaf" id="r_aa31411c409babf6e07efd30b8e0a4eaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> Mat3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa31411c409babf6e07efd30b8e0a4eaf">log</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a> &amp;q)</td></tr>
+<tr class="memdesc:aa31411c409babf6e07efd30b8e0a4eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic chart map implementation: \(SO(3) \rightarrow \mathfrak{so}(3)\).  <br /></td></tr>
 <tr class="separator:aa31411c409babf6e07efd30b8e0a4eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9b4196aff9e7d66532e058d0fd58bb8" id="r_af9b4196aff9e7d66532e058d0fd58bb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> Vec3T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9b4196aff9e7d66532e058d0fd58bb8">Log</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> <a class="el" href="classSO3.html">SO3</a> &amp;q)</td></tr>
+<tr class="memdesc:af9b4196aff9e7d66532e058d0fd58bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logarithmic chart map implementation: \(SO(3) \rightarrow \mathbb{R}^3\).  <br /></td></tr>
 <tr class="separator:af9b4196aff9e7d66532e058d0fd58bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a728e6e4acd40432be33cf65c04e6ac02" id="r_a728e6e4acd40432be33cf65c04e6ac02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a728e6e4acd40432be33cf65c04e6ac02">exp</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Mat3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Omega</a>)</td></tr>
+<tr class="memdesc:a728e6e4acd40432be33cf65c04e6ac02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential chart map implementation: \(\mathfrak{so}(3) \rightarrow SO(3)\).  <br /></td></tr>
 <tr class="separator:a728e6e4acd40432be33cf65c04e6ac02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a076d258c972d5c21530a9b8f66d07743" id="r_a076d258c972d5c21530a9b8f66d07743"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a076d258c972d5c21530a9b8f66d07743">Exp</a> (<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">const</a> Vec3T &amp;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">omega</a>)</td></tr>
+<tr class="memdesc:a076d258c972d5c21530a9b8f66d07743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exponential chart map implementation: \(\mathbb{R}^3 \rightarrow SO(3)\).  <br /></td></tr>
 <tr class="separator:a076d258c972d5c21530a9b8f66d07743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a171ef0a3b982fc4f8d66510a32960d99" id="r_a171ef0a3b982fc4f8d66510a32960d99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">EIGEN_MAKE_ALIGNED_OPERATOR_NEW</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">Map</a>&lt; Vec4T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a171ef0a3b982fc4f8d66510a32960d99">arr_</a></td></tr>
+<tr class="memdesc:a171ef0a3b982fc4f8d66510a32960d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory-mapped array representing all rotation fields in \(\boldsymbol{q}\).  <br /></td></tr>
 <tr class="separator:a171ef0a3b982fc4f8d66510a32960d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -256,6 +345,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Create a rotation (with garbage data). </p>
+
 </div>
 </div>
 <a id="a995891b9a5567ceb2543b7db9d6a3430" name="a995891b9a5567ceb2543b7db9d6a3430"></a>
@@ -282,6 +373,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create a transform from an array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^4\). </p>
 
 </div>
 </div>
@@ -310,6 +403,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Copy constructor from another rotation. </p>
+
 </div>
 </div>
 <a id="abb7e020c1cde2d7da68e4138c9ee8320" name="abb7e020c1cde2d7da68e4138c9ee8320"></a>
@@ -336,6 +431,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Create a rotation from a pointer array representing all rotation fields in \(\boldsymbol{q}\in\mathbb{R}^4\). </p>
 
 </div>
 </div>
@@ -364,6 +461,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access all elements of \(\boldsymbol{q}\in\mathbb{R}^4\). </p>
 
 </div>
 </div>
@@ -394,6 +493,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Cast the underlying numeric type. </p>
+
 </div>
 </div>
 <a id="af36e839a744d834ff89539b22257c67e" name="af36e839a744d834ff89539b22257c67e"></a>
@@ -420,6 +521,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get a deep copy of the current rotation. </p>
 
 </div>
 </div>
@@ -448,6 +551,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^4\). </p>
+
 </div>
 </div>
 <a id="ae46ba421d9edb5e0b3783bd2b25f2996" name="ae46ba421d9edb5e0b3783bd2b25f2996"></a>
@@ -474,6 +579,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access pointer to all elements of \(\boldsymbol{q}\in\mathbb{R}^4\). </p>
 
 </div>
 </div>
@@ -502,6 +609,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access all elements of \(\boldsymbol{q}\in\mathbb{R}^4\). </p>
+
 </div>
 </div>
 <a id="a728e6e4acd40432be33cf65c04e6ac02" name="a728e6e4acd40432be33cf65c04e6ac02"></a>
@@ -529,6 +638,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Exponential chart map implementation: \(\mathfrak{so}(3) \rightarrow SO(3)\). </p>
+
 </div>
 </div>
 <a id="a076d258c972d5c21530a9b8f66d07743" name="a076d258c972d5c21530a9b8f66d07743"></a>
@@ -555,6 +666,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Exponential chart map implementation: \(\mathbb{R}^3 \rightarrow SO(3)\). </p>
 
 </div>
 </div>
@@ -586,6 +699,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convert an angle (in radians) with accompanying axis (defined by a vector) into a rotation. </p>
 
 </div>
 </div>
@@ -623,6 +738,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a rotation from yaw-pitch-roll successive-axes Euler angles. </p>
+
 </div>
 </div>
 <a id="ac445171a5231bac2c32ff6fa2658ed55" name="ac445171a5231bac2c32ff6fa2658ed55"></a>
@@ -649,6 +766,14 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Construct a rotation from an Eigen quaternion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">quat</td><td>The Eigen quaternion. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -691,6 +816,17 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a rotation from the individual fields. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qw</td><td>Real component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qx</td><td>First imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qy</td><td>Second imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+    <tr><td class="paramname">qz</td><td>Third imaginary component of the rotation \(\boldsymbol{q}\in SO(3)\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="af8e9d6e5e3e822a459a0136bb9abc265" name="af8e9d6e5e3e822a459a0136bb9abc265"></a>
@@ -718,6 +854,14 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a rotation from a rotation fields vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qvec</td><td>The rotation represented as an array \(\boldsymbol{q}\in\mathbb{R}^4\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2556042745d4c972f07b855fe8a7b200" name="a2556042745d4c972f07b855fe8a7b200"></a>
@@ -744,6 +888,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convert a rotation matrix \(\boldsymbol{R}\in\mathbb{R}^{3\times 3}\) to a \(SO(3)\) rotation. </p>
 
 </div>
 </div>
@@ -776,6 +922,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Given two unit vectors \(\boldsymbol{u},\boldsymbol{v}\in \mathbb{R}^3\), returns the rotation that rotates \(\boldsymbol{u}\rightarrow\boldsymbol{v}\). </p>
+<p>Naturally, there is roll ambiguity in such a transform, so watch out. </p>
+
 </div>
 </div>
 <a id="a1be01fd0d41e6d51bc7b06c98d83a548" name="a1be01fd0d41e6d51bc7b06c98d83a548"></a>
@@ -802,6 +951,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Hat operator implementation, which coverts the tangent-space vector representation to the corresponding Lie algebra: \(\mathbb{R}^3\rightarrow \mathfrak{so}(3)\). </p>
 
 </div>
 </div>
@@ -830,6 +981,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain an identity \(SO(3)\) rotation. </p>
+
 </div>
 </div>
 <a id="ad1545ff27fecf535309b0ecd4ac6dd74" name="ad1545ff27fecf535309b0ecd4ac6dd74"></a>
@@ -856,6 +1009,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtain the inverse rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\). </p>
 
 </div>
 </div>
@@ -884,6 +1039,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invert the current rotation \(\boldsymbol{R}_A^B\rightarrow \boldsymbol{R}_B^A\). </p>
+
 </div>
 </div>
 <a id="aa31411c409babf6e07efd30b8e0a4eaf" name="aa31411c409babf6e07efd30b8e0a4eaf"></a>
@@ -910,6 +1067,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Logarithmic chart map implementation: \(SO(3) \rightarrow \mathfrak{so}(3)\). </p>
 
 </div>
 </div>
@@ -938,6 +1097,37 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Logarithmic chart map implementation: \(SO(3) \rightarrow \mathbb{R}^3\). </p>
+
+</div>
+</div>
+<a id="a188ab6b6d9c7979dbffcce641edeb416" name="a188ab6b6d9c7979dbffcce641edeb416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188ab6b6d9c7979dbffcce641edeb416">&#9670;&#160;</a></span>nans()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a> <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">static</a> <a class="el" href="classSO3.html">SO3</a> <a class="el" href="classSO3.html">SO3</a>&lt; <a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">T</a> &gt;::nans </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtain a rotation full of NaNs. </p>
+
 </div>
 </div>
 <a id="a97a7b8a854eb1a2eae3f3ae40d5d7cbc" name="a97a7b8a854eb1a2eae3f3ae40d5d7cbc"></a>
@@ -965,6 +1155,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Normalize the elements of \(\boldsymbol{q}\) to make it a valid rotation. </p>
+
 </div>
 </div>
 <a id="aa8174950d5665069e59b3f6c8cf9febc" name="aa8174950d5665069e59b3f6c8cf9febc"></a>
@@ -991,6 +1183,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtain a normalized copy of the current rotation. </p>
 
 </div>
 </div>
@@ -1021,6 +1215,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of group subtraction: \(\boldsymbol{q}_A^B\ominus \boldsymbol{q}_A^{B&#39;} \rightarrow
+\boldsymbol{\theta}_B^{B&#39;}\). </p>
+
 </div>
 </div>
 <a id="a3107f75505ef79f183bce74a670f0ccc" name="a3107f75505ef79f183bce74a670f0ccc"></a>
@@ -1049,6 +1246,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\). </p>
 
 </div>
 </div>
@@ -1079,6 +1279,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of otimes via multiplication. </p>
+
 </div>
 </div>
 <a id="afeae32814c1918bf4bfbcd35851f489e" name="afeae32814c1918bf4bfbcd35851f489e"></a>
@@ -1106,6 +1308,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Transform a vector via multiplication: \(\boldsymbol{q}_A^B\boldsymbol{t}^A \rightarrow
+\boldsymbol{t}^B\). </p>
+
 </div>
 </div>
 <a id="aa6fcc58210eb0aec5c5f835833243b59" name="aa6fcc58210eb0aec5c5f835833243b59"></a>
@@ -1132,6 +1337,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
 
 </div>
 </div>
@@ -1162,6 +1370,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of otimes via multiplication. </p>
+
 </div>
 </div>
 <a id="ae520c687b830f4ff82d7886648fb7fa3" name="ae520c687b830f4ff82d7886648fb7fa3"></a>
@@ -1189,6 +1399,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of oplus via addition. </p>
+
 </div>
 </div>
 <a id="a3ca9cdd361d8d6afb6ccd3d876958111" name="a3ca9cdd361d8d6afb6ccd3d876958111"></a>
@@ -1215,6 +1427,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Invocation of oplus via addition. </p>
 
 </div>
 </div>
@@ -1245,6 +1459,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Invocation of ominus via subtraction. </p>
+
 </div>
 </div>
 <a id="a660e3500d51c9c03575e1d0e7fc60d42" name="a660e3500d51c9c03575e1d0e7fc60d42"></a>
@@ -1271,6 +1487,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
 
 </div>
 </div>
@@ -1299,6 +1518,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
+
 </div>
 </div>
 <a id="aab901a8c67a80c021b53057c42d177cd" name="aab901a8c67a80c021b53057c42d177cd"></a>
@@ -1326,6 +1548,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Copy constructor. </p>
+
 </div>
 </div>
 <a id="a404ce659e2a8165026d5bd5899bbf2b0" name="a404ce659e2a8165026d5bd5899bbf2b0"></a>
@@ -1352,6 +1576,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access a field from \(\boldsymbol{q}\in\mathbb{R}^4\). </p>
 
 </div>
 </div>
@@ -1382,6 +1608,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of tangent space group perturbations: \(\boldsymbol{q}_A^B\oplus
+\boldsymbol{\theta}_B^{B&#39;} \rightarrow \boldsymbol{q}_A^{B&#39;}\). </p>
+
 </div>
 </div>
 <a id="aafe7f5c27ea12eae57f7836fd1326ef4" name="aafe7f5c27ea12eae57f7836fd1326ef4"></a>
@@ -1411,6 +1640,9 @@ template&lt;typename Tout  = T, typename T2 &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Implementation of group composition: \(\boldsymbol{q}_B^C \otimes \boldsymbol{q}_A^B\rightarrow
+\boldsymbol{q}_A^C\). </p>
+
 </div>
 </div>
 <a id="a112b9f00a4faac755e58ca63acb22eb1" name="a112b9f00a4faac755e58ca63acb22eb1"></a>
@@ -1437,6 +1669,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtain the pitch component of the yaw-pitch-roll successive-axes Euler angle representation. </p>
 
 </div>
 </div>
@@ -1465,6 +1699,9 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain an equivalent 4-by-4 matrix representation of \(\boldsymbol{q}\rightarrow [\boldsymbol{q}]_L\) such that \(\boldsymbol{q}\otimes \boldsymbol{q}_{\text{other}}=[\boldsymbol{q}]_L
+\boldsymbol{q}_{\text{other}}\). </p>
+
 </div>
 </div>
 <a id="a962f51eec1a1bd855a993f051439310f" name="a962f51eec1a1bd855a993f051439310f"></a>
@@ -1491,6 +1728,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convert the rotation to matrix representation \(\boldsymbol{R}\in \mathbb{R}^{3\times 3}\). </p>
 
 </div>
 </div>
@@ -1519,6 +1758,10 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain a random rotation. </p>
+<dl class="section return"><dt>Returns</dt><dd>A random rotation \(\boldsymbol{q}_B^W\in SO(3)\).</dd></dl>
+<p>The rotation \(\mathbf{q}_B^W\) will be normalized. </p>
+
 </div>
 </div>
 <a id="a6b5d9b33547e94bdd23e2bdc6995c196" name="a6b5d9b33547e94bdd23e2bdc6995c196"></a>
@@ -1545,6 +1788,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Obtain the roll component of the yaw-pitch-roll successive-axes Euler angle representation. </p>
 
 </div>
 </div>
@@ -1573,6 +1818,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain the Euler angle representation as a 3-vector. </p>
+
 </div>
 </div>
 <a id="a0ed07758752832b42aa56d25403c2bb7" name="a0ed07758752832b42aa56d25403c2bb7"></a>
@@ -1599,6 +1846,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Vee operator implementation, which coverts the Lie algebra representation to a tangent-space vector representation: \(\mathfrak{so}(3) \rightarrow \mathbb{R}^3\). </p>
 
 </div>
 </div>
@@ -1627,6 +1876,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the real element of the rotation. </p>
+
 </div>
 </div>
 <a id="a498d842f18ea0a35ba4aab8df18f5eff" name="a498d842f18ea0a35ba4aab8df18f5eff"></a>
@@ -1653,6 +1904,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access the real element of the rotation. </p>
 
 </div>
 </div>
@@ -1681,6 +1934,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the first imaginary element of the rotation. </p>
+
 </div>
 </div>
 <a id="ab310803de074e7bc1ead95482b5719c3" name="ab310803de074e7bc1ead95482b5719c3"></a>
@@ -1707,6 +1962,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access the first imaginary element of the rotation. </p>
 
 </div>
 </div>
@@ -1735,6 +1992,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the second imaginary element of the rotation. </p>
+
 </div>
 </div>
 <a id="a7683bf5cf9690e0a73fb9937fe8a1e18" name="a7683bf5cf9690e0a73fb9937fe8a1e18"></a>
@@ -1761,6 +2020,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access the second imaginary element of the rotation. </p>
 
 </div>
 </div>
@@ -1789,6 +2050,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Obtain the yaw component of the yaw-pitch-roll successive-axes Euler angle representation. </p>
+
 </div>
 </div>
 <a id="a206809c5d9c90af29d1989b8323d2c83" name="a206809c5d9c90af29d1989b8323d2c83"></a>
@@ -1815,6 +2078,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Access the third imaginary element of the rotation. </p>
 
 </div>
 </div>
@@ -1843,6 +2108,8 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
 </table>
 </div><div class="memdoc">
 
+<p>Access the third imaginary element of the rotation. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -1860,15 +2127,21 @@ template&lt;<a class="el" href="#aafe7f5c27ea12eae57f7836fd1326ef4">typename</a>
       </table>
 </div><div class="memdoc">
 
+<p>Memory-mapped array representing all rotation fields in \(\boldsymbol{q}\). </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="SO3_8h_source.html">SO3.h</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="classSO3.html">SO3</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
 </body>
 </html>

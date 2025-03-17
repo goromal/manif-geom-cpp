@@ -10,6 +10,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
@@ -22,6 +26,7 @@ MathJax.Hub.Config({
 </script>
 <script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -55,6 +60,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('SO2_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,11 +98,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
@@ -110,12 +127,15 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a1a4e58c80d8257ef331e98dac8efa8f9" id="r_a1a4e58c80d8257ef331e98dac8efa8f9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a1a4e58c80d8257ef331e98dac8efa8f9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1a4e58c80d8257ef331e98dac8efa8f9">operator*</a> (const double &amp;l, const <a class="el" href="classSO2.html">SO2</a>&lt; T &gt; &amp;r)</td></tr>
+<tr class="memdesc:a1a4e58c80d8257ef331e98dac8efa8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:a1a4e58c80d8257ef331e98dac8efa8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2d3d835863fe95b679cddb30831ba66" id="r_ab2d3d835863fe95b679cddb30831ba66"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab2d3d835863fe95b679cddb30831ba66"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classSO2.html">SO2</a>&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab2d3d835863fe95b679cddb30831ba66">operator*</a> (const <a class="el" href="classSO2.html">SO2</a>&lt; T &gt; &amp;l, const double &amp;r)</td></tr>
+<tr class="memdesc:ab2d3d835863fe95b679cddb30831ba66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scale a rotation by a scalar.  <br /></td></tr>
 <tr class="separator:ab2d3d835863fe95b679cddb30831ba66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49feba37c7a2afeb3577610a1fd4d9b5" id="r_a49feba37c7a2afeb3577610a1fd4d9b5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a49feba37c7a2afeb3577610a1fd4d9b5"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a49feba37c7a2afeb3577610a1fd4d9b5">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classSO2.html">SO2</a>&lt; T &gt; &amp;q)</td></tr>
+<tr class="memdesc:a49feba37c7a2afeb3577610a1fd4d9b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the rotation in a stream.  <br /></td></tr>
 <tr class="separator:a49feba37c7a2afeb3577610a1fd4d9b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -155,6 +175,9 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
+
 </div>
 </div>
 <a id="ab2d3d835863fe95b679cddb30831ba66" name="ab2d3d835863fe95b679cddb30831ba66"></a>
@@ -177,6 +200,9 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Scale a rotation by a scalar. </p>
+<p>Under the hood, this converts the rotation into a tangent-space vector, scales the vector, then converts the scaled vector back to a rotation. </p>
 
 </div>
 </div>
@@ -209,12 +235,18 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Render the rotation in a stream. </p>
+
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="SO2_8h.html">SO2.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
 </body>
 </html>

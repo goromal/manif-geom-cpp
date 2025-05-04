@@ -42,8 +42,13 @@ jobs:
         lcov --capture --directory . --output-file coverage.info
         lcov --remove coverage.info '/usr/*' '*/test/*' --output-file coverage.info.cleaned
         genhtml coverage.info.cleaned --output-directory coverage_report
-    - name: Upload coverage report artifact
-      uses: actions/upload-artifact@v3
+    - name: Setup LCOV
+      uses: hrishikesh-kadam/setup-lcov@v1
+    - name: Report code coverage
+      uses: zgosalvez/github-actions-report-lcov@v4
       with:
-        name: coverage-report
-        path: coverage_report
+        coverage-files: coverage.info.cleaned
+        minimum-coverage: 40
+        artifact-name: code-coverage-report
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        update-comment: true

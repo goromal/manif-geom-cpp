@@ -21,3 +21,57 @@ jobs:
     - run: >
         git config --global url."https://github.com/".insteadOf ssh://git@github.com/
     - run: export NIXPKGS_ALLOW_UNFREE=1 && nix-build -E 'with (import (fetchTarball "https://github.com/goromal/anixpkgs/archive/refs/heads/master.tar.gz") {}); manif-geom-cpp.override { pkg-src = lib.cleanSource ./.; }'
+  code-cov:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v20
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+    - uses: cachix/cachix-action@v12
+      with:
+        name: github-public
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - name: Build, test, and generate coverage HTML report
+      run: |
+        mkdir build && cd build
+        nix-shell ../.github/_nixshell --run "cmake .. -DCMAKE_BUILD_TYPE=Debug && make unit-tests"
+        nix-shell ../.github/_nixshell --run "lcov --capture --directory . --output-file coverage.info && \
+                                              lcov --remove coverage.info '/usr/*' '*/test/*' --output-file coverage.info.cleaned && \
+                                              genhtml --branch-coverage --ignore-errors source --output-directory coverage_report coverage.info.cleaned"
+    - name: Upload coverage report artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: code-coverage-report
+        path: build/coverage_report
+    - name: Post PR comment with coverage artifact (optional)
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const artifactUrl = `https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}`;
+          const comment = `
+          ### 🧪 Code Coverage Report
+          The code coverage report has been generated for this PR.
+
+          ➡️ [View coverage artifact](${artifactUrl})
+          `;
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
+    - name: Copy coverage report into docs/
+      run: |
+        mkdir -p docs/coverage
+        cp -r build/coverage_report/* docs/coverage/
+    - name: Commit coverage report to docs/
+      if: github.ref == 'refs/heads/master'
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add docs/coverage
+        git commit -m "Update coverage report [skip ci]" || echo "No changes to commit"
+        git push

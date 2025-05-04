@@ -38,7 +38,7 @@ jobs:
         nix-shell ../.github/_nixshell --run "cmake .. -DCMAKE_BUILD_TYPE=Debug && make unit-tests"
         nix-shell ../.github/_nixshell --run "lcov --capture --directory . --output-file coverage.info && \
                                               lcov --remove coverage.info '/usr/*' '*/test/*' --output-file coverage.info.cleaned && \
-                                              genhtml coverage.info.cleaned --output-directory coverage_report"
+                                              genhtml --ignore-errors source coverage.info.cleaned --output-directory coverage_report"
     - name: Setup LCOV
       uses: hrishikesh-kadam/setup-lcov@v1
     - name: Report code coverage

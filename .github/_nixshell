@@ -3,6 +3,7 @@ let pkgs = import (builtins.fetchTarball
 in with pkgs; mkShell {
   nativeBuildInputs = [
         cmake
+        lcov
     ];
     buildInputs = [
         boost

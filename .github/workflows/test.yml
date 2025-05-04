@@ -63,3 +63,15 @@ jobs:
             repo: context.repo.repo,
             body: comment
           });
+    - name: Copy coverage report into docs/
+      run: |
+        mkdir -p docs/coverage
+        cp -r build/coverage_report/* docs/coverage/
+    - name: Commit coverage report to docs/
+      if: github.ref == 'refs/heads/master'
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add docs/coverage
+        git commit -m "Update coverage report [skip ci]" || echo "No changes to commit"
+        git push

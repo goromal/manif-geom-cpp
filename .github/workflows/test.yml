@@ -32,12 +32,10 @@ jobs:
       with:
         name: github-public
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - name: Build and test
+    - name: Build, test, and generate coverage HTML report
       run: |
         mkdir build && cd build
         nix-shell ../.github/_nixshell --run "cmake .. -DCMAKE_BUILD_TYPE=Debug && make unit-tests"
-    - name: Generate coverage HTML report
-      run: |
         nix-shell ../.github/_nixshell --run "lcov --capture --directory . --output-file coverage.info && \
                                               lcov --remove coverage.info '/usr/*' '*/test/*' --output-file coverage.info.cleaned && \
                                               genhtml coverage.info.cleaned --output-directory coverage_report"

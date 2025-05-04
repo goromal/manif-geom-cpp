@@ -21,3 +21,29 @@ jobs:
     - run: >
         git config --global url."https://github.com/".insteadOf ssh://git@github.com/
     - run: export NIXPKGS_ALLOW_UNFREE=1 && nix-build -E 'with (import (fetchTarball "https://github.com/goromal/anixpkgs/archive/refs/heads/master.tar.gz") {}); manif-geom-cpp.override { pkg-src = lib.cleanSource ./.; }'
+  code-cov:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: cachix/install-nix-action@v20
+      with:
+        nix_path: nixpkgs=channel:nixos-unstable
+    - uses: cachix/cachix-action@v12
+      with:
+        name: github-public
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+    - run: sudo apt-get update && sudo apt-get install -y lcov
+    - name: Build and test
+      run: |
+        mkdir build && cd build
+        nix-shell ../.github/_nixshell --run "cmake .. -DCMAKE_BUILD_TYPE=Debug && make unit-tests"
+    - name: Generate coverage HTML report
+      run: |
+        lcov --capture --directory . --output-file coverage.info
+        lcov --remove coverage.info '/usr/*' '*/test/*' --output-file coverage.info.cleaned
+        genhtml coverage.info.cleaned --output-directory coverage_report
+    - name: Upload coverage report artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: coverage_report

@@ -1,0 +1,11 @@
+let pkgs = import (builtins.fetchTarball
+    "https://github.com/goromal/anixpkgs/archive/refs/tags/v6.22.0.tar.gz") {};
+in with pkgs; mkShell {
+  nativeBuildInputs = [
+        cmake
+    ];
+    buildInputs = [
+        boost
+        eigen
+    ];
+}
